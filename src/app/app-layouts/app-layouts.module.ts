@@ -1,23 +1,22 @@
+import { AngularMaterialModule } from '../app-modules/angular-material.module';
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+import {MainComponent} from './main/main.component';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 @NgModule({
   imports: [
-    AppHeaderModule,
     AngularMaterialModule,
     CommonModule,
-    CommonWidgetModule,
-    PipesModule,
     RouterModule,
-    SubComponentsModule,
     PerfectScrollbarModule,
   ],
   declarations: [
-    BackNavigationComponent,
     MainComponent,
-    WebComponent,
   ],
   entryComponents: [
-    WebComponent,
+    MainComponent,
   ],
 })
 export class AppLayoutsModule {}
