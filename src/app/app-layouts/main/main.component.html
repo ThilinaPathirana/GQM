@@ -1,3 +1,5 @@
+<!-- Header toolbar menu for responsive handheld devices starts-->
+
 <mat-toolbar class="hidden-xl-up">
   <div class="row full-width">
     <div class="col-6">
@@ -7,7 +9,7 @@
         </button>
       </div>
       <div class="text-left hidden-xs-down">
-        <img src="src/products/at/global/assets/images/AT-login-logo.svg" width="90" height="39" alt="" class="main-logo">
+        <img src="assets/images/main-logo.svg" width="90" height="39" alt="" class="main-logo">
       </div>
     </div>
     <div class="col-6 text-right pr-0">
@@ -17,19 +19,16 @@
     </div>
   </div>
 </mat-toolbar>
-<mat-sidenav-container  class="full-height" ><!--[ngClass]="{ 'theme2': isDarkTheme, 'theme1': !isDarkTheme, 'breadcrumb-available': isBackButtonVisible }">-->
-  <mat-sidenav
-    id="sidenav"
-    #sidenav mode="side"
-    class="full-height overflow-hidden"
-    [ngClass]="isSideNavMinimised == true ? 'min-sidenav' : 'max-sidenav'"
-    [ngStyle]="{ 'width.px': sideNavWidth }"
-    [opened]="true">
-    <nav class="d-sm-block sidebar-color p-0 full-width full-height p-fixed">
+
+<!-- Header toolbar menu for responsive handheld devices ends-->
+<mat-sidenav-container  class="full-height" [ngClass]="{ 'theme2': isDarkTheme, 'theme1': !isDarkTheme, 'breadcrumb-available': isBackButtonVisible }">
+  <mat-sidenav id="sidenav" #sidenav mode="side" class="full-height overflow-hidden" [ngClass]="isSideNavMinimised == true ? 'min-sidenav' : 'max-sidenav'"
+               [ngStyle]="{ 'width.px': sidenavWidth }" position={{sideNavAlignment}} opened="true">
+    <nav class="d-sm-block sidebar-color p-0 full-width full-height p-fixed overflow-hidden">
       <mat-toolbar class="hidden-lg-down">
         <div class="flex opacity-min hidden-md-down">
           <div class="col-9">
-            <img src="src/products/at/global/assets/images/AT-login-logo.svg" width="90" height="39" alt="" class="main-logo">
+            <img src="assets/images/main-logo.svg" width="90" height="39" alt="" class="main-logo">
           </div>
           <div class="col-3 text-right">
             <button mat-icon-button (click)="changeSideNavWidth()" class="menu-button">
@@ -45,111 +44,57 @@
           </div>
         </div>
       </mat-toolbar>
-      <!--&lt;!&ndash; User Login Profile &ndash;&gt;-->
-      <!--<div class="d-flex flex-column align-items-center pt-4 pb-3">-->
-      <!--<img class="avatar" src="assets/images/dummy-avatar.svg" width="60" height="60" alt="">-->
-      <!--<span class="name d-flex flex-column align-items-center pt-2 pb-2">Mohammad bin Salman</span>-->
-      <!--</div>-->
       <div class="nav-body h-100">
-        <!-- Dynamically Added AT Menus -->
-        <perfect-scrollbar>
+        <!--<div class="d-flex linear-gauge full-width p-3">
+                    <app-account-summary-gauge class="w-100"> </app-account-summary-gauge>
+                </div>-->
+
+        <perfect-scrollbar >
           <mat-nav-list class="nav-list-wrapper y-scroll-auto pt-0 h-100">
-            <ul class="nav nav-pills flex-row nav-top dir-ltr">
-              <div class="d-flex flex-row full-width" *ngFor="let item of mainMenuItems; let i = index">
-                <!-- -->
-                <li class="nav-item" (click)="panelButtonClicked(item, true)" *ngIf="!item?.sub" [class.active]="item?.active" [tabindex]="i">
-                  <input id={{item.name}} type="checkbox" (change)="menuItemSelected($event)" />
-                  <label class="nav-item-group-lbl" for={{item.name}} >
+            <ul class="nav nav-pills flex-row nav-top">
+              <div class="nav-item-wrapper full-width" *ngFor="let item of menuItems; let i = index;">
+                <li class="nav-item" (click)="panelButtonClicked(item, true)" *ngIf="!item?.subItems" [class.active]="item?.active" [tabindex]="i">
+                  <input id={{item.config.tooltip}} type="checkbox" (change)="menuItemSelected($event)" /> <!--Tooltip is used as a unique id. Change this if it's oddd-->
+                  <label class="nav-item-group-lbl" for={{item.config.tooltip}}>
                     <a class="nav-link p-3 flex space-between flex-item-center"  routerLinkActive="active">
-                      <i ngClass={{item.icon}} class="align-middle pr-2 pl-2 nav-item-icon"></i>
-                      <span class="col p-0 lblmenu">{{ item.name }}</span>
+                      <i ngClass={{item.config.icon}} class="align-middle pr-2 pl-2 nav-item-icon"
+                         matTooltipPosition="after"></i>
+                      <span class="col p-0 lblmenu"></span>
                       <span class="arrow right">
 												<i class="uni-angle-down"></i>
 											</span>
                     </a>
                   </label>
                 </li>
-                <li class="nav-item has-sub-items" (click)="panelButtonClicked(item, true)" *ngIf="item?.sub" [class.active]="item?.active"
+                <li class="nav-item has-sub-items" (click)="panelButtonClicked(item, true)" *ngIf="item?.subItems" [class.active]="item?.active"
                     [tabindex]="i">
-                  <input id={{item.name}} type="checkbox" (change)="menuItemSelected($event)" /> <!--Tooltip is used as a unique id. Change this if it's oddd-->
-                  <label class="nav-item-group-lbl" for={{item.name}}>
-                    <a class="nav-link p-3 flex space-between flex-item-center">
-                      <i ngClass={{item.icon}} class="align-middle pr-2 pl-2 nav-item-icon"></i>
-                      <span class="col p-0 lblmenu has-sub-items-lbl">{{ item.name }}</span>
+                  <input id={{item.config.tooltip}} type="checkbox" (change)="menuItemSelected($event)" /> <!--Tooltip is used as a unique id. Change this if it's oddd-->
+                  <label class="nav-item-group-lbl" for={{item.config.tooltip}}>
+                    <a class="nav-link p-3 flex space-between flex-item-center" [matTooltip]="item.config.tooltip"
+                       matTooltipPosition="after">
+                      <i ngClass={{item.config.icon}} class="align-middle pr-2 pl-2 nav-item-icon"></i>
+                      <span class="col p-0 lblmenu has-sub-items-lbl">{{ item.config.tooltip }}</span>
                       <span class="arrow right">
 												<i class="uni-angle-down"></i>
 											</span>
                     </a>
-                    <ul class="nav nav-pills flex-row nav-top sub-nav-items" *ngIf="item?.sub">
-                      <div class="full-width" *ngFor="let subItem of item?.sub; let i = index;">
+                    <ul class="nav nav-pills flex-row nav-top sub-nav-items" *ngIf="item?.subItems">
+                      <div class="full-width" *ngFor="let subItem of item?.subItems; let i = index;">
                         <li class="nav-item" (click)="panelButtonClicked(subItem)">
-                          <a class="nav-link pr-3 pl-3 pt-2 pb-2" routerLink={{subItem.link}} routerLinkActive="active">
-                            <i ngClass={{subItem.icon}} class="align-middle pr-2 pl-2 sub-nav-item-icon" ></i>
-                            <span class="lblmenu">{{ subItem.name }}</span>
+                          <a class="nav-link pr-3 pl-3 pt-2 pb-2" routerLink={{subItem.config.url}} routerLinkActive="active">
+                            <i ngClass={{subItem.config.icon}} class="align-middle pr-2 pl-2 sub-nav-item-icon" [matTooltip]="subItem.config.tooltip"
+                               matTooltipPosition="after"></i>
+                            <span class="lblmenu">{{subItem.config.tooltip}}</span>
                           </a>
                         </li>
                       </div>
                     </ul>
                   </label>
                 </li>
-
-                <!-- -->
-                <!--<li class="nav-item">-->
-                <!--&lt;!&ndash;<input type="checkbox" id={{mm.code}} />&ndash;&gt;-->
-                <!--<a class="nav-link p-3" routerLink={{item.url}} routerLinkActive="active">-->
-                <!--&lt;!&ndash;<label class="nav-link p-3" for={{mm.code}}>&ndash;&gt;-->
-                <!--<i ngClass={{item.icon}} class="align-middle pr-2 pl-2"></i>-->
-                <!--<span class="menu-l1"> {{ item.name }} </span>-->
-                <!--&lt;!&ndash; First Level Group&ndash;&gt;-->
-                <!--<i class="fa fa-plus-square right"></i>-->
-                <!--&lt;!&ndash;</label>&ndash;&gt;-->
-                <!--</a>-->
-
-                <!--<ul *ngIf="item.sub" class="nav nav-pills flex-row">-->
-                <!--<div class="d-flex full-width" *ngFor="let m of item.sub; let j = index">-->
-
-                <!--<div class="d-flex full-width" *ngIf="m.sub==''">-->
-                <!--&lt;!&ndash; Secound Level Active Link&ndash;&gt;-->
-                <!--<li class="full-width">-->
-                <!--<a (click)="sideNavLinkClick(m)" class="nav-link pl-4 pt-2 pb-2 pr-3">-->
-                <!--<i class="fa fa-angle-right right-arrow"></i>-->
-                <!--<span class="menu-l2"> {{ m.name }} </span>-->
-                <!--</a>-->
-                <!--</li>-->
-                <!--</div>-->
-
-                <!--<div class="second-level d-flex full-width" *ngIf="m.sub!=''">-->
-                <!--&lt;!&ndash; Secound Level Menu Group &ndash;&gt;-->
-                <!--<li class="full-width">-->
-                <!--<input type="checkbox" id={{m.code}} />-->
-                <!--<label class="d-flex pl-4 pt-2 pb-2 pr-3" for={{m.code}}>-->
-                <!--<i class="fa fa-angle-right right-arrow"></i>-->
-                <!--<span class="menu-l2 w-50 flex-column"> {{ m.name }} </span>-->
-                <!--&lt;!&ndash; Secound Level Group &ndash;&gt;-->
-                <!--<i class="fa fa-plus-square w-50 text-right flex-column"></i>-->
-                <!--</label>-->
-
-                <!--<ul class="nav nav-pills flex-row">-->
-                <!--<div class="d-flex full-width" *ngFor="let sm of m.sub">-->
-                <!--<li class="full-width">-->
-                <!--<a (click)="sideNavLinkClick(sm)" class="nav-link pl-5 pt-2 pb-2 pr-3">-->
-                <!--&lt;!&ndash; Third Level Active Link&ndash;&gt;-->
-                <!--<i class="fa fa-angle-right right-arrow"></i>-->
-                <!--<span class="menu-l3"> {{ sm.name }} </span>-->
-                <!--</a>-->
-                <!--</li>-->
-                <!--</div>-->
-                <!--</ul>-->
-                <!--</li>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</ul>-->
-                <!--</li>-->
               </div>
             </ul>
           </mat-nav-list>
         </perfect-scrollbar>
-        <!-- Footer Action Items -->
         <ul class="nav nav-pills nav-actions nav-bottom w-100 flex-row opacity-min">
           <li class="col-12 app-version">
             <div class="w-100 gap-1 left mb-2"></div>
@@ -204,66 +149,33 @@
     </nav>
   </mat-sidenav>
 
-  <mat-sidenav-content [ngClass]="sideNavWidth == 15 ? 'expand' : 'shrink-at'">
-
+  <mat-sidenav-content class="full-height" [ngClass]="sidenavWidth == 210 ? 'expand' : 'shrink'">
     <div class="top-panel-wrapper hidden-lg-down flex">
       <div class="flex-1">
-        <!--<app-at-header-sub-menu></app-at-header-sub-menu>-->
       </div>
       <div class="flex">
         <div class="top-panel-more-btn">
-          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100" (click)="onSymbolSearch()">
+          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
             <i class="fa fa-search"></i>
           </button>
         </div>
         <div class="top-panel-more-btn border-0">
-          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100" (click)="logoutApplication()">
+          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
             <i class="fa fa-power-off"></i>
           </button>
         </div>
       </div>
     </div>
-    <!-- 15 (SIDE_BAR_MAX_WIDTH) Has Hardcoded Here -->
-    <!--<nav aria-label="breadcrumb" role="navigation" #breadcrumb class="full-width p-0" (click)="onBreadCrumbClick()">-->
-    <!--<ol class="breadcrumb m-0">-->
-    <!--<div class="font-weight-bold" (click)="onBreadCrumbClick()">Home</div>-->
-    <!--<div class="font-weight-bold" *ngFor="let x of selectedId; let i = index" (click)="onBreadCrumbClick()">-->
-    <!--<i class="fa fa-angle-right pr-3 pl-3"></i>-->
-    <!--{{ selectedItems[i][x].name }}-->
+    <!--<div *ngIf="isBackButtonVisible" class="d-flex pl-3 pr-3 pb-2 pt-2 breadcrumb-panel">-->
+			<!--<span *ngFor="let item of navigationService.navWidgetStack; let i = index;" (click)="navigateBack(i)" class="d-flex">-->
+				<!--<div class="mr-1 ml-1 d-flex breadcrumb-panel-item" [ngClass] = "{ 'breadcrumb-visited-page font-weight-regular': i === navigationService.navWidgetStack.length -1}">-->
+					<!--<div>{{ localizationService.language[item.childView.tooltip] }}</div>-->
+				<!--</div>-->
+				<!--<div class="mr-1 ml-1 d-flex"><div *ngIf="i !== navigationService.navWidgetStack.length -1"><div class="fa fa-angle-right"></div></div></div>-->
+			<!--</span>-->
     <!--</div>-->
-    <!--</ol>-->
-    <!--</nav>-->
-    <!--<div class="p-relative">-->
-    <!--<div class="background p-absolute" *ngIf="menuOpen" #dialog>-->
-    <!--<div class="lane" [ngClass]="{selected: selectedEnable[1]}">-->
-    <!--<div class="button" [ngClass]="{'selected-item': selectedId[0] === i}" *ngFor="let x of selectedItems[0]; let i = index"-->
-    <!--(click)="selectItem(0, i)">-->
-    <!--<div> {{ x.name }} </div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="lane" [ngClass]="{selected: selectedEnable[2], 'inactive-lane': !selectedEnable[1]}">-->
-    <!--<div class="button" [ngClass]="{'selected-item': selectedId[1] === i}" *ngFor="let x of selectedItems[1]; let i = index"-->
-    <!--(click)="selectItem(1, i)">-->
-    <!--<div> {{ x.name }} </div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="lane" [ngClass]="{selected: selectedEnable[3], 'inactive-lane': !selectedEnable[2]}">-->
-    <!--<div class="button" [ngClass]="{'selected-item': selectedId[2] === i}" *ngFor="let x of selectedItems[2]; let i = index"-->
-    <!--(click)="selectItem(2, i)">-->
-    <!--<div> {{ x.name }} </div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="lane" [ngClass]="{'inactive-lane': !selectedEnable[3]}">-->
-    <!--<div class="button" [ngClass]="{'selected-item': selectedId[3] === i}" *ngFor="let x of selectedItems[3]; let i = index"-->
-    <!--(click)="selectItem(3, i)">-->
-    <!--<div> {{ x.name }} </div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <div class="page-wrapper-at full-height">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
+
+</mat-sidenav-container>
 

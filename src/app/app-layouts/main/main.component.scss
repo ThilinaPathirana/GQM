@@ -16,6 +16,13 @@
 	overflow: hidden;
 }
 
+.main-component-body{
+  height: calc(100% - 60px);
+}
+.h-44{
+  height: 44px;
+}
+
 .button>div {
 	display: table-cell;
 	vertical-align: middle;
@@ -306,3 +313,41 @@ perfect-scrollbar {
 //	box-sizing: border-box;
 //	position: relative;
 //}
+
+
+@import '../../../assets/styles/colour-theme-theme1';
+@import '../../../assets/styles/colour-theme-theme2';
+
+.theme2 mat-sidenav-container {
+  background-color: $theme2-color-background;
+  color: $theme2-text-color-main;
+}
+
+.theme1  mat-sidenav-container{
+  background: $theme1-color-background;
+  color: $theme1-text-color-main;
+}
+
+.main-logo{
+  padding: 0 10px;
+}
+mat-sidenav .lblmenu {
+  font-size: 13px;
+}
+.nav-top i {
+  font-size: 1rem;
+}
+.min-sidenav .nav-top i {
+  position: relative;
+  left: 4px;
+}
+.nav-list-wrapper{
+  height: calc(100% - 250px);
+}
+
+
+@media (max-width: 1199px){
+  .nav-list-wrapper{
+    height: calc(100% - 200px);
+  }
+}

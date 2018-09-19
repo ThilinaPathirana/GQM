@@ -10,7 +10,6 @@ export const userSettings = {
 
   webMenuItems: [
     {
-      id: WidgetTypes.OneStopTrade,
       config: {
         tooltip: 'TRADING_CONSOLE',
         url: 'one-stop-trade',

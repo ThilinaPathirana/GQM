@@ -1,0 +1,357 @@
+@import 'common-variables';
+@import 'widget-variables';
+
+body {
+	line-height: $line-height-normal;
+	margin: 0 auto;
+}
+
+body.ar {
+	direction: rtl;
+}
+
+body.en {
+	direction: ltr;
+}
+
+.spacer {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+
+.h-sep-line {
+	width: 100%;
+	height: 1px;
+}
+
+.v-sep {
+	border-right: 1px solid;
+}
+
+.v-sep:last-child {
+	border-right: 0px;
+}
+
+.ar .v-sep {
+	border-right: 0px solid;
+	border-left: 1px solid;
+}
+
+.ar .v-sep:last-child {
+	border-right: 0px;
+	border-left: 0px !important;
+}
+
+.snap-current-price-wrapper {
+	padding-left: 5px;
+}
+
+.snap-current-price {
+	font-size: $snap-font-size-5;
+	margin-bottom: 15px;
+}
+
+.snap-current-price-currency {
+	font-size: $snap-font-size-2;
+}
+
+.snap-change {
+	margin-right: 10px;
+	font-size: $snap-font-size-3;
+}
+
+.ar .snap-change {
+	margin-left: 10px;
+	font-size: $snap-font-size-3;
+}
+
+.snap-percentange {
+	font-size: $snap-font-size-5;
+}
+
+.snap-date {
+	font-size: 11px;
+	margin-bottom: 5px;
+}
+
+.snap-note {
+	font-size: 11px;
+}
+
+.snap-val-1 {
+	font-size: $snap-font-size-2;
+}
+
+.snap-val-2 {
+	font-size: $snap-font-size-2;
+}
+
+.snap-lbl-1 {
+	font-size: $snap-font-size-1;
+}
+
+.snap-lbl-2 {
+	font-size: $snap-font-size-2;
+}
+
+/* Bootstrap 4 - mtplus v2 implementation */
+
+.nav-link {
+	padding: 1rem 1rem !important;
+}
+
+header, header nav {
+	height: 60px;
+}
+
+.nav-pills .nav-item a {
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+.sidebar .name {
+	font-size: 1.1rem;
+	white-space: nowrap;
+}
+
+#wrapper {
+	padding-left: 80px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+	padding-left: 250px;
+}
+
+
+
+#wrapper.toggled #sidebar-wrapper {
+	width: 250px;
+}
+
+#page-content-wrapper {
+	width: 100%;
+	position: absolute;
+	padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+	position: absolute;
+	margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+	position: absolute;
+	top: 0;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar-nav li {
+	text-indent: 20px;
+	line-height: 40px;
+}
+
+.sidebar-nav li a {
+	display: block;
+	text-decoration: none;
+	color: #999999;
+}
+
+.sidebar-nav li a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+	text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+	height: 65px;
+	font-size: 18px;
+	line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+	color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+	color: #fff;
+	background: none;
+}
+
+@media (max-width: 768px) {
+	#sidebar-wrapper {
+		width: 0;
+	}
+	#wrapper {
+		padding-left: 0px;
+	}
+}
+
+@media(min-width: 768px) {
+	#wrapper {
+		padding-left: 80px;
+	}
+	#wrapper.toggled {
+		padding-left: 250px;
+	}
+	#sidebar-wrapper {
+		width: 80px;
+	}
+	#wrapper.toggled #sidebar-wrapper {
+		width: 250px;
+	}
+	#page-content-wrapper {
+		padding: 20px;
+		position: relative;
+	}
+	#wrapper.toggled #page-content-wrapper {
+		position: relative;
+		margin-right: 0;
+	}
+}
+
+.nav-wrap:not(.toggled) {
+	.name, .lblmenu {
+		opacity: 0 !important;
+		-webkit-transition: opacity 0.5s ease-in-out;
+		-moz-transition: opacity 0.5s ease-in-out;
+		-ms-transition: opacity 0.5s ease-in-out;
+		-o-transition: opacity 0.5s ease-in-out;
+	}
+	.avatar {
+		width: 60px;
+		height: 60px;
+		-webkit-transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+		-ms-transition: all 0.5s ease-in-out;
+		-o-transition: all 0.5s ease-in-out;
+	}
+}
+
+.nav-wrap.toggled {
+	.name, .lblmenu {
+		opacity: 1 !important;
+		-webkit-transition: opacity 0.7s ease-in-out;
+		-moz-transition: opacity 0.7s ease-in-out;
+		-ms-transition: opacity 0.7s ease-in-out;
+		-o-transition: opacity 0.7s ease-in-out;
+	}
+	.avatar {
+		width: 60px;
+		height: 60px;
+		-webkit-transition: all 0.7s ease-in-out;
+		-moz-transition: all 0.7s ease-in-out;
+		-ms-transition: all 0.7s ease-in-out;
+		-o-transition: all 0.7s ease-in-out;
+	}
+}
+
+.menu-icon {
+	font-size: $snap-font-size-2 !important;
+}
+
+/* Toggle menu button animation*/
+
+.toggle-wrap {
+	padding: 10px 25px;
+	position: relative;
+	cursor: pointer;
+	float: left;
+
+	/*disable selection*/
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.toggle-bar,
+.toggle-bar::before,
+.toggle-bar::after,
+.toggle-wrap.active .toggle-bar,
+.toggle-wrap.active .toggle-bar::before,
+.toggle-wrap.active .toggle-bar::after {
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.toggle-bar {
+	width: 20px;
+	margin: 10px 0;
+	position: relative;
+	border-top: 2px solid #ffffff;
+	display: block;
+}
+
+.toggle-bar::before,
+.toggle-bar::after {
+	content: "";
+	display: block;
+	background: #ffffff;
+	height: 2px;
+	width: 20px;
+	position: absolute;
+	top: -8px;
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-ms-transform-origin: 13%;
+	-webkit-transform-origin: 13%;
+	transform-origin: 13%;
+}
+
+.toggle-bar::after {
+	top: 4px;
+}
+
+.toggle-wrap.active .toggle-bar {
+	border-top: 2px solid transparent;
+}
+
+.toggle-wrap.active .toggle-bar::before {
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: -6px
+}
+
+.toggle-wrap.active .toggle-bar::after {
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.nav-pills .nav-link {
+	border-radius: 0 !important;
+}
+
+header input.form-control {
+	padding: 0 1rem;
+	border-radius: 0 !important;
+	width: 260px !important;
+	height:35px;
+	font-size: 0.9rem;
+}
+.card {
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	border: 0;
+	border-radius: 0;
+}
