@@ -3,30 +3,47 @@ import { WidgetTypes } from '../app-constants/enums/widget-types.enum';
 export const userSettings = {
 
   defaultWidget: {
-    web: WidgetTypes.OneStopTrade,
+    web: WidgetTypes.home,
     // ios: WidgetTypes.WatchList,
     // android: WidgetTypes.StockProfile,
   },
 
   webMenuItems: [
     {
+      id: WidgetTypes.home,
       config: {
-        tooltip: 'TRADING_CONSOLE',
-        url: 'one-stop-trade',
-        icon: 'uni-trade',
+        tooltips: 'Dashboard',
+        url: 'home',
+        icon: 'fa fa-dashboard',
       },
     },
     {
       config: {
-        tooltip: 'TRADING_ACCOUNT',
+        tooltip: 'Documents',
         icon: 'uni-my-account',
       },
       subItems: [
         {
           id: WidgetTypes.Portfolio,
           config: {
-            tooltip: 'PORTFOLIO',
-            url: 'portfolio',
+            tooltip: 'doc',
+            url: 'home2',
+            icon: 'uni-portfolio',
+          },
+        },
+      ],
+    },
+    {
+      config: {
+        tooltip: 'Tab2',
+        icon: 'uni-my-account',
+      },
+      subItems: [
+        {
+          id: WidgetTypes.OneStopTrade,
+          config: {
+            tooltip: 'tab',
+            url: 'home3',
             icon: 'uni-portfolio',
           },
         },

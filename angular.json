@@ -20,7 +20,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/images",
+              "src/manifest.json"
             ],
             "styles": ["src/assets/styles/app.scss",
               "node_modules/ag-grid/dist/styles/ag-grid.css",

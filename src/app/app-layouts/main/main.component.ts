@@ -51,7 +51,7 @@ export class MainComponent {
   private popupDialogRef;
 
   constructor(
-
+    private routerr: Router,
   ) {
     this.env = environment.production ? 'PROD' : 'DEBUG';
     this.customizeMenuItems();
@@ -85,7 +85,7 @@ export class MainComponent {
       this.activeListItem = item;
     }
     if (!item.subItems) {
-      // this.navigationService.navigateToRootView(item.id);
+      this.routerr.navigateByUrl( item.config.url, { skipLocationChange: false });
     }
   }
 

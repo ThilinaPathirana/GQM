@@ -6,10 +6,18 @@ import {HomePageWidgetsModule} from './app-widgets/home-page-widgets/home-page-w
 
 export const routes: Routes = [
   {
-    path: 'home', component: MainComponent,
+    path: '', component: MainComponent,
     children: [
       {
-        path: '',
+        path: 'home',
+        loadChildren: './app-widgets/home-page-widgets/home-page-widgets.module#HomePageWidgetsModule',
+      },
+      {
+        path: 'home2',
+        loadChildren: './app-widgets/home-page-widgets/home-page-widgets.module#HomePageWidgetsModule',
+      },
+      {
+        path: 'home3',
         loadChildren: './app-widgets/home-page-widgets/home-page-widgets.module#HomePageWidgetsModule',
       },
     ],
