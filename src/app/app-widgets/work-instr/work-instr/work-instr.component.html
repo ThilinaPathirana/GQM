@@ -1,0 +1,41 @@
+<mat-nav-list class="nav-list-wrapper y-scroll-auto pt-0 h-75">
+  <ul class="nav nav-pills flex-row nav-top">
+    <div class="nav-item-wrapper full-width" *ngFor="let item of menuItems; let i = index;">
+      <li class="nav-item has-sub-items" (click)="panelButtonClicked(item, false)" *ngIf="!item.subItems" [class.active]="item?.active" [tabindex]="i">
+        <input id={{item.config.tooltips}} type="checkbox" (change)="menuItemSelected($event)" /> <!--Tooltip is used as a unique id. Change this if it's oddd-->
+        <label class="nav-item-group-lbl" for={{item.config.tooltips}}>
+          <a class="nav-link p-3 flex space-between flex-item-center" routerLink={{item.config.url}} routerLinkActive="active">
+            <i class="align-middle pr-2 pl-2 sub-nav-item-icon" [matTooltip]="item.config.tooltips"
+               matTooltipPosition="after"></i>
+            <span class="lblmenu">{{item.config.tooltips}}</span>
+          </a>
+        </label>
+      </li>
+      <li class="nav-item has-sub-items" (click)="panelButtonClicked(item, true)" *ngIf="item.subItems" [class.active]="item?.active"
+          [tabindex]="i">
+        <input id={{item.config.tooltip}} type="checkbox" (change)="menuItemSelected($event)" /> <!--Tooltip is used as a unique id. Change this if it's oddd-->
+        <label class="nav-item-group-lbl" for={{item.config.tooltip}}>
+          <a class="nav-link" [matTooltip]="item.config.tooltip"
+             matTooltipPosition="after">
+            <i class="align-middle pr-2 pl-2 nav-item-icon"></i>
+            <span class="col p-0 lblmenu has-sub-items-lbl">{{ item.config.tooltip }}</span>
+            <span class="arrow right">
+												<i class="fa fa-angle-down"></i>
+											</span>
+          </a>
+          <ul class="nav nav-pills flex-row nav-top sub-nav-items" *ngIf="item?.subItems">
+            <div class="half-width" *ngFor="let subItem of item?.subItems; let i = index;">
+              <li class="nav-sub-item" (click)="panelButtonClicked(subItem)">
+                <a class="nav-link">
+                  <i [matTooltip]="subItem.config.tooltip"
+                     matTooltipPosition="after"></i>
+                  <span class="lblmenu">{{subItem.config.tooltip}}</span>
+                </a>
+              </li>
+            </div>
+          </ul>
+        </label>
+      </li>
+    </div>
+  </ul>
+</mat-nav-list>

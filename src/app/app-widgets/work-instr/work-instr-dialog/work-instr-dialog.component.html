@@ -1,0 +1,33 @@
+<div id="printable">
+<h2 class="padding-large-left: 50px">{{config.tooltip}}</h2><br>
+<h5 class="style:bold">{{config.topic}}</h5><br>
+<div *ngFor="let ins of config.Instruction;">
+<h5>{{ins.Ins}}</h5>
+</div>
+</div><br>
+<div class="row md-5">
+<div class="col-3">
+  <button mat-button
+          (click)="dialogRef.close(null)"
+          tabindex="-1"
+          color="warn">
+    Cancel
+  </button>
+</div>
+<div class="col-5">
+  <button mat-button
+          tabindex="-1"
+          color="warn">
+    Report an Issue
+  </button>
+</div>
+<div class="col-4">
+  <button mat-button
+          tabindex="-1"
+          (click)="printDiv('printable')"
+          color="warn">
+    Print
+  </button>
+</div>
+</div>
+
