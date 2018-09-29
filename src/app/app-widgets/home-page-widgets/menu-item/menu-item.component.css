@@ -1,0 +1,11 @@
+.menu-item{
+  width: 20%;
+  position: relative;
+  margin-left: 40%;
+}
+.menu-item-container .card:hover{
+  box-shadow: 10px 10px 5px grey;
+}
+.menu-item-text{
+  text-align: center;
+}

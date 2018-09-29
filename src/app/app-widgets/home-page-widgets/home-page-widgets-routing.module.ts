@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: '', component: HomePageLayoutComponent,
     children: [
       {path: '', component: MenuItemComponent, outlet: 'outlet2'},
-      {path: '', component: MenuItemComponent, outlet: 'outlet1'}
+      // {path: '', component: MenuItemComponent, outlet: 'outlet1'}
 
     ]
 

@@ -11,5 +11,8 @@ export class MenuItemComponent implements OnInit {
 
   ngOnInit() {
   }
+  public onItemCLicked(itemID: any): void {
+    const x = 10;
+  }
 
 }
