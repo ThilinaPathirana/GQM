@@ -1,0 +1,26 @@
+<ag-grid-angular  #agGrid class="ag-theme-fresh ag-grid-container"
+                  [style.height]="height"
+                  [gridOptions]="gridOptions"
+                  [columnDefs]="columnDefs"
+                  [rowData]="rowData"
+                  [deltaRowDataMode]="deltaRowDataMode"
+                  [getRowNodeId]="getRowNodeId"
+                  [headerHeight]="headerRowHeight"
+                  [icons]="icons"
+                  [frameworkComponents]="frameworkComponents"
+                  [suppressDragLeaveHidesColumns]="suppressDragLeaveHidesColumns"
+                  [rowHeight]="rowHeight"
+                  [rowSelection]="'single'"
+                  [enableColResize]="true"
+                  [enableSorting] = enableSorting
+                  enableFilter = false;
+                  [enableRtl]=enableRtl
+                  (sortChanged)="onSortChanged($event)"
+                  (rowClicked)="onRowClicked($event)"
+                  (gridReady)="onReady($event)"
+                  (cellContextMenu)="cellContextMenu($event)"
+                  (dragStopped)="moveStopped($event)"
+                  (gridSizeChanged)="updateGridSize($event)"
+                  (displayedColumnsChanged)="updateGridSize($event)"
+>
+</ag-grid-angular>
