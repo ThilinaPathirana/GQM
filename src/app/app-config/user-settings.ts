@@ -1,6 +1,13 @@
 import { WidgetTypes } from '../app-constants/enums/widget-types.enum';
+import {Languages} from '../app-constants/enums/languages.enum';
 
 export const userSettings = {
+
+  presentation: {
+    // defaultTheme: Themes.LIGHT,
+    defaultLanguage: Languages.ENGLISH,
+    defaultFontSize: 12,
+  },
 
   defaultWidget: {
     web: WidgetTypes.home,
@@ -27,7 +34,7 @@ export const userSettings = {
           id: WidgetTypes.TopLevelManuals,
           config: {
             tooltip: 'Top Level Manuals',
-            url: 'DocumentControl/TopLevelManuals',
+            url: 'gts/DocumentControl/TopLevelManuals',
             icon: 'uni-portfolio',
           },
         },

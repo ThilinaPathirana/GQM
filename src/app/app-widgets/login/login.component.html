@@ -1,0 +1,111 @@
+<div class="w-100 flex login-page" >
+
+	<div class="col-md-8 login-page-white hidden-md-down">
+		<div class="row h-100 flex flex-item-center pr-3 pl-3">
+			<div class="col-md-12"><img class="w-25 right" src="src/assets/images/AT-logo-light.svg"></div>
+		</div>
+	</div>
+
+	<div class="col-lg-4 col-md-12 login-page-blue">
+
+		<div class="row h-100 flex flex-item-center">
+			<div class="col-md-12">
+				<form role="form" action="">
+
+					<div class="row text-center">
+						<div class="col-md-12"><img class="main-logo w-50 hidden-lg-up mb-5" src="src/assets/images/AT-logo-light.svg"></div>
+					</div>
+					<div class="row text-center p-3">
+						<div class="col-md-12">
+							<label class="h1 text-white">{{ localizationService.language.ADMIN_TERMINAL }}</label>
+						</div>
+						<!--<div class="col-md-12"><img class="main-logo w-50 hidden-lg-up mb-5" src="assets/images/mt-logo-dark.svg"></div>-->
+					</div>
+
+					<div class="row mb-3 pr-1 pl-1">
+						<div class="col-md-12">
+							<input type="text" class="w-100 login-input-feild" id="form-username-live" name="username" required autofocus
+								   autocomplete="off" autocorrect="off" autocapitalize="none"
+								   [(ngModel)]="userName"
+								   [placeholder]="localizationService.language.USERNAME">
+						</div>
+					</div>
+
+					<div class="row mb-3 pr-1 pl-1">
+						<div class="col-md-12">
+							<input type="password" [(ngModel)]="password" (keydown.enter)="login()" [placeholder]="localizationService.language.PASSWORD"
+								   id="form-password-live" name="password" class="w-100 login-input-feild">
+						</div>
+					</div>
+
+					<div class="row mb-3 pr-1 pl-1 login-options">
+						<div class="col-md-12 checkbox-area">
+							<input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+							<label class = "ml-2 mr-2">{{ localizationService.language.REMEMBER_ME }}</label></div>
+					</div>
+					<div class="row pr-1 pl-1">
+						<div class="col-md-12">
+							<button type="submit" [disabled]="isAuthenticating" (click)="login()" class="btn  md-ink-ripple login-button no-radius mb-2">
+								{{ localizationService.language.LOGIN }}
+							</button>
+						</div>
+					</div>
+					<div class="row text-center login-options">
+						<div class="col-md-12 frgt-passwrd-area">
+							<a [routerLink]="['forgot-password']">
+								<label class="cursor-pointer">{{ localizationService.language.FORGOT_PASSWORD }}</label>
+							</a>
+						</div>
+					</div>
+
+					<div class="row mt-4 pr-1 pl-1 login-options">
+						<div class="col-md-12 login-bottom-area">
+							<div class="row">
+								<div class="col-md-8 col-8 col-sm-8 left">
+									<a [href]="'tel:' + callCenterNo">
+										<i class="fa fa-phone"></i>
+										<label>{{ callCenterNo }}</label>
+									</a>
+								</div>
+								<div class="col-md-4 col-4 col-sm-4 right">
+									<a>
+										<i class="fa fa-language"></i>
+										<label *ngIf="localizationService.isRTL()" (click)="changeLanguage()">English</label>
+										<label *ngIf="!localizationService.isRTL()" (click)="changeLanguage()">عربى</label>
+									</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-8 col-8 col-sm-8 left">
+									<a [href]="'mailto:' + callCenterEmail">
+										<i class="fa fa-envelope-o"></i>
+										<label>{{ callCenterEmail }}</label>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row text-center">
+						<div class="col-md-12">
+							<div *ngIf="rejectReason" class="login_error_msg">{{ rejectReason }}</div>
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+
+
+
+		<div class="row text-center">
+			<div class="col-md-12 version">{{ customization }}|{{ appVersion }}|Build - {{ env }}</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+

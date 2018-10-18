@@ -1,0 +1,23 @@
+{
+  "buildParams": {
+    "buildFlavour": "global",
+    "customization": "AT.MFG.MFS",
+    "patchNumber": "",
+    "version": "1.2345"
+  },
+  "connectionConfig": {
+    "bo": {
+      "ajax_url": "http://localhost:8080/mfg-back-office/services/omsServices",
+      "url": "localhost:8080/mfg-back-office",
+      "isSecure": false
+    }
+  },
+  "googleAnalytics": {
+    "prod": "UA-102995758-1",
+    "uat": "UA-102995758-2"
+  },
+  "customizationConfigs": {
+    "callCenterPhone": "+94 11 7 680580",
+    "callCenterEmail": "app.support@mubasher.net"
+  }
+}

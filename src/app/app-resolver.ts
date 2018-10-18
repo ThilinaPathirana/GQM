@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AppResolver implements Resolve<any> {
 
-	constructor(
-	) {}
+  constructor(
+  ) {}
 
-	public resolve(route: ActivatedRouteSnapshot): any {
-		// do nothing
-	}
+  public resolve(route: ActivatedRouteSnapshot): any {
+    // do nothing
+  }
 }

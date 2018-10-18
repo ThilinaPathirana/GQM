@@ -1,0 +1,7 @@
+export enum TradeWindowTypes {
+  ALLOW_CONDITIONAL_ORDERS = 1,
+  ALLOW_BRACKET_ORDERS,
+  ALLOW_DAY_ORDERS,
+  AUTO_TRADE,
+  STORE,
+}

@@ -11,7 +11,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { ColumnApi, GridApi, GridOptions } from 'ag-grid/main';
-import {CustomHeaderComponent} from './custom-header/custom-header.component';
+// import {CustomHeaderComponent} from './custom-header/custom-header.component';
 
 const DEFAULT_VIEW_UPDATE_INTERVAL = 300;
 const DEFAULT_ROW_HEIGHT = 25;
@@ -62,7 +62,7 @@ export class AgGridTableComponent implements OnInit, OnChanges {
   private sortModelToAdd;
 
   constructor(private _ngZone: NgZone) {
-    this.frameworkComponents = { agColumnHeader: CustomHeaderComponent };
+   //  this.frameworkComponents = { agColumnHeader: CustomHeaderComponent };
   }
 
   public ngOnInit() {

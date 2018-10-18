@@ -85,7 +85,7 @@ export class MainComponent {
       this.activeListItem = item;
     }
     if (!item.subItems) {
-      this.routerr.navigateByUrl( item.config.url, { skipLocationChange: false });
+      this.routerr.navigateByUrl( 'gts/' + item.config.url, { skipLocationChange: false });
     }
   }
 
