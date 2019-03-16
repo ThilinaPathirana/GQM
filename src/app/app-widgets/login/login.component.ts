@@ -112,7 +112,7 @@ export class LoginComponent {
       this.authService.authenticateUser(this.userName, this.password);
       // Subscribe for Auth Response
       this.authService.subscribeForAuthResponse().subscribe((clientResponse) => {
-        if (clientResponse.isAuthenticated) {
+        if (!clientResponse.isAuthenticated) {
           this.router.navigateByUrl('/gts'); // at home
         }
 

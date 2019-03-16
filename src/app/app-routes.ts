@@ -11,8 +11,6 @@ export const routes: Routes = [
   },
   {
     path: 'gts',
-    canActivateChild: [AuthGuardService],
-    canActivate: [AuthGuardService],
     component: MainComponent,
     children: [
       {
@@ -24,15 +22,15 @@ export const routes: Routes = [
         loadChildren: './app-widgets/work-instr/work-instr.module#WorkInstrModule',
       },
       {
-        path: 'home3',
-        loadChildren: './app-widgets/home-page-widgets/home-page-widgets.module#HomePageWidgetsModule',
+        path: 'Scope',
+        loadChildren: './app-widgets/scope/scope.module#ScopeModule',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full',
   },
-  { path: '**', component: LoginComponent },
+  { path: '**', component: MainComponent },
 ];

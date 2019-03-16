@@ -24,6 +24,8 @@ import {TradeModule} from './app-backend/trade/trade.module';
 import {PipesModule} from './app-utils/pipes/pipes.module';
 import {TradeService} from './app-backend/trade/trade.service';
 import {AuthGuardService} from './app-widgets/widget-utils/auth-guard.service';
+import {Scope} from '@angular/core/src/profile/wtf_impl';
+import {ScopeModule} from './app-widgets/scope/scope.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import {AuthGuardService} from './app-widgets/widget-utils/auth-guard.service';
     NoopAnimationsModule,
     PipesModule,
     TradeModule,
+    ScopeModule,
   ],
   providers: [
     AuthService,

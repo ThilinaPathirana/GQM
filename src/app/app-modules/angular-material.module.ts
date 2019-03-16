@@ -28,6 +28,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CommonModule } from '@angular/common';
@@ -64,6 +65,7 @@ import { PortalModule } from '@angular/cdk/portal';
     MatToolbarModule,
     MatTooltipModule,
     PortalModule,
+    MatFormFieldModule,
   ],
   exports: [
     CdkTableModule,
@@ -93,6 +95,7 @@ import { PortalModule } from '@angular/cdk/portal';
     MatToolbarModule,
     MatTooltipModule,
     PortalModule,
+    MatFormFieldModule,
   ],
   providers: [
     { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: 'never' } },
