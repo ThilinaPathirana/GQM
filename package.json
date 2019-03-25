@@ -25,6 +25,7 @@
     "@material/form-field": "^1.0.1",
     "ag-grid": "^18.1.2",
     "ag-grid-angular": "^18.1.0",
+    "ag-grid-community": "^20.2.0",
     "core-js": "^2.5.4",
     "firebase": "~5.4.2",
     "hammerjs": "~2.0.8",

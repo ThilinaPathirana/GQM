@@ -1,5 +1,6 @@
 export enum WidgetTypes {
   home = 'home',
+  scope = 'scope',
   StockProfile = 'stockProfile',
   OneStopTrade = 'oneStopTrade',
   Portfolio = 'portfolio',

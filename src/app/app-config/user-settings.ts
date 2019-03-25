@@ -81,12 +81,31 @@ export const userSettings = {
       ],
     },
     {
-      id: WidgetTypes.home,
+      id: WidgetTypes.scope,
       config: {
-        tooltips: 'Legal Documents',
-        url: 'home',
+        tooltip: 'Scope',
+        // url: 'Scope',
         icon: 'uni-my-account',
       },
+      subItems: [
+        {
+          id: WidgetTypes.home,
+          config: {
+            tooltip: 'Add Scope',
+            url: 'Scope',
+            icon: 'uni-portfolio',
+          },
+        },
+
+        {
+          id: WidgetTypes.home,
+          config: {
+            tooltip: 'View Scope',
+            url: 'Scope/viewScope',
+            icon: 'uni-portfolio',
+          },
+        },
+      ]
     },
     {
       id: WidgetTypes.home,
