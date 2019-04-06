@@ -25,6 +25,10 @@ export const routes: Routes = [
         path: 'Scope',
         loadChildren: './app-widgets/scope/scope.module#ScopeModule',
       },
+      {
+        path: 'policy',
+        loadChildren: './app-widgets/policy/policy.module#PolicyModule',
+      },
     ],
   },
   {

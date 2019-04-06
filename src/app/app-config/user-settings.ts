@@ -108,6 +108,14 @@ export const userSettings = {
       ]
     },
     {
+      id: WidgetTypes.policy,
+      config: {
+        tooltip: 'Scope',
+         url: 'policy',
+        icon: 'uni-my-account',
+      },
+    },
+    {
       id: WidgetTypes.home,
       config: {
         tooltips: 'Production Records',

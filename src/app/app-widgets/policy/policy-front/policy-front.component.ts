@@ -1,14 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {TradeService} from '../../../app-backend/trade/trade.service';
-import {TradeRequests} from '../../../app-constants/enums/trade-meta/trade-requests.enum';
-import {TradeBackends} from '../../../app-constants/enums/trade-backends.enum';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-view-scope',
-  templateUrl: './view-scope.component.html',
-  styleUrls: ['./view-scope.component.scss']
+  selector: 'app-policy-front',
+  templateUrl: './policy-front.component.html',
+  styleUrls: ['./policy-front.component.css']
 })
-export class ViewScopeComponent implements OnInit {
+export class PolicyFrontComponent implements OnInit {
 
   title = 'app';
 
@@ -33,10 +30,9 @@ export class ViewScopeComponent implements OnInit {
     { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', product: 'vfskvlfn' },
   ];
 
-  constructor(public tradeService: TradeService) { }
+  constructor() { }
 
   ngOnInit() {
-
   }
 
 }

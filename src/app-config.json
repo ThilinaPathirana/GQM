@@ -7,7 +7,7 @@
   },
   "connectionConfig": {
     "bo": {
-      "ajax_url": "http://localhost:8080/mfg-back-office/services/omsServices",
+      "ajax_url": "http://localhost:8080/gts-back-office/services/gtsServices",
       "url": "localhost:8080/mfg-back-office",
       "isSecure": false
     }

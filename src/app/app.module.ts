@@ -26,6 +26,7 @@ import {TradeService} from './app-backend/trade/trade.service';
 import {AuthGuardService} from './app-widgets/widget-utils/auth-guard.service';
 import {Scope} from '@angular/core/src/profile/wtf_impl';
 import {ScopeModule} from './app-widgets/scope/scope.module';
+import {PolicyModule} from './app-widgets/policy/policy.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {ScopeModule} from './app-widgets/scope/scope.module';
     PipesModule,
     TradeModule,
     ScopeModule,
+    PolicyModule
   ],
   providers: [
     AuthService,
