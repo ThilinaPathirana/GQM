@@ -27,6 +27,7 @@ import {AuthGuardService} from './app-widgets/widget-utils/auth-guard.service';
 import {Scope} from '@angular/core/src/profile/wtf_impl';
 import {ScopeModule} from './app-widgets/scope/scope.module';
 import {PolicyModule} from './app-widgets/policy/policy.module';
+import {TrainingModule} from './app-widgets/training/training.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {PolicyModule} from './app-widgets/policy/policy.module';
     NoopAnimationsModule,
     PipesModule,
     TradeModule,
+    TrainingModule,
     ScopeModule,
     PolicyModule
   ],

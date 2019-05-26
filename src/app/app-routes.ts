@@ -29,6 +29,10 @@ export const routes: Routes = [
         path: 'policy',
         loadChildren: './app-widgets/policy/policy.module#PolicyModule',
       },
+      {
+        path: 'Training',
+        loadChildren: './app-widgets/training/training.module#TrainingModule',
+      },
     ],
   },
   {

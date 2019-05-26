@@ -110,8 +110,16 @@ export const userSettings = {
     {
       id: WidgetTypes.policy,
       config: {
-        tooltip: 'Scope',
+        tooltips: 'Policy',
          url: 'policy',
+        icon: 'uni-my-account',
+      },
+    },
+    {
+      id: WidgetTypes.training,
+      config: {
+        tooltips: 'Training',
+         url: 'Training',
         icon: 'uni-my-account',
       },
     },
