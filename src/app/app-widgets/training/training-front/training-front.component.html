@@ -10,32 +10,6 @@
           <div class="row">
             <div class="col-12">
 
-              <form>
-                <div class="form-row">
-                  <div class="form-group col-md-7 ">
-                  </div>
-                <img class="fa-align-right"src="../../../../assets/images/profile.png" class="img-rounded" alt="Cinque Terre" width="100" height="120">
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-4 ">
-                    <label for="staffNo">Staff No</label>
-                    <input type="email" class="form-control" id="staffNo" placeholder="Staff No">
-                  </div>
-                  <div class="form-row">
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="contactNo">Contact No</label>
-                    <input type="text" class="form-control" id="contactNo">
-                  </div>
-                </div>
-              </form>
-
             </div>
           </div>
 
@@ -55,8 +29,22 @@
               style="width: 100%; height: 500px;"
               class="ag-theme-balham"
               [floatingFilter]="true"
-              [rowData]="rowData"
-              [columnDefs]="columnDefs">
+              [rowData]="rowDataTop"
+            [columnDefs]="columnDefsTop"
+            [gridOptions]="topOptions">
+            </ag-grid-angular>
+
+          </div>
+          <div class="row col-13">
+            <ag-grid-angular
+              style="width: 100%; height: 200px"
+              class="ag-theme-balham"
+              [rowStyle]="{ fontWeight: 'bold' }"
+              [floatingFilter]="false"
+              [rowData]="bottomData"
+            [columnDefs]="columnDefsTop"
+              headerHeight="0"
+              [gridOptions]="bottomOptions">
             </ag-grid-angular>
 
           </div>
