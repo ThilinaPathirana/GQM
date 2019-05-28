@@ -28,6 +28,11 @@ import {Scope} from '@angular/core/src/profile/wtf_impl';
 import {ScopeModule} from './app-widgets/scope/scope.module';
 import {PolicyModule} from './app-widgets/policy/policy.module';
 import {TrainingModule} from './app-widgets/training/training.module';
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
+import {ChartModule} from "angular-highcharts";
+
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +53,10 @@ import {TrainingModule} from './app-widgets/training/training.module';
     TradeModule,
     TrainingModule,
     ScopeModule,
-    PolicyModule
+    PolicyModule,
+    PerfectScrollbarModule,
+    ChartModule,
+
   ],
   providers: [
     AuthService,

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TrainingFrontComponent } from './training-front/training-front.component';
 import { TrainingLayoutComponent } from './training-layout/training-layout.component';
+import {TrainingChartComponent} from "./training-chart/training-chart.component";
 
 
 const routes: Routes = [

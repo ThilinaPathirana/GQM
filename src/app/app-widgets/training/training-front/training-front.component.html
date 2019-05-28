@@ -3,30 +3,15 @@
   <div class="h1 col-12 text-sm-center" style="color:#090634 ">
     TRAINING MODULE
   </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-12">
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-
+  <perfect-scrollbar [config]="config">
     <div class="col-12">
       <div class="card">
         <div class="card-body">
 
-          <div class="row col-13">
+          <div class="row col-12">
+
             <ag-grid-angular
-              style="width: 100%; height: 500px;"
+              style="width: 100%; height: 400px;"
               class="ag-theme-balham"
               [floatingFilter]="true"
               [rowData]="rowDataTop"
@@ -35,9 +20,11 @@
             </ag-grid-angular>
 
           </div>
-          <div class="row col-13">
+
+          <div class="row col-12">
+
             <ag-grid-angular
-              style="width: 100%; height: 200px"
+              style="width: 100%; height: 150px"
               class="ag-theme-balham"
               [rowStyle]="{ fontWeight: 'bold' }"
               [floatingFilter]="false"
@@ -47,10 +34,24 @@
               [gridOptions]="bottomOptions">
             </ag-grid-angular>
 
+
           </div>
+
+          <div class="row" *ngIf="!isChartVisible">
+            <button style="width: 100%" class="btn btn-lg btn-info" (click)="showChart()">Expand to Chart View</button>
+          </div>
+
+          <div  *ngIf="isChartVisible" class="row col-12">
+            <app-training-chart class="col-12"></app-training-chart>
+          </div>
+
+
 
         </div>
       </div>
+
+
     </div>
+  </perfect-scrollbar>
+
   </div>
-</div>

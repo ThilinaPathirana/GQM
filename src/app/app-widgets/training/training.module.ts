@@ -5,6 +5,10 @@ import { TrainingLayoutComponent } from './training-layout/training-layout.compo
 import { TrainingRoutingModule } from './training-routing.module';
 import {AngularMaterialModule} from "../../app-modules/angular-material.module";
 import {AgGridModule} from "ag-grid-angular";
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
+import { TrainingChartComponent } from './training-chart/training-chart.component';
+import {ChartModule} from "angular-highcharts";
+
 
 @NgModule({
   imports: [
@@ -12,7 +16,13 @@ import {AgGridModule} from "ag-grid-angular";
     TrainingRoutingModule,
     AngularMaterialModule,
     AgGridModule.withComponents([]),
+    PerfectScrollbarModule,
+    ChartModule,
+
   ],
-  declarations: [TrainingFrontComponent, TrainingLayoutComponent]
+  declarations: [TrainingFrontComponent, TrainingLayoutComponent, TrainingChartComponent],
+
+  exports: [TrainingChartComponent],
+  entryComponents:[TrainingChartComponent]
 })
 export class TrainingModule { }
