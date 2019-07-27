@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TradeService} from '../../../app-backend/trade/trade.service';
-import {TradeRequests} from '../../../app-constants/enums/trade-meta/trade-requests.enum';
-import {TradeBackends} from '../../../app-constants/enums/trade-backends.enum';
+
 
 @Component({
   selector: 'app-view-scope',
@@ -13,27 +11,33 @@ export class ViewScopeComponent implements OnInit {
   title = 'app';
 
   columnDefs = [
-    {headerName: 'Ref#', field: 'ref', width: 100 },
-    {headerName: 'System', field: 'system', width: 100 },
-    {headerName: 'Company Name', field: 'companyName', width: 100},
-    {headerName: 'Address', field: 'address', width: 100 },
-    {headerName: 'Contact Person', field: 'cPerson' },
-    {headerName: 'Position', field: 'position'},
-    {headerName: 'Phone 1', field: 'Phone' },
-    {headerName: 'Respond Person', field: 'rPerson' },
-    {headerName: 'Phone', field: 'rPhone'},
-    {headerName: 'Position', field: 'rPosition' },
-    {headerName: 'Product', field: 'product' },
-    {headerName: 'Service', field: 'service'},
+    {headerName: 'Ref#', field: 'ref', width: 100, cellClass: 'text-center'},
+    {headerName: 'System', field: 'system', width: 100, cellClass: 'text-center' },
+    {headerName: 'Company Name', field: 'companyName', width: 100, cellClass: 'text-center'},
+    {headerName: 'Address', field: 'address', width: 100, cellClass: 'text-center' },
+    {headerName: 'Contact Person', field: 'cPerson', width: 100, cellClass: 'text-center' },
+    {headerName: 'Position', field: 'cposition', width: 100, cellClass: 'text-center'},
+    {headerName: 'CP Phone', field: 'cPhone', width: 100, cellClass: 'text-center' },
+    {headerName: 'Respond Person', field: 'rPerson', width: 100, cellClass: 'text-center' },
+    {headerName: 'RP Phone', field: 'rPhone', width: 100, cellClass: 'text-center'},
+    {headerName: 'Position', field: 'rPosition', width: 100, cellClass: 'text-center' },
+    {headerName: 'Product', field: 'product', width: 100, cellClass: 'text-center' },
+    {headerName: 'Service', field: 'service', width: 100, cellClass: 'text-center'},
   ];
 
   rowData = [
-    { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', product: 'vfskvlfn' },
-    { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', product: 'vfskvlfn' },
-    { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', product: 'vfskvlfn' },
-  ];
+    { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
+      rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
+    { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
+      rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
+    { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
+      rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
+    { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
+      rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
+    { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
+      rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
 
-  constructor(public tradeService: TradeService) { }
+  ];
 
   ngOnInit() {
 

@@ -57,10 +57,6 @@ export class MainComponent {
     this.customizeMenuItems();
   }
 
-  public onInit(): void {
-
-  }
-
 
   public changeSideNavWidth(): void {
     if (this.isSideNavMinimised) {

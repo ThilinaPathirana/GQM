@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import {MainComponent} from './app-layouts/main/main.component';
 import {LoginComponent} from './app-widgets/login/login.component';
-import {AuthGuardService} from './app-widgets/widget-utils/auth-guard.service';
 
 export const routes: Routes = [
   {
@@ -32,6 +31,10 @@ export const routes: Routes = [
       {
         path: 'Training',
         loadChildren: './app-widgets/training/training.module#TrainingModule',
+      },
+      {
+        path: 'DocumentControl',
+        loadChildren: './app-widgets/document-controll/document-controll.module#DocumentControllModule'
       },
     ],
   },

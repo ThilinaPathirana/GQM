@@ -7,7 +7,8 @@ import {environment} from '../../../environments/environment';
 import {Languages} from '../../app-constants/enums/languages.enum';
 import {ConfigService} from '../../app-config/config.service';
 import {LocalizationService} from '../../app-utils/localization/localization.service';
-import {AuthService} from '../../app-backend/auth/auth.service';
+import {BackOfficeAuthService} from "../../app-backend/auth/bo.auth.service";
+// import {AuthService} from '../../app-backend/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -31,7 +32,8 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthService,
+
+    private boAuthService: BackOfficeAuthService,
     public localizationService: LocalizationService, // private
     private configService: ConfigService,
     private dataService: DataService,
@@ -74,7 +76,7 @@ export class LoginComponent {
       this.disableLoginButton = true;
       this.responseMessage = 'Authenticating....';
 
-      this.authenticateUser();
+      // this.authenticateUser();
     }
   }
 
@@ -107,18 +109,14 @@ export class LoginComponent {
 	 * This method invoke back office core logon services to authenticate user
 	 */
   private authenticateUser(): void {
-    this.configService.getBackOfficeConnectionConfig().then(connectionConfigs => {
-      this.dataService.init(connectionConfigs);
-      this.authService.authenticateUser(this.userName, this.password);
-      // Subscribe for Auth Response
-      this.authService.subscribeForAuthResponse().subscribe((clientResponse) => {
-        if (!clientResponse.isAuthenticated) {
-          this.router.navigateByUrl('/gts'); // at home
-        }
 
-        this.responseMessage = clientResponse.responseMessage;
-        this.disableLoginButton = clientResponse.isAuthenticated;
-      });
+    this.boAuthService.authenticateUser(this.userName, this.password);
+    this.boAuthService.getAuthStatus().subscribe(msg => {
+      if ( msg.isAuthenticated ) {
+
+        this.router.navigateByUrl('welcome');
+      }
     });
+
   }
 }

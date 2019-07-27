@@ -10,26 +10,25 @@ import {AppLayoutsModule} from './app-layouts/app-layouts.module';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {LoginComponent} from './app-widgets/login/login.component';
 import {FormsModule} from '@angular/forms';
-import {AuthService} from './app-backend/auth/auth.service';
-import {CommunicationV2Service} from './app-backend/communication/communication-v2.service';
 import {LocalizationService} from './app-utils/localization/localization.service';
 import {ConfigService} from './app-config/config.service';
 import {DataService} from './app-backend/communication/data.service';
 import {HttpClientModule} from '@angular/common/http';
 import {LoggerService} from './app-utils/logger.service';
-import {WebsocketControllerService} from './app-backend/communication/websocket/websocket-controller.service';
-import {StreamRouteService} from './app-backend/communication/stream-route.service';
 import {NotificationService} from './app-utils/notification.service';
-import {TradeModule} from './app-backend/trade/trade.module';
 import {PipesModule} from './app-utils/pipes/pipes.module';
-import {TradeService} from './app-backend/trade/trade.service';
-import {AuthGuardService} from './app-widgets/widget-utils/auth-guard.service';
 import {Scope} from '@angular/core/src/profile/wtf_impl';
 import {ScopeModule} from './app-widgets/scope/scope.module';
 import {PolicyModule} from './app-widgets/policy/policy.module';
 import {TrainingModule} from './app-widgets/training/training.module';
 import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 import {ChartModule} from "angular-highcharts";
+import {UploadService} from "./app-backend/services/upload.service";
+import {BackOfficeAuthService} from "./app-backend/auth/bo.auth.service";
+import {BackOfficeService} from "./app-backend/bo/back-office.service";
+import {CacheAtService} from "./app-backend/cache/cache-at.service";
+import {AjaxService} from "./app-backend/communication/ajax/ajax.service";
+import {CacheRequestAtGenerator} from "./app-backend/cache/cache-request-generator-at";
 
 
 
@@ -50,7 +49,6 @@ import {ChartModule} from "angular-highcharts";
     HttpClientModule,
     NoopAnimationsModule,
     PipesModule,
-    TradeModule,
     TrainingModule,
     ScopeModule,
     PolicyModule,
@@ -59,17 +57,18 @@ import {ChartModule} from "angular-highcharts";
 
   ],
   providers: [
-    AuthService,
-    AuthGuardService,
-    CommunicationV2Service,
+    UploadService,
     LocalizationService,
     LoggerService,
     ConfigService,
     DataService,
-    StreamRouteService,
     NotificationService,
-    TradeService,
-    WebsocketControllerService,
+    BackOfficeAuthService,
+    BackOfficeService,
+    CacheAtService,
+    AjaxService,
+    CacheRequestAtGenerator,
+
   ],
   bootstrap: [AppComponent]
 })

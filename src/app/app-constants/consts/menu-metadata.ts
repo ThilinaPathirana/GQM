@@ -4,152 +4,145 @@
 * Created by malaka on 8/25/17.
 */
 export const MENU_METADATA = [
-  {
-    text: 'Trading' ,
-    code: '150' ,
-    link: 'root-menu' ,
-    icon: 'uni-trade' ,
-    ent: 13 ,
-    sub: [
-      {
-        text: 'Order List' ,
-        code: '150_300' ,
-        link: 'root-menu' ,
-        icon: 'uni-trade' ,
-        ent: 50 ,
-        sub: [
-          {text: 'All Orders' , code: '150_300_100' , link: 'order-list' , icon: '' , ent: 104 , sub: []} ,
-          {text: 'Open Orders' , code: '150_300_150' , link: 'not-implemented-yet' , icon: '' , ent: 103 , sub: []} ,
-          {text: 'Waiting for Approval' , code: '150_300_200' , link: 'not-implemented-yet' , icon: '' , ent: 140 , sub: []} ,
-          {text: 'Executed Orders' , code: '150_300_250' , link: 'not-implemented-yet' , icon: '' , ent: 105 , sub: []} ,
-        ] ,
-      } ,
-      {text: 'Trading Connections' , code: '150_850' , link: 'not-implemented-yet' , icon: '' , ent: 1069 , sub: []} ,
-    ] ,
-  } ,
-  {
-    text: 'Customers' ,
-    code: '250' ,
-    link: 'root-menu' ,
-    icon: 'uni-my-account' ,
-    ent: 17 ,
-    sub: [
-      {text: 'Customers' , code: '250_350' , link: 'not-implemented-yet' , icon: '' , ent: 12 , sub: []} ,
-      {text: 'Cash Accounts' , code: '250_500' , link: 'not-implemented-yet' , icon: '' , ent: 20 , sub: []} ,
-      {text: 'Security Accounts' , code: '250_550' , link: 'not-implemented-yet' , icon: '' , ent: 21 , sub: []} ,
-      {text: 'Trading Accounts' , code: '250_600' , link: 'not-implemented-yet' , icon: '' , ent: 35 , sub: []} ,
-      {text: 'Account Locked Customers' , code: '250_800' , link: 'not-implemented-yet' , icon: '' , ent: 623 , sub: []} ,
-    ] ,
-  } ,
-  {
-    text: 'Finance' ,
-    code: '350' ,
-    link: 'root-menu' ,
-    icon: 'uni-turnover' ,
-    ent: 84 ,
-    sub: [
-      {
-        text: 'Customer Notifications' ,
-        code: '350_100' ,
-        link: 'root-menu' ,
-        icon: 'uni-trade' ,
-        ent: 121 ,
-        sub: [
-          {text: 'Deposit' , code: '350_100_100' , link: 'not-implemented-yet' , icon: '' , ent: 526 , sub: []} ,
-          {text: 'Withdrawal' , code: '350_100_200' , link: 'not-implemented-yet' , icon: '' , ent: 527 , sub: []} ,
-          {text: 'Cash Transfer' , code: '350_100_300' , link: 'not-implemented-yet' , icon: '' , ent: 1951 , sub: []} ,
-        ] ,
-      } ,
+	{
+		text: 'Trading',
+		code: '150',
+		link: 'root-menu',
+		icon: 'uni-trade',
+		ent: 13,
+		sub: [
+			{
+				text: 'Order List',
+				code: '150_300',
+				link: 'root-menu',
+				icon: 'fa fa-user',
+				ent: 50,
+				sub: [
+					{ text: 'All Orders', code: '150_300_100', link: 'order-list', icon: '', ent: 104, sub: [] },
+					{ text: 'Open Orders', code: '150_300_150', link: 'not-implemented-yet', icon: '', ent: 103, sub: [] },
+					{ text: 'Waiting for Approval', code: '150_300_200', link: 'not-implemented-yet', icon: '', ent: 140, sub: [] },
+					{ text: 'Executed Orders', code: '150_300_250', link: 'not-implemented-yet', icon: '', ent: 105, sub: [] },
+				],
+			},
+			{ text: 'Trading Connections', code: '150_850', link: 'not-implemented-yet', icon: '', ent: 1069, sub: [] },
+		],
+	},
+	{
+		text: 'Customers',
+		code: '250',
+		link: 'root-menu',
+		icon: 'uni-my-account',
+		ent: 17,
+		sub: [
+			{ text: 'Customers', code: '250_350', link: 'not-implemented-yet', icon: '', ent: 12, sub: [] },
+			{ text: 'Cash Accounts', code: '250_500', link: 'not-implemented-yet', icon: '', ent: 20, sub: [] },
+			{ text: 'Security Accounts', code: '250_550', link: 'not-implemented-yet', icon: '', ent: 21, sub: [] },
+			{ text: 'Trading Accounts', code: '250_600', link: 'not-implemented-yet', icon: '', ent: 35, sub: [] },
+			{ text: 'Account Locked Customers', code: '250_800', link: 'not-implemented-yet', icon: '', ent: 623, sub: [] },
+		],
+	},
+	{
+		text: 'Finance',
+		code: '350',
+		link: 'root-menu',
+		icon: 'uni-turnover',
+		ent: 84,
+		sub: [
+			{
+				text: 'Customer Notifications',
+				code: '350_100',
+				link: 'root-menu',
+				icon: 'uni-trade',
+				ent: 121,
+				sub: [
+					{ text: 'Deposit', code: '350_100_100', link: 'client-cash-deposit-list', icon: '', ent: 526, sub: [] },
+					{ text: 'Withdrawal', code: '350_100_200', link: 'client-cash-withdraw-list', icon: '', ent: 527, sub: [] },
+					{ text: 'Cash Transfer', code: '350_100_300', link: 'not-implemented-yet', icon: '', ent: 1951, sub: [] },
+				],
+			},
 
-      {
-        text: 'Cash Management' ,
-        code: '350_125' ,
-        link: 'root-menu' ,
-        icon: '' ,
-        ent: 98 ,
-        sub: [
-          {text: 'Pending Transactions' , code: '350_125_100' , link: 'not-implemented-yet' , icon: '' , ent: 114 , sub: []} ,
-          {text: 'All Transactions' , code: '350_125_200' , link: 'not-implemented-yet' , icon: '' , ent: 528 , sub: []} ,
-          {text: 'Deposits' , code: '350_125_250' , link: 'not-implemented-yet' , icon: '' , ent: 116 , sub: []} ,
-          {text: 'Withdrawals' , code: '350_125_300' , link: 'not-implemented-yet' , icon: '' , ent: 117 , sub: []} ,
-          {text: 'Cash Transfers' , code: '350_125_425' , link: 'not-implemented-yet' , icon: '' , ent: 1505 , sub: []} ,
-        ] ,
-      } ,
+			{
+				text: 'Cash Management',
+				code: '350_125',
+				link: 'root-menu',
+				icon: '',
+				ent: 98,
+				sub: [
+					{ text: 'Pending Transactions', code: '350_125_100', link: 'not-implemented-yet', icon: '', ent: 114, sub: [] },
+					{ text: 'All Transactions', code: '350_125_200', link: 'not-implemented-yet', icon: '', ent: 528, sub: [] },
+					{ text: 'Deposits', code: '350_125_250', link: 'not-implemented-yet', icon: '', ent: 116, sub: [] },
+					{ text: 'Withdrawals', code: '350_125_300', link: 'not-implemented-yet', icon: '', ent: 117, sub: [] },
+					{ text: 'Cash Transfers', code: '350_125_425', link: 'not-implemented-yet', icon: '', ent: 1505, sub: [] },
+				],
+			},
 
-      {text: 'SWIFT Transactions' , code: '350_145' , link: 'not-implemented-yet' , icon: '' , ent: 1009 , sub: []} ,
-      {text: 'Market Cap Notifications' , code: '350_250' , link: 'not-implemented-yet' , icon: '' , ent: 1788 , sub: []} ,
-    ] ,
-  } ,
-  {
-    text: 'Master Data' ,
-    code: '500' ,
-    link: 'root-menu' ,
-    icon: 'uni-markets' ,
-    ent: 132 ,
-    sub: [
-      {
-        text: 'Symbol Management' ,
-        code: '500_050' ,
-        link: 'root-menu' ,
-        icon: '' ,
-        ent: 510 ,
-        sub: [
-          {text: 'Symbols' , code: '500_050_100' , link: 'not-implemented-yet' , icon: '' , ent: 223 , sub: []} ,
-          {text: 'Sectors' , code: '500_050_150' , link: 'not-implemented-yet' , icon: '' , ent: 224 , sub: []} ,
-        ] ,
-      } ,
-      {
-        text: 'Finance' ,
-        code: '500_100' ,
-        link: 'root-menu' ,
-        ent: 511 ,
-        sub: [
-          {text: 'Banks' , code: '500_100_100' , link: 'bank-list' , icon: '' , ent: 229 , sub: []} ,
-          {text: 'Cost Centers' , code: '500_100_250' , link: 'not-implemented-yet' , icon: '' , ent: 323 , sub: []} ,
-          {text: 'Currencies' , code: '500_100_300' , link: 'not-implemented-yet' , icon: '' , ent: 226 , sub: []} ,
-          {text: 'Signup Locations' , code: '500_100_350' , link: 'not-implemented-yet' , icon: '' , ent: 228 , sub: []} ,
-          {text: 'Countries' , code: '500_185' , link: 'not-implemented-yet' , icon: '' , ent: 227 , sub: []} ,
-        ] ,
-      } ,
-    ] ,
-  } ,
-  {
-    text: 'System' ,
-    code: '550' ,
-    link: 'root-menu' ,
-    icon: 'uni-gms' ,
-    ent: 589 ,
-    sub: [
-      {text: 'Institutions' , code: '550_050' , link: 'not-implemented-yet' , icon: '' , ent: 1277 , sub: []} ,
-      {
-        text: 'Exchange' ,
-        code: '550_200' ,
-        link: 'root-menu' ,
-        icon: '' ,
-        ent: 509 ,
-        sub: [
-          {text: 'Exchanges' , code: '550_200_050' , link: 'exchange-list' , icon: '' , ent: 222 , sub: []} ,
-          {text: 'Trading Markets' , code: '550_200_100' , link: 'not-implemented-yet' , icon: '' , ent: 171 , sub: []} ,
-        ] ,
-      } ,
-    ] ,
-  } ,
-  {
-    text: 'Commission' ,
-    code: '600' ,
-    link: 'root-menu' ,
-    icon: 'uni-trade' ,
-    ent: 589 , // use correct entitlement is
-    sub: [
-      {text: 'Commission Groups' , code: '600_050' , link: 'commission-group-list-view-list' , icon: 'uni-trade' , ent: 264 , sub: []} ,
-      {
-        text: 'Commission Pending Changes' ,
-        code: '600_100' ,
-        link: 'pending-commission-changes-list-view-list' ,
-        icon: 'uni-trade' ,
-        ent: 267 ,
-        sub: []
-      } ,
-    ] ,
-  } ,
+			{ text: 'SWIFT Transactions', code: '350_145', link: 'not-implemented-yet', icon: '', ent: 1009, sub: [] },
+			{ text: 'Market Cap Notifications', code: '350_250', link: 'not-implemented-yet', icon: '', ent: 1788, sub: [] },
+		],
+	},
+	{
+		text: 'Master Data',
+		code: '500',
+		link: 'root-menu',
+		icon: 'uni-markets',
+		ent: 132,
+		sub: [
+			{
+				text: 'Symbol Management',
+				code: '500_050',
+				link: 'root-menu',
+				icon: '',
+				ent: 510,
+				sub: [
+					{ text: 'Symbols', code: '500_050_100', link: 'not-implemented-yet', icon: '', ent: 223, sub: [] },
+					{ text: 'Sectors', code: '500_050_150', link: 'not-implemented-yet', icon: '', ent: 224, sub: [] },
+				],
+			},
+			{
+				text: 'Finance',
+				code: '500_100',
+				link: 'root-menu',
+				ent: 511,
+				sub: [
+					{ text: 'Banks', code: '500_100_100', link: 'bank-list', icon: '', ent: 229, sub: [] },
+					{ text: 'Cost Centers', code: '500_100_250', link: 'not-implemented-yet', icon: '', ent: 323, sub: [] },
+					{ text: 'Currencies', code: '500_100_300', link: 'not-implemented-yet', icon: '', ent: 226, sub: [] },
+					{ text: 'Signup Locations', code: '500_100_350', link: 'not-implemented-yet', icon: '', ent: 228, sub: [] },
+					{ text: 'Countries', code: '500_185', link: 'not-implemented-yet', icon: '', ent: 227, sub: [] },
+				],
+			},
+		],
+	},
+	{
+		text: 'System',
+		code: '550',
+		link: 'root-menu',
+		icon: 'uni-gms',
+		ent: 589,
+		sub: [
+			{ text: 'Institutions', code: '550_050', link: 'not-implemented-yet', icon: '', ent: 1277, sub: [] },
+			{
+				text: 'Exchange',
+				code: '550_200',
+				link: 'root-menu',
+				icon: '',
+				ent: 509,
+				sub: [
+					{ text: 'Exchanges', code: '550_200_050', link: 'exchange-list', icon: '', ent: 222, sub: [] },
+					{ text: 'Trading Markets', code: '550_200_100', link: 'not-implemented-yet', icon: '', ent: 171, sub: [] },
+				],
+			},
+		],
+	},
+	{
+		text: 'Commission',
+		code: '600',
+		link: 'root-menu',
+		icon: 'uni-trade',
+		ent: 589, // use correct entitlement is
+		sub: [
+			{ text: 'Commission Groups', code: '600_050', link: 'commission-group-list-view-list', icon: 'uni-trade', ent: 264, sub: [] },
+			{ text: 'Commission Pending Changes', code: '600_100', link: 'pending-commission-changes-list-view-list', icon: 'uni-trade', ent: 267, sub: [] },
+		],
+	},
 ];

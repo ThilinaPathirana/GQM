@@ -34,7 +34,7 @@ export const userSettings = {
           id: WidgetTypes.TopLevelManuals,
           config: {
             tooltip: 'Top Level Manuals',
-            url: 'gts/DocumentControl/TopLevelManuals',
+            url: 'DocumentControl/TopLevelManuals',
             icon: 'uni-portfolio',
           },
         },

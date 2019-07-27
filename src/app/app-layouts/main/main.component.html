@@ -49,7 +49,7 @@
                     <app-account-summary-gauge class="w-100"> </app-account-summary-gauge>
                 </div>-->
 
-        <!--<perfect-scrollbar >-->
+        <perfect-scrollbar >
           <mat-nav-list class="nav-list-wrapper y-scroll-auto pt-0 h-100">
             <ul class="nav nav-pills flex-row nav-top">
               <div class="nav-item-wrapper full-width" *ngFor="let item of menuItems; let i = index;">
@@ -91,7 +91,7 @@
               </div>
             </ul>
           </mat-nav-list>
-        <!--</perfect-scrollbar>-->
+        </perfect-scrollbar>
         <ul class="nav nav-pills nav-actions nav-bottom w-100 flex-row opacity-min">
           <li class="col-12 app-version">
             <div class="w-100 gap-1 left mb-2"></div>
@@ -171,7 +171,9 @@
 				<!--<div class="mr-1 ml-1 d-flex"><div *ngIf="i !== navigationService.navWidgetStack.length -1"><div class="fa fa-angle-right"></div></div></div>-->
 			<!--</span>-->
     <!--</div>-->
+    <perfect-scrollbar>
     <router-outlet></router-outlet>
+    </perfect-scrollbar>
   </mat-sidenav-content>
 
 </mat-sidenav-container>

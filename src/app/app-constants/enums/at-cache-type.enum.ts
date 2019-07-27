@@ -4,9 +4,9 @@
  */
 
 export enum ATCacheTypes {
-  NET,
-  ONE_DAY,
-  MIN_5,
+	NET,
+	ONE_DAY,
+	MIN_5,
 }
 
 // new cache types from Rubix

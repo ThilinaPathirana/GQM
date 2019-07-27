@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {PerfectScrollbarConfigInterface} from "ngx-perfect-scrollbar";
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import {TrainingChartComponent} from "../training-chart/training-chart.component";
+import {TrainingCellRendereComponent} from "../../common-widgets/ag-grid-cell-renderes/training-cell-rendere/training-cell-rendere.component";
 
 @Component({
   selector: 'app-training-front',
@@ -29,21 +30,21 @@ export class TrainingFrontComponent implements OnInit {
   @ViewChild('bottomGrid') bottomGrid;
 
   columnDefsTop = [
-    {headerName: 'Staff No', field: 'staff_No', width: 200, },
-    {headerName: 'Name', field: 'name', width: 200},
-    {headerName: 'Department', field: 'department', width: 100 },
-    {headerName: 'Position', field: 'position', width: 100  },
+    {headerName: 'Staff No', field: 'staff_No', width: 200, cellClass: 'text-center'},
+    {headerName: 'Name', field: 'name', width: 200, cellClass: 'text-center'},
+    {headerName: 'Department', field: 'department', width: 100, cellClass: 'text-center' },
+    {headerName: 'Position', field: 'position', width: 100 , cellClass: 'text-center' },
 
     // {headerName: 'Total', field: 'total', width: 100,  valueGetter: 'data.Phone + data.rPerson + data.rPosition',},
 
-    {headerName: 'D1', field: 'D1', width: 50  },
-    {headerName: 'D2', field: 'D2', width: 50  },
-    {headerName: 'D3', field: 'D3', width: 50  },
-    {headerName: 'D4', field: 'D4', width: 50  },
-    {headerName: 'Applicable', field: 'applicable', width: 100 },
-    {headerName: 'Planned', field: 'planned', width: 100  },
-    {headerName: 'Completed from planned', field: 'cfp', width: 100  },
-    {headerName: 'Achieve', field: 'achieve', width: 100 },
+    {headerName: 'D1', field: 'D1', width: 50 , cellClass: 'text-center' },
+    {headerName: 'D2', field: 'D2', width: 50 , cellClass: 'text-center' },
+    {headerName: 'D3', field: 'D3', width: 50 , cellClass: 'text-center' },
+    {headerName: 'D4', field: 'D4', width: 50 , cellClass: 'text-center' },
+    {headerName: 'Applicable', field: 'applicable', width: 100, cellClass: 'text-center' },
+    {headerName: 'Planned', field: 'planned', width: 100, cellClass: 'text-center text-warning bold'  },
+    {headerName: 'Completed from planned', field: 'cfp', width: 100 , cellClass: 'text-center text-primary bold' },
+    {headerName: 'Achieve', field: 'achieve', width: 100, cellClass: 'text-center text-success bold' },
 
     // {
     //   headerName: 'Total',

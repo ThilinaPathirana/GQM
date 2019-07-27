@@ -1,16 +1,10 @@
+/**
+ * Keep all message groups here for AT protocol
+ * Created by MalakaD on 8/22/2017
+ **/
 
 export enum BoMessageGroups {
-  Authentication = 1,
-  System = 2,
-  MasterData = 3,
-  Customer = 4,
-  Trading = 5,
-  Institution = 6,
-  Market = 7,
-  Finance = 8,
-  Report = 9,
-  Settlement = 10,
-  Employee = 11,
-  Entitlement = 12,
-  Commission = 13,
+	Authentication = 1,
+	Register = 3,
+  Scope = 15
 }
