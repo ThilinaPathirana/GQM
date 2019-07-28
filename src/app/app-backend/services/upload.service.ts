@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 // import * as AWS from 'aws-sdk/global';
 import * as S3 from 'aws-sdk/clients/s3';
+import {MatDialog} from '@angular/material';
+import {DialogPopupComponent} from "../../app-widgets/common-widgets/dialog-popup/dialog-popup.component";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,8 @@ import * as S3 from 'aws-sdk/clients/s3';
 export class UploadService {
 
     public FOLDER = 'cv/';
-  constructor() { }
+    public errorMsg = {header: 'Upload Status !!!', content: 'Successfully Updated!!'};
+  constructor(public dialog: MatDialog) { }
 
     uploadfileaws(file) {
         const contentType = file.type;
@@ -32,6 +35,7 @@ export class UploadService {
                 return false;
             }
             console.log('Successfully uploaded file.', data);
+           // this.dialog.open(DialogPopupComponent, { data: this.errorMsg , panelClass: 'custom-dialog-container'});
             return true;
         });
 

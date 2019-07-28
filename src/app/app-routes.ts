@@ -36,6 +36,10 @@ export const routes: Routes = [
         path: 'DocumentControl',
         loadChildren: './app-widgets/document-controll/document-controll.module#DocumentControllModule'
       },
+      {
+        path: 'ProductionRecord',
+        loadChildren: './app-widgets/production-record/production-record.module#ProductionRecordModule'
+      },
     ],
   },
   {

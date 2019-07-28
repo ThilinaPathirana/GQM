@@ -5,6 +5,8 @@ import {DocumetControlLayoutComponent} from "./documet-control-layout/documet-co
 import {Mgts1LayoutComponent} from "../scope/mgts1-layout/mgts1-layout.component";
 import {Mgts1Component} from "../scope/mgts1/mgts1.component";
 import {PdfViewerComponent} from "./pdf-viewer/pdf-viewer.component";
+import {ProceduresComponent} from "./procedures/procedures.component";
+import {ProductionRecordComponent} from "./production-record/production-record.component";
 
 
 const routes: Routes = [
@@ -13,6 +15,16 @@ const routes: Routes = [
   {path: '', component: TopLevelManualsComponent, outlet: 'outlet1'},
 ]
 },
+  {path: 'Procedures', component: DocumetControlLayoutComponent ,
+    children: [
+      {path: '', component: ProceduresComponent, outlet: 'outlet1'},
+    ]
+  },
+  {path: 'ProductionRecords', component: DocumetControlLayoutComponent ,
+    children: [
+      {path: '', component: ProductionRecordComponent, outlet: 'outlet1'},
+    ]
+  },
 ];
 
 @NgModule({

@@ -19,4 +19,33 @@
 
   </div>
 
+
+
+  <!--<div class="row">-->
+  <!--<label class="btn btn-default">-->
+  <!--<input type="file" (change)="selectFileaws($event)">-->
+  <!--</label>-->
+
+  <!--</div>-->
+  <!--<div class="text-right">-->
+  <!--<button class="btn btn-success " [disabled]="!selectedFiles" (click)="uploadaws()">Upload</button>-->
+  <!--</div>-->
+  </div>
+
+<div id="dropFileForm">
+  <input type="file" name="files[]" id="fileInput" (change)="addFiles($event)">
+
+  <label for="fileInput" id="fileLabel" (dragover)="overrideDefault($event);" (dragenter)="overrideDefault($event);" (dragleave)="overrideDefault($event);" (drop)="overrideDefault($event);
+        addFiles($event);">
+    <i class="fa fa-download fa-5x"></i>
+    <br>
+    <!--<span id="fileLabelText">-->
+      <!--Choose a file or drag it here-->
+    <!--</span>-->
+    <label>{{FileLabeltext}}</label>
+    <br>
+    <span id="uploadStatus"></span>
+  </label>
+
+  <button class="uploadButton" (click)="uploadaws()">Upload</button>
 </div>

@@ -7,14 +7,16 @@ import { CommonDocumentTableComponent } from './common-document-table/common-doc
 import { TopLevelManualsComponent } from './top-level-manuals/top-level-manuals.component';
 import { DocumetControlLayoutComponent } from './documet-control-layout/documet-control-layout.component';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
-import {PdfViewerModule} from "ng2-pdf-viewer";
-import {MatDialogModule} from "@angular/material";
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import {MatDialogModule} from '@angular/material';
 import { WorkInstructionsComponent } from './work-instructions/work-instructions.component';
-import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
+import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import { DocumentUploaderPopupComponent } from './document-uploader-popup/document-uploader-popup.component';
-import {FormsModule} from "@angular/forms";
-import {ContextMenuModule} from "ngx-contextmenu";
+import {FormsModule} from '@angular/forms';
+import {ContextMenuModule} from 'ngx-contextmenu';
 import { PopCommonDocTableComponent } from './pop-common-doc-table/pop-common-doc-table.component';
+import { ProceduresComponent } from './procedures/procedures.component';
+import { ProductionRecordComponent } from './production-record/production-record.component';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { PopCommonDocTableComponent } from './pop-common-doc-table/pop-common-do
     ContextMenuModule
 
   ],
-  declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent, DocumentUploaderPopupComponent, PopCommonDocTableComponent],
+  declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent,
+    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent],
   exports: [
     CommonDocumentTableComponent,
     PdfViewerComponent,

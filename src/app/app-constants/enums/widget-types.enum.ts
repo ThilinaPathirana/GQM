@@ -10,6 +10,7 @@ export enum WidgetTypes {
   TopLevelManuals = 'topLevelManuals',
   WorkInstructions = 'workInstructions',
   Records = 'records',
+    Procedures = 'procedures',
   ChangeDocumentOrRecord = 'changeDocOrRec',
   DocOrRecReviewUpdateProcess = 'docOrRecRevUpProcess',
   Reports = 'reports',

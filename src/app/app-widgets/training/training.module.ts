@@ -23,6 +23,6 @@ import {ChartModule} from "angular-highcharts";
   declarations: [TrainingFrontComponent, TrainingLayoutComponent, TrainingChartComponent],
 
   exports: [TrainingChartComponent],
-  entryComponents:[TrainingChartComponent]
+  entryComponents: [TrainingChartComponent]
 })
 export class TrainingModule { }

@@ -39,6 +39,14 @@ export const userSettings = {
           },
         },
         {
+          id: WidgetTypes.Procedures,
+          config: {
+            tooltip: 'Procedures',
+            url: 'DocumentControl/Procedures',
+            icon: 'uni-portfolio',
+          },
+        },
+        {
           id: WidgetTypes.WorkInstructions,
           config: {
             tooltip: 'Work Instructions',
@@ -49,35 +57,35 @@ export const userSettings = {
         {
           id: WidgetTypes.Records,
           config: {
-            tooltip: 'Records',
-            url: 'DocumentControl/Records',
+            tooltip: 'Production Records',
+            url: 'DocumentControl/ProductionRecords',
             icon: 'uni-portfolio',
           },
         },
-        {
-          id: WidgetTypes.ChangeDocumentOrRecord,
-          config: {
-            tooltip: 'Change Document Or Record',
-            url: 'DocumentControl/ChangeDocORRecord',
-            icon: 'uni-portfolio',
-          },
-        },
-        {
-          id: WidgetTypes.DocOrRecReviewUpdateProcess,
-          config: {
-            tooltip: 'Doc Review Update Process',
-            url: 'DocumentControl/DocReviewUpdateProcess',
-            icon: 'uni-portfolio',
-          },
-        },
-        {
-          id: WidgetTypes.Reports,
-          config: {
-            tooltip: 'Reports',
-            url: 'DocumentControl/Reports',
-            icon: 'uni-portfolio',
-          },
-        },
+        // {
+        //   id: WidgetTypes.ChangeDocumentOrRecord,
+        //   config: {
+        //     tooltip: 'Change Document Or Record',
+        //     url: 'DocumentControl/ChangeDocORRecord',
+        //     icon: 'uni-portfolio',
+        //   },
+        // },
+        // {
+        //   id: WidgetTypes.DocOrRecReviewUpdateProcess,
+        //   config: {
+        //     tooltip: 'Doc Review Update Process',
+        //     url: 'DocumentControl/DocReviewUpdateProcess',
+        //     icon: 'uni-portfolio',
+        //   },
+        // },
+        // {
+        //   id: WidgetTypes.Reports,
+        //   config: {
+        //     tooltip: 'Reports',
+        //     url: 'DocumentControl/Reports',
+        //     icon: 'uni-portfolio',
+        //   },
+        // },
       ],
     },
     {
