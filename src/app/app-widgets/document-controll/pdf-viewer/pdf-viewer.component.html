@@ -12,7 +12,7 @@
       valid From {{docValidFrom}}
     </div>
     <div class="col-6 h3 text-sm-center">
-      <button style="width: 100%" class="btn btn-lg btn-info" [ngClass]="docStatusStyle">{{docStatus}}</button>
+      <button style="width: 100%" class="btn btn-lg btn-info" [ngClass]="docStatusStyle" (click)="showApprovalPopup()">{{docStatus}}</button>
     </div>
         </div>
       </div>

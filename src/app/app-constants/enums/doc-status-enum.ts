@@ -1,6 +1,6 @@
 export enum DocStatus {
-  Not_reviewed = 1,
-  QE_reviewed,
-  Manager_reviewed,
+  Not_reviewed = "Not Reviewed",
+  QE_reviewed = "QE Approved",
+  Manager_reviewed = "Manager Approved",
 
 }
