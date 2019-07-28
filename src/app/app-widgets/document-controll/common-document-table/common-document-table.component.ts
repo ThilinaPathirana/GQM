@@ -1,10 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Injector, Input, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 import {DocumentControlType} from "../../../app-constants/enums/document-control-type.enum";
 import {MatDialog, MatDialogConfig} from "@angular/material";
 import {PdfViewerComponent} from "../pdf-viewer/pdf-viewer.component";
 import {TrainingChartComponent} from "../../training/training-chart/training-chart.component";
-import {Overlay, ScrollStrategy} from "@angular/cdk/overlay";
+import {Overlay, OverlayRef, ScrollStrategy} from "@angular/cdk/overlay";
 import {DocumentUploaderPopupComponent} from "../document-uploader-popup/document-uploader-popup.component";
+import {TemplatePortal} from "@angular/cdk/portal";
+import {fromEvent, Subscription} from "rxjs";
+import {ContextMenuComponent, ContextMenuService} from "ngx-contextmenu";
 
 @Component({
   selector: 'app-common-document-table',
@@ -21,8 +24,10 @@ export class CommonDocumentTableComponent implements OnInit {
   private gridColumnApi;
 
 
+  constructor(
 
-  constructor(public popupPdf : MatDialog, public overlay: Overlay) { }
+    public popupPdf : MatDialog,
+    ) { }
 
   ngOnInit() {
   }
@@ -30,20 +35,20 @@ export class CommonDocumentTableComponent implements OnInit {
   public rowClick(event:any){
 
     if(this.tableType == DocumentControlType.TopLevelManuals){
-      this.showPDF('sss');
+      this.showPDF(event.data);
     }
 
   }
 
-  public showPDF(pdfID: any): void{
+  public showPDF(data:any): void{
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '60%';
     dialogConfig.height = '90%';
-    dialogConfig.maxHeight = '10000px'
-    dialogConfig.data = pdfID;
+    dialogConfig.maxHeight = '10000px';
+    dialogConfig.data = {columnData:data, tableType:this.tableType};
     // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
     this.popupPdf.open(PdfViewerComponent, dialogConfig);
 
@@ -77,6 +82,8 @@ export class CommonDocumentTableComponent implements OnInit {
     this.popupPdf.open(DocumentUploaderPopupComponent, dialogConfig);
 
   }
+
+
 
 
 }

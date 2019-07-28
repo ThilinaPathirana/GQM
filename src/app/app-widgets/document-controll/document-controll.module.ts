@@ -13,6 +13,8 @@ import { WorkInstructionsComponent } from './work-instructions/work-instructions
 import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 import { DocumentUploaderPopupComponent } from './document-uploader-popup/document-uploader-popup.component';
 import {FormsModule} from "@angular/forms";
+import {ContextMenuModule} from "ngx-contextmenu";
+import { PopCommonDocTableComponent } from './pop-common-doc-table/pop-common-doc-table.component';
 
 
 @NgModule({
@@ -24,16 +26,17 @@ import {FormsModule} from "@angular/forms";
     MatDialogModule,
     PerfectScrollbarModule,
     FormsModule,
+    ContextMenuModule
 
   ],
-  declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent, DocumentUploaderPopupComponent],
+  declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent, DocumentUploaderPopupComponent, PopCommonDocTableComponent],
   exports: [
     CommonDocumentTableComponent,
     PdfViewerComponent,
     WorkInstructionsComponent,
   ],
-  entryComponents: [PdfViewerComponent, DocumentUploaderPopupComponent],
-  providers: [PdfViewerComponent]
+  entryComponents: [PdfViewerComponent, DocumentUploaderPopupComponent, PopCommonDocTableComponent],
+  providers: [PdfViewerComponent, PopCommonDocTableComponent]
 
 })
 export class DocumentControllModule { }

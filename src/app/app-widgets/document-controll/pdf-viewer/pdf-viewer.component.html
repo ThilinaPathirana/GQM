@@ -1,6 +1,30 @@
-<div class="h1 col-12 text-sm-center"  style="color:white; background: #0e2c68 ">
-  Top Level Management
+<div class="h2 col-12 text-sm-center"  style="color:white; background: #0e2c68 ">
+  {{header}}
 </div>
+
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+
+    <div class="col-6 h3 text-sm-center header-label">
+      valid From {{docValidFrom}}
+    </div>
+    <div class="col-6 h3 text-sm-center">
+      <button style="width: 100%" class="btn btn-lg btn-info" [ngClass]="docStatusStyle">{{docStatus}}</button>
+    </div>
+        </div>
+      </div>
+
+    <div class="col-4">
+      <button style="width: 100%" class="btn btn-lg btn-info" (click)="clickList()">Procedure List</button>
+
+    </div>
+
+  </div>
+</div>
+
 <div mat-dialog-content style="max-height: 100%">
 <pdf-viewer [src]="pdfSrc"
             [render-text]="true"

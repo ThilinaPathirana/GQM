@@ -1,23 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import {DocumentContentType} from "aws-sdk/clients/workdocs";
-import {DocumentControlType} from "../../../app-constants/enums/document-control-type.enum";
-
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material";
+import {PdfViewerComponent} from "../pdf-viewer/pdf-viewer.component";
 
 @Component({
-  selector: 'app-top-level-manuals',
-  templateUrl: './top-level-manuals.component.html',
-  styleUrls: ['./top-level-manuals.component.css']
+  selector: 'app-pop-common-doc-table',
+  templateUrl: './pop-common-doc-table.component.html',
+  styleUrls: ['./pop-common-doc-table.component.css']
 })
-export class TopLevelManualsComponent implements OnInit {
+export class PopCommonDocTableComponent implements OnInit {
 
+  public rowData;
+  public columnDefs;
+  public gridApi;
+  public gridColumnApi;
+  public header;
+  public tableType=1;
 
-  public rowData = [];
-  public columnDefs = [];
-  public tableType = DocumentControlType.TopLevelManuals
-
-  constructor() { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA)public data: any,
+    private dialogRef: MatDialogRef<PopCommonDocTableComponent>,
+    public popupPdf : MatDialog,
+  ) { }
 
   ngOnInit() {
+
+    this.header = this.data
 
     this.columnDefs = [
       {headerName: 'Doucument ID', field: 'doc_id', Width:100, cellClass: 'text-center'},
@@ -41,6 +48,33 @@ export class TopLevelManualsComponent implements OnInit {
 
     ];
 
+  }
+
+  onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+
+    params.api.sizeColumnsToFit();
+
+    params.api.sizeColumnsToFit();
+    window.addEventListener("resize", function() {
+      setTimeout(function() {
+        params.api.sizeColumnsToFit();
+      });
+    });
+  }
+
+  public showPDF(data:any): void{
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '60%';
+    dialogConfig.height = '90%';
+    dialogConfig.maxHeight = '10000px';
+    dialogConfig.data = {columnData:data.data, tableType:this.tableType};
+    // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
+    this.popupPdf.open(PdfViewerComponent, dialogConfig);
 
   }
 
