@@ -32,6 +32,7 @@ import { AprovalPopupComponent } from './aproval-popup/aproval-popup.component';
     PerfectScrollbarModule,
     FormsModule,
     ContextMenuModule,
+    CommonWidgetsModule,
 
 
   ],
@@ -42,7 +43,7 @@ import { AprovalPopupComponent } from './aproval-popup/aproval-popup.component';
     PdfViewerComponent,
     WorkInstructionsComponent,
   ],
-  entryComponents: [PdfViewerComponent, DocumentUploaderPopupComponent, PopCommonDocTableComponent, DialogPopupComponent],
+  entryComponents: [PdfViewerComponent, DocumentUploaderPopupComponent, PopCommonDocTableComponent, DialogPopupComponent, AprovalPopupComponent],
   providers: [PdfViewerComponent, PopCommonDocTableComponent]
 
 })
