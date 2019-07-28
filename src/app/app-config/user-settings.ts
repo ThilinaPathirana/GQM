@@ -131,14 +131,14 @@ export const userSettings = {
         icon: 'uni-my-account',
       },
     },
-    {
-      id: WidgetTypes.home,
-      config: {
-        tooltips: 'Production Records',
-        url: 'home',
-        icon: 'uni-my-account',
-      },
-    },
+    // {
+    //   id: WidgetTypes.home,
+    //   config: {
+    //     tooltips: 'Production Records',
+    //     url: 'home',
+    //     icon: 'uni-my-account',
+    //   },
+    // },
     {
       id: WidgetTypes.home,
       config: {

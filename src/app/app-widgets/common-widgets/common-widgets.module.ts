@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AgGridModule} from 'ag-grid-angular';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule } from "@angular/material";
+import { MatDialogModule } from '@angular/material';
 import { AgGridTableComponent } from './ag-grid-table/ag-grid-table.component';
 import { BaseCellRendereComponent } from './ag-grid-cell-renderes/base-cell-rendere/base-cell-rendere.component';
 import { TrainingCellRendereComponent } from './ag-grid-cell-renderes/training-cell-rendere/training-cell-rendere.component';
@@ -19,5 +19,6 @@ import { DialogPopupComponent } from './dialog-popup/dialog-popup.component';
   entryComponents: [
     DialogPopupComponent
   ],
+  providers: [DialogPopupComponent]
 })
 export class CommonWidgetsModule { }

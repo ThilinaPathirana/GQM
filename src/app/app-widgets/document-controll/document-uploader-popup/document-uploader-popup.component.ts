@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {UploadService} from "../../../app-backend/services/upload.service";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+import {UploadService} from '../../../app-backend/services/upload.service';
+import {DialogPopupComponent} from '../../common-widgets/dialog-popup/dialog-popup.component';
 
 @Component({
   selector: 'app-document-uploader-popup',
@@ -15,9 +16,14 @@ export class DocumentUploaderPopupComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)data: any,
     private dialogRef: MatDialogRef<DocumentUploaderPopupComponent>,
     private uploadService: UploadService,
+    public dialog: MatDialog
   ) {}
 
+  public errorMsg = {header: 'Upload Status', content: 'Successfully Updated!!'};
+  public successMsg = {header: 'Upload Status', content: 'Something Went Wrong!!'}
+
   public docName = '';
+  public AWSUpStatus: boolean;
   public dropFileForm = document.getElementById('dropFileForm');
   public FileLabeltext = 'Choose a file or drag it here';
   public uploadStatus = document.getElementById('uploadStatus');
@@ -51,7 +57,13 @@ export class DocumentUploaderPopupComponent implements OnInit {
 
   uploadaws() {
     const file = this.droppedFiles.item(0);
-    this.uploadService.uploadfileaws(file);
+    this.FileLabeltext = 'uploading......';
+    if (this.uploadService.uploadfileaws(file)) {
+      this.dialog.open(DialogPopupComponent, { data: this.successMsg , panelClass: 'custom-dialog-container'});
+    } else {
+      this.dialog.open(DialogPopupComponent, { data: this.errorMsg , panelClass: 'custom-dialog-container'});
+    }
+    this.FileLabeltext = 'Choose a file or drag it here';
   }
 
   // uploadFiles(event) {

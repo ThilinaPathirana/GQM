@@ -2,18 +2,19 @@ import { Injectable } from '@angular/core';
 // import * as AWS from 'aws-sdk/global';
 import * as S3 from 'aws-sdk/clients/s3';
 import {MatDialog} from '@angular/material';
-import {DialogPopupComponent} from "../../app-widgets/common-widgets/dialog-popup/dialog-popup.component";
+import {DialogPopupComponent} from '../../app-widgets/common-widgets/dialog-popup/dialog-popup.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UploadService {
 
+  public upStatusAWS: boolean;
     public FOLDER = 'cv/';
     public errorMsg = {header: 'Upload Status !!!', content: 'Successfully Updated!!'};
   constructor(public dialog: MatDialog) { }
 
-    uploadfileaws(file) {
+    uploadfileaws(file): boolean {
         const contentType = file.type;
         const bucket = new S3(
             {
@@ -29,13 +30,15 @@ export class UploadService {
             ACL: 'public-read',
             ContentType: contentType
         };
-        bucket.upload(params, (err, data) => {
+       bucket.upload(params, (err, data) => {
             if (err) {
                 console.log('There was an error uploading your file: ', err);
+              this.upStatusAWS =  false;
                 return false;
             }
             console.log('Successfully uploaded file.', data);
-           // this.dialog.open(DialogPopupComponent, { data: this.errorMsg , panelClass: 'custom-dialog-container'});
+            this.upStatusAWS =  true;
+
             return true;
         });
 
@@ -50,5 +53,6 @@ export class UploadService {
                   console.log('Successfully uploaded file.', data);
                   return true;
               });*/
+        return this.upStatusAWS;
     }
 }

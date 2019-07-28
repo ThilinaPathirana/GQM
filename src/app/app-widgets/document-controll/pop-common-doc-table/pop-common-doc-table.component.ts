@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material";
-import {PdfViewerComponent} from "../pdf-viewer/pdf-viewer.component";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material';
+import {PdfViewerComponent} from '../pdf-viewer/pdf-viewer.component';
 
 @Component({
   selector: 'app-pop-common-doc-table',
@@ -14,27 +14,27 @@ export class PopCommonDocTableComponent implements OnInit {
   public gridApi;
   public gridColumnApi;
   public header;
-  public tableType=1;
+  public tableType = 1;
 
   constructor(
     @Inject(MAT_DIALOG_DATA)public data: any,
     private dialogRef: MatDialogRef<PopCommonDocTableComponent>,
-    public popupPdf : MatDialog,
+    public popupPdf: MatDialog,
   ) { }
 
   ngOnInit() {
 
-    this.header = this.data
+    this.header = this.data;
 
     this.columnDefs = [
-      {headerName: 'Doucument ID', field: 'doc_id', Width:100, cellClass: 'text-center'},
-      {headerName: 'Category', field: 'category', Width:100, cellClass: 'text-center' },
-      {headerName: 'Type', field: 'type', Width:100, cellClass: 'text-center'},
-      {headerName: 'Created Date', field: 'created_date', Width:100, cellClass: 'text-center' },
-      {headerName: 'Version', field: 'version', Width:100, cellClass: 'text-center' },
-      {headerName: 'Last Update', field: 'last_update', Width:100, cellClass: 'text-center'},
-      {headerName: 'Valid From', field: 'valid_from', Width:100, cellClass: 'text-center'},
-      {headerName: 'Status', field: 'status',Width:100, cellClass: 'text-center' }
+      {headerName: 'Doucument ID', field: 'doc_id', Width: 100, cellClass: 'text-center'},
+      {headerName: 'Category', field: 'category', Width: 100, cellClass: 'text-center' },
+      {headerName: 'Type', field: 'type', Width: 100, cellClass: 'text-center'},
+      {headerName: 'Created Date', field: 'created_date', Width: 100, cellClass: 'text-center' },
+      {headerName: 'Version', field: 'version', Width: 100, cellClass: 'text-center' },
+      {headerName: 'Last Update', field: 'last_update', Width: 100, cellClass: 'text-center'},
+      {headerName: 'Valid From', field: 'valid_from', Width: 100, cellClass: 'text-center'},
+      {headerName: 'Status', field: 'status', Width: 100, cellClass: 'text-center' }
     ];
 
     this.rowData = [
