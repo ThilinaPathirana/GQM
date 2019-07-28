@@ -31,11 +31,12 @@ import { AprovalPopupComponent } from './aproval-popup/aproval-popup.component';
     MatDialogModule,
     PerfectScrollbarModule,
     FormsModule,
-    ContextMenuModule
+    ContextMenuModule,
+
 
   ],
   declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent,
-    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent],
+    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent, AprovalPopupComponent],
   exports: [
     CommonDocumentTableComponent,
     PdfViewerComponent,
