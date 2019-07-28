@@ -4,6 +4,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 import {PdfViewerComponent} from "../pdf-viewer/pdf-viewer.component";
 import {TrainingChartComponent} from "../../training/training-chart/training-chart.component";
 import {Overlay, ScrollStrategy} from "@angular/cdk/overlay";
+import {DocumentUploaderPopupComponent} from "../document-uploader-popup/document-uploader-popup.component";
 
 @Component({
   selector: 'app-common-document-table',
@@ -60,6 +61,21 @@ export class CommonDocumentTableComponent implements OnInit {
         params.api.sizeColumnsToFit();
       });
     });
+  }
+
+  public openDocumentUploadPopup(): void{
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.height = '50%';
+    dialogConfig.maxHeight = '10000px'
+    dialogConfig.data = '';
+    // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
+    this.popupPdf.open(DocumentUploaderPopupComponent, dialogConfig);
+
   }
 
 

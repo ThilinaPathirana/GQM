@@ -11,6 +11,8 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
 import {MatDialogModule} from "@angular/material";
 import { WorkInstructionsComponent } from './work-instructions/work-instructions.component';
 import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
+import { DocumentUploaderPopupComponent } from './document-uploader-popup/document-uploader-popup.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -21,15 +23,16 @@ import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
     PdfViewerModule,
     MatDialogModule,
     PerfectScrollbarModule,
+    FormsModule,
 
   ],
-  declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent],
+  declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent, DocumentUploaderPopupComponent],
   exports: [
     CommonDocumentTableComponent,
     PdfViewerComponent,
     WorkInstructionsComponent,
   ],
-  entryComponents: [PdfViewerComponent],
+  entryComponents: [PdfViewerComponent, DocumentUploaderPopupComponent],
   providers: [PdfViewerComponent]
 
 })

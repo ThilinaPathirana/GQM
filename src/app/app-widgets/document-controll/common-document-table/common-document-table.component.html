@@ -5,7 +5,9 @@
   <div class="card">
     <!--<div class="col-12">-->
 
-    <div class="col-12" style="margin-top: 10px; margin-bottom: 10px">
+    <div class="col-12">
+
+    <div class="row" style="margin-top: 10px">
       <ag-grid-angular
         style="width: 100%;height: 500px;"
         class="ag-theme-balham"
@@ -15,6 +17,12 @@
       (rowClicked)="rowClick($event)"
       >
       </ag-grid-angular>
+
+    </div>
+    <div class="row">
+      <button style="width: 100%" class="btn btn-lg btn-info" (click)="openDocumentUploadPopup()">Upload a New Document</button>
+
+    </div>
 
     </div>
     <!--</div>-->
