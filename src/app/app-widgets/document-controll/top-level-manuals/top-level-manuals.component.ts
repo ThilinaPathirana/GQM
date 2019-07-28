@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DocumentContentType} from "aws-sdk/clients/workdocs";
+import {DocumentControlType} from "../../../app-constants/enums/document-control-type.enum";
 
 
 @Component({
@@ -11,37 +13,30 @@ export class TopLevelManualsComponent implements OnInit {
 
   public rowData = [];
   public columnDefs = [];
+  public tableType = DocumentControlType.TopLevelManuals
 
   constructor() { }
 
   ngOnInit() {
 
     this.columnDefs = [
-      {headerName: 'Ref#', field: 'ref', width: 100, cellClass: 'text-center'},
-      {headerName: 'System', field: 'system', width: 100, cellClass: 'text-center' },
-      {headerName: 'Company Name', field: 'companyName', width: 100, cellClass: 'text-center'},
-      {headerName: 'Address', field: 'address', width: 100, cellClass: 'text-center' },
-      {headerName: 'Contact Person', field: 'cPerson', width: 100, cellClass: 'text-center' },
-      {headerName: 'Position', field: 'cposition', width: 100, cellClass: 'text-center'},
-      {headerName: 'CP Phone', field: 'cPhone', width: 100, cellClass: 'text-center' },
-      {headerName: 'Respond Person', field: 'rPerson', width: 100, cellClass: 'text-center' },
-      {headerName: 'RP Phone', field: 'rPhone', width: 100, cellClass: 'text-center'},
-      {headerName: 'Position', field: 'rPosition', width: 100, cellClass: 'text-center' },
-      {headerName: 'Product', field: 'product', width: 100, cellClass: 'text-center' },
-      {headerName: 'Service', field: 'service', width: 100, cellClass: 'text-center'},
+      {headerName: 'Doucument ID', field: 'doc_id', Width:100, cellClass: 'text-center'},
+      {headerName: 'Category', field: 'category', Width:100, cellClass: 'text-center' },
+      {headerName: 'Type', field: 'type', Width:100, cellClass: 'text-center'},
+      {headerName: 'Created Date', field: 'created_date', Width:100, cellClass: 'text-center' },
+      {headerName: 'Version', field: 'version', Width:100, cellClass: 'text-center' },
+      {headerName: 'Last Update', field: 'last_update', Width:100, cellClass: 'text-center'},
+      {headerName: 'Approved By', field: 'approved',Width:100, cellClass: 'text-center' }
     ];
 
     this.rowData = [
-      { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
-        rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
-      { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
-        rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
-      { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
-        rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
-      { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
-        rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
-      { ref: 'Toyota', system: 'Celica', companyName: 'jjjjj', address: 'wdqwd', cPerson: 'dscdc', cposition:'gsw', cPhone: '112233', rPerson:'fkgfdk',
-        rPhone:'11445', rPosition:'hkjffdhk',product: 'vfskvlfn', service: 'dhfhuhs' },
+      {doc_id:'bcd143', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3',approved:'manager'},
+      {doc_id:'bcd145', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3',approved:'manager'},
+      {doc_id:'bcd146', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3',approved:'manager'},
+      {doc_id:'bcd147', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3',approved:'manager'},
+      {doc_id:'bcd148', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3',approved:'manager'},
+      {doc_id:'bcd149', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3',approved:'manager'},
+
 
     ];
 

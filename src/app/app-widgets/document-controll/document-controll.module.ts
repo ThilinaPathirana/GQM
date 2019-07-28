@@ -6,16 +6,31 @@ import { DocumentControllRoutingModule } from './document-controll-routing.modul
 import { CommonDocumentTableComponent } from './common-document-table/common-document-table.component';
 import { TopLevelManualsComponent } from './top-level-manuals/top-level-manuals.component';
 import { DocumetControlLayoutComponent } from './documet-control-layout/documet-control-layout.component';
+import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
+import {PdfViewerModule} from "ng2-pdf-viewer";
+import {MatDialogModule} from "@angular/material";
+import { WorkInstructionsComponent } from './work-instructions/work-instructions.component';
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
+
 
 @NgModule({
   imports: [
     CommonModule,
     DocumentControllRoutingModule,
     AgGridModule.withComponents([]),
+    PdfViewerModule,
+    MatDialogModule,
+    PerfectScrollbarModule,
+
   ],
-  declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent],
+  declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent],
   exports: [
     CommonDocumentTableComponent,
-  ]
+    PdfViewerComponent,
+    WorkInstructionsComponent,
+  ],
+  entryComponents: [PdfViewerComponent],
+  providers: [PdfViewerComponent]
+
 })
 export class DocumentControllModule { }

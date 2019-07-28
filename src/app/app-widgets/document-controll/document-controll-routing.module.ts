@@ -4,14 +4,15 @@ import {TopLevelManualsComponent} from "./top-level-manuals/top-level-manuals.co
 import {DocumetControlLayoutComponent} from "./documet-control-layout/documet-control-layout.component";
 import {Mgts1LayoutComponent} from "../scope/mgts1-layout/mgts1-layout.component";
 import {Mgts1Component} from "../scope/mgts1/mgts1.component";
+import {PdfViewerComponent} from "./pdf-viewer/pdf-viewer.component";
 
 
 const routes: Routes = [
   {path: 'TopLevelManuals', component: DocumetControlLayoutComponent ,
     children: [
-      {path: '', component: TopLevelManualsComponent, outlet: 'outlet1'},
-    ]
-  },
+  {path: '', component: TopLevelManualsComponent, outlet: 'outlet1'},
+]
+},
 ];
 
 @NgModule({
