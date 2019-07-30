@@ -37,8 +37,8 @@ export const routes: Routes = [
         loadChildren: './app-widgets/document-controll/document-controll.module#DocumentControllModule'
       },
       {
-        path: 'ProductionRecord',
-        loadChildren: './app-widgets/production-record/production-record.module#ProductionRecordModule'
+        path: 'MRMmeeting',
+        loadChildren: './app-widgets/mrm-meeting/mrm-meeting.module#MrmMeetingModule'
       },
     ],
   },

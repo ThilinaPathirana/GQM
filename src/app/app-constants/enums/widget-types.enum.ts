@@ -14,5 +14,5 @@ export enum WidgetTypes {
   ChangeDocumentOrRecord = 'changeDocOrRec',
   DocOrRecReviewUpdateProcess = 'docOrRecRevUpProcess',
   Reports = 'reports',
-
+  AddMrmMeeting = 'addMrmMeeting',
 }

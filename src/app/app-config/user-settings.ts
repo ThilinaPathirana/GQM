@@ -89,6 +89,22 @@ export const userSettings = {
       ],
     },
     {
+      config: {
+        tooltip: 'MRM Meeting',
+        icon: 'uni-my-account',
+      },
+      subItems: [
+        {
+          id: WidgetTypes.AddMrmMeeting,
+          config: {
+            tooltip: 'Add Meeting Record',
+            url: 'MRMmeeting/AddMeetingRecord',
+            icon: 'uni-portfolio',
+          },
+        },
+      ],
+    },
+    {
       id: WidgetTypes.scope,
       config: {
         tooltip: 'Scope',
