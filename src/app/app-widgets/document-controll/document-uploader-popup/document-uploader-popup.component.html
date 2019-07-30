@@ -1,13 +1,15 @@
 <div class="h1 col-12 text-sm-center"  style="color:white; background: #0e2c68 ">
   Upload a New Document
 </div>
-<div class="col-12 row mb-5">
+<div class="col-12 row">
+
 <div class="col-6 dropdown">
+  <label class="bold">Document Category</label>
   <select class="col-12 mb-md-2">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
+    <option value="volvo">Department 1</option>
+    <option value="saab">Department 2</option>
+    <option value="opel">Department 3</option>
+    <option value="audi">Department 4</option>
   </select>
 </div>
 
@@ -19,18 +21,11 @@
 
   </div>
 
-
-
-  <!--<div class="row">-->
-  <!--<label class="btn btn-default">-->
-  <!--<input type="file" (change)="selectFileaws($event)">-->
-  <!--</label>-->
-
-  <!--</div>-->
-  <!--<div class="text-right">-->
-  <!--<button class="btn btn-success " [disabled]="!selectedFiles" (click)="uploadaws()">Upload</button>-->
-  <!--</div>-->
   </div>
+
+<div class="row document-select">
+  <ejs-multiselect id='multiselectelement'[dataSource]='data' [placeholder]="placeHolder" [popupHeight]='popupHeight' [popupWidth]='popupWidth'></ejs-multiselect>
+</div>
 
 <div id="dropFileForm">
   <input type="file" name="files[]" id="fileInput" (change)="addFiles($event)">

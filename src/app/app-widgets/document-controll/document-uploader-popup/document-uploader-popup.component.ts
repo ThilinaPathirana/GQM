@@ -10,6 +10,12 @@ import {DialogPopupComponent} from '../../common-widgets/dialog-popup/dialog-pop
 })
 export class DocumentUploaderPopupComponent implements OnInit {
 
+  public data: string[] = ['bd123', 'ab132', 'ba211', 'cb321', 'tr123', 'qw221', 'nm654', 'km988', 'bn213', 'kl213'];
+  public placeHolder = "Other Linked Documents";
+
+  public popupHeight:string = '200px';
+  public popupWidth:string = '250px';
+
 
 
   constructor(

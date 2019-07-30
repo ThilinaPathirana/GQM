@@ -12,3 +12,11 @@
 .not-reviwed{
   background: red;
 }
+
+.header-bar {
+  margin: 5px;
+}
+.top-bar{
+  padding: 5px;
+  margin-bottom: 5px;
+}

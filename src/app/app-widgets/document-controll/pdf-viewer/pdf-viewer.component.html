@@ -1,21 +1,17 @@
-<div class="h2 col-12 text-sm-center"  style="color:white; background: #0e2c68 ">
+<div class="card top-bar">
+<div class="h2 col-12 text-sm-center"  style="color:white; background: #0e2c68;height: 35px ">
   {{header}}
 </div>
 
-
-  <div class="col-12">
+  <div class="col-12 header-bar">
     <div class="row">
-      <div class="col-8">
-        <div class="row">
 
-    <div class="col-6 h3 text-sm-center header-label">
+    <div class="col-4 h3 text-sm-center header-label" style="margin-bottom: 0px">
       valid From {{docValidFrom}}
     </div>
-    <div class="col-6 h3 text-sm-center">
+    <div class="col-4">
       <button style="width: 100%" class="btn btn-lg btn-info" [ngClass]="docStatusStyle" (click)="showApprovalPopup()">{{docStatus}}</button>
     </div>
-        </div>
-      </div>
 
     <div class="col-4">
       <button style="width: 100%" class="btn btn-lg btn-info" (click)="clickList()">Procedure List</button>
@@ -23,7 +19,11 @@
     </div>
 
   </div>
+    </div>
 </div>
+
+
+
 
 <div mat-dialog-content style="max-height: 100%">
 <pdf-viewer [src]="pdfSrc"
@@ -33,9 +33,10 @@
             style="display: block;">
 </pdf-viewer>
 
+</div>
 
 
-  </div>
+
 
 
 

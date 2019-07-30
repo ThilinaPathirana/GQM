@@ -61,3 +61,13 @@
 #dropFileForm.fileHover {
   box-shadow: 0 0 16px #0e2c68;
 }
+.document-select{
+  width: 400px;
+  height: 10px;
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 39px;
+}
+#multiselectelement{
+  width: 100%;
+}

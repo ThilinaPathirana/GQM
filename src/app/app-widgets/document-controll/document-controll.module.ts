@@ -20,6 +20,7 @@ import { ProductionRecordComponent } from './production-record/production-record
 import {DialogPopupComponent} from '../common-widgets/dialog-popup/dialog-popup.component';
 import {CommonWidgetsModule} from '../common-widgets/common-widgets.module';
 import { AprovalPopupComponent } from './aproval-popup/aproval-popup.component';
+import {MultiSelectModule} from "@syncfusion/ej2-angular-dropdowns";
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AprovalPopupComponent } from './aproval-popup/aproval-popup.component';
     FormsModule,
     ContextMenuModule,
     CommonWidgetsModule,
+    MultiSelectModule,
 
 
   ],
