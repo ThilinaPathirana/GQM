@@ -1,0 +1,20 @@
+.second-row{
+  margin-top: 10px
+}
+.pad{
+  padding-left: 50px;
+}
+.large-text-area{
+  height: 100px;
+}
+.large-text-row{
+  margin: 5px;
+  margin-top:10px;
+}
+.header-topic{
+  color:#090634;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+}

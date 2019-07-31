@@ -40,6 +40,10 @@ export const routes: Routes = [
         path: 'MRMmeeting',
         loadChildren: './app-widgets/mrm-meeting/mrm-meeting.module#MrmMeetingModule'
       },
+      {
+        path: 'IncidentComplain',
+        loadChildren: './app-widgets/incident-complain-note/incident-complain-note.module#IncidentComplainNoteModule'
+      },
     ],
   },
   {

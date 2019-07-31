@@ -105,6 +105,22 @@ export const userSettings = {
       ],
     },
     {
+      config: {
+        tooltip: 'Incident/Complain Note',
+        icon: 'uni-my-account',
+      },
+      subItems: [
+        {
+          id: WidgetTypes.ComplainNote,
+          config: {
+            tooltip: 'Complain Note',
+            url: 'IncidentComplain/ComplainNote',
+            icon: 'uni-portfolio',
+          },
+        },
+      ],
+    },
+    {
       id: WidgetTypes.scope,
       config: {
         tooltip: 'Scope',

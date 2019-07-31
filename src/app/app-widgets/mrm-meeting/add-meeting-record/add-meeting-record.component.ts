@@ -49,9 +49,6 @@ export class AddMeetingRecordComponent implements OnInit {
     if(this.topics[topicID].newValue){
     this.topics[topicID].items.push({item:this.topics[topicID].newValue, isSelected: false});
       this.topics[topicID].newValue = null;
-      // for(let item of this.newFollowUps){
-      //   item.isSelected = false;
-      // }
 
       for(let topic of this.topics){
         for(let item of topic.items){
@@ -69,7 +66,7 @@ export class AddMeetingRecordComponent implements OnInit {
     }
 
     this.topics[topicId].items[itemID].isSelected = true;
-    // this.newFollowUps[itemID].isSelected = true;
+
   }
 
   public removeItem(itemID: any,topicID:any){
@@ -77,10 +74,6 @@ export class AddMeetingRecordComponent implements OnInit {
     if(this.topics[topicID].items[itemID].isSelected){
       this.topics[topicID].items.splice(itemID,1);
     }
-
-    // if(this.newFollowUps[itemID].isSelected){
-    //   this.newFollowUps.splice(item,1);
-    // }
   }
 
 }
