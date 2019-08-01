@@ -32,7 +32,7 @@ export class TrainingFrontComponent implements OnInit {
   columnDefsTop = [
     {headerName: 'Staff No', field: 'staff_No', width: 200, cellClass: 'text-center'},
     {headerName: 'Name', field: 'name', width: 200, cellClass: 'text-center'},
-    {headerName: 'Department', field: 'department', width: 100, cellClass: 'text-center' },
+    // {headerName: 'Department', field: 'department', width: 100, cellClass: 'text-center' },
     {headerName: 'Position', field: 'position', width: 100 , cellClass: 'text-center' },
 
     // {headerName: 'Total', field: 'total', width: 100,  valueGetter: 'data.Phone + data.rPerson + data.rPosition',},
@@ -58,16 +58,16 @@ export class TrainingFrontComponent implements OnInit {
   ];
 
   rowDataTop = [
-    { staff_No: '64546', name: 'H.L.Samaranayake', department: 'Unit Manager', D1: '1', D2: 'n/a',D3: '1', D4: '2', applicable:'3', planned:'2', cfp: '1',achieve:'1' },
-    { staff_No: '1123', name: 'K.D.gihan', department: 'Mechanic1', D1: '2', D2: '2',D3: '1', D4: '2', applicable:'4', planned:'1', cfp: '1',achieve:'1' },
-    { staff_No: '2324', name: 'W.m.udesh', department: 'Mechanic2', D1: '1', D2: '1',D3: '1', D4: '2', applicable:'4', planned:'3', cfp: '2',achieve:'2' },
-    { staff_No: '1233', name: 'K.M.malinda', department: 'Unit Manager', D1: '1', D2: '2',D3: '1', D4: '2', applicable:'4', planned:'3', cfp: '1',achieve:'1' },
-    { staff_No: '1322', name: 'D.S.gunawardhana', department: 'Unit Manager', D1: '1', D2: 'n/a',D3: '1', D4: '2', applicable:'3', planned:'3', cfp: '2',achieve:'2' },
-    { staff_No: '1223', name: 'S.M. de silva', department: 'Mechanic1', D1: '1', D2: '2',D3: '1', D4: '2', applicable:'4', planned:'4', cfp: '1',achieve:'1' },
-    { staff_No: '1224', name: 'K.D.Wimasha', department: 'Mechanic1', D1: '2', D2: '2',D3: '1', D4: '2', applicable:'4', planned:'4', cfp: '3',achieve:'3' },
-    { staff_No: '5688', name: 'L.K.D.waruna', department: 'Unit Manager', D1: 'n/a', D2: '1',D3: '1', D4: '2', applicable:'3', planned:'3', cfp: '2',achieve:'2' },
-    { staff_No: '9876', name: 'H.M.L.Bandara', department: 'Mechanic2', D1: '2', D2: '1',D3: '1', D4: '2', applicable:'4', planned:'3', cfp: '3',achieve:'3' },
-    { staff_No: '5678', name: 'P.T.U.Pathirana', department: 'Unit Manager', D1: '1', D2: '2',D3: '1', D4: 'n/a', applicable:'3', planned:'2', cfp: '2',achieve:'2' },
+    { staff_No: 'UN/2018/14', name: 'H.L.Samaranayake', position: 'Unit Manager', D1: '1', D2: 'n/a',D3: '1', D4: '2', applicable:'3', planned:'2', cfp: '1',achieve:'1' },
+    { staff_No: 'MN/2018/43', name: 'K.D.gihan', position: 'Mechanic1', D1: '2', D2: '2',D3: '1', D4: '2', applicable:'4', planned:'1', cfp: '1',achieve:'1' },
+    { staff_No: 'MN/2018/22', name: 'W.m.udesh', position: 'Mechanic2', D1: '1', D2: '1',D3: '1', D4: '2', applicable:'4', planned:'3', cfp: '2',achieve:'2' },
+    { staff_No: 'UN/2018/10', name: 'K.M.malinda', position: 'Unit Manager', D1: '1', D2: '2',D3: '1', D4: '2', applicable:'4', planned:'3', cfp: '1',achieve:'1' },
+    { staff_No: 'UN/2018/40', name: 'D.S.gunawardhana', position: 'Unit Manager', D1: '1', D2: 'n/a',D3: '1', D4: '2', applicable:'3', planned:'3', cfp: '2',achieve:'2' },
+    { staff_No: 'MN/2018/01', name: 'S.M. de silva', position: 'Mechanic1', D1: '1', D2: '2',D3: '1', D4: '2', applicable:'4', planned:'4', cfp: '1',achieve:'1' },
+    { staff_No: 'MN/2018/12', name: 'K.D.Wimasha', position: 'Mechanic1', D1: '2', D2: '2',D3: '1', D4: '2', applicable:'4', planned:'4', cfp: '3',achieve:'3' },
+    { staff_No: 'UN/2018/23', name: 'L.K.D.waruna', position: 'Unit Manager', D1: 'n/a', D2: '1',D3: '1', D4: '2', applicable:'3', planned:'3', cfp: '2',achieve:'2' },
+    { staff_No: 'MN/2018/30', name: 'H.M.L.Bandara', position: 'Mechanic2', D1: '2', D2: '1',D3: '1', D4: '2', applicable:'4', planned:'3', cfp: '3',achieve:'3' },
+    { staff_No: 'UN/2018/16', name: 'P.T.U.Pathirana', position: 'Unit Manager', D1: '1', D2: '2',D3: '1', D4: 'n/a', applicable:'3', planned:'2', cfp: '2',achieve:'2' },
 
 
   ];
