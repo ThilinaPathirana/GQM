@@ -7,6 +7,7 @@ import {Mgts1Component} from "../scope/mgts1/mgts1.component";
 import {PdfViewerComponent} from "./pdf-viewer/pdf-viewer.component";
 import {ProceduresComponent} from "./procedures/procedures.component";
 import {ProductionRecordComponent} from "./production-record/production-record.component";
+import {WorkInstructionsComponent} from "./work-instructions/work-instructions.component";
 
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ const routes: Routes = [
   {path: 'ProductionRecords', component: DocumetControlLayoutComponent ,
     children: [
       {path: '', component: ProductionRecordComponent, outlet: 'outlet1'},
+    ]
+  },
+  {path: 'WorkInstructions', component: DocumetControlLayoutComponent ,
+    children: [
+      {path: '', component: WorkInstructionsComponent, outlet: 'outlet1'},
     ]
   },
 ];

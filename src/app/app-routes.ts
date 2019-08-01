@@ -16,10 +16,10 @@ export const routes: Routes = [
         path: 'home',
         loadChildren: './app-widgets/home-page-widgets/home-page-widgets.module#HomePageWidgetsModule',
       },
-      {
-        path: 'WorkInstructions',
-        loadChildren: './app-widgets/work-instr/work-instr.module#WorkInstrModule',
-      },
+      // {
+      //   path: 'WorkInstructions',
+      //   loadChildren: './app-widgets/work-instr/work-instr.module#WorkInstrModule',
+      // },
       {
         path: 'Scope',
         loadChildren: './app-widgets/scope/scope.module#ScopeModule',

@@ -50,7 +50,7 @@ export const userSettings = {
           id: WidgetTypes.WorkInstructions,
           config: {
             tooltip: 'Work Instructions',
-            url: 'WorkInstructions',
+            url: 'DocumentControl/WorkInstructions',
             icon: 'uni-portfolio',
           },
         },
