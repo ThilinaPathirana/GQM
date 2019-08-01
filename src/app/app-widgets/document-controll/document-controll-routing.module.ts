@@ -8,9 +8,15 @@ import {PdfViewerComponent} from "./pdf-viewer/pdf-viewer.component";
 import {ProceduresComponent} from "./procedures/procedures.component";
 import {ProductionRecordComponent} from "./production-record/production-record.component";
 import {WorkInstructionsComponent} from "./work-instructions/work-instructions.component";
+import {MasterListComponent} from "./master-list/master-list.component";
 
 
 const routes: Routes = [
+  {path: 'MasterList', component: DocumetControlLayoutComponent ,
+    children: [
+      {path: '', component: MasterListComponent, outlet: 'outlet1'},
+    ]
+  },
   {path: 'TopLevelManuals', component: DocumetControlLayoutComponent ,
     children: [
   {path: '', component: TopLevelManualsComponent, outlet: 'outlet1'},

@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class PolicyFrontComponent implements OnInit {
 
   title = 'app';
+  public gridApi;
+  public gridColumnApi;
 
   columnDefs = [
     {headerName: 'Ref#', field: 'ref', width: 100 },
@@ -33,6 +35,20 @@ export class PolicyFrontComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+
+    params.api.sizeColumnsToFit();
+
+    params.api.sizeColumnsToFit();
+    window.addEventListener('resize', function() {
+      setTimeout(function() {
+        params.api.sizeColumnsToFit();
+      });
+    });
   }
 
 }

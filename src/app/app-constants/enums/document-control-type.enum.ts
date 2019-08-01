@@ -3,4 +3,5 @@ export enum DocumentControlType {
     Procedures,
     ProductionRecords,
   WorkInstructions,
+  MasterList,
 }

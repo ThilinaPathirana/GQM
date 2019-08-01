@@ -5,7 +5,8 @@ import {PopCommonDocTableComponent} from "../pop-common-doc-table/pop-common-doc
 import {AprovalPopupComponent} from "../aproval-popup/aproval-popup.component";
 import {DocStatusConst} from "../../../app-constants/consts/doc-status-const";
 
-const Headers = {topLevel: "Top Level Manual-", procedure: "Procedures-", production:"Production Records-"}
+const Headers = {topLevel: "Top Level Manual-", procedure: "Procedures-", production:"Production Records-",
+workInst: "Work Instruction-", masterList:"Master List-"};
 
 @Component({
   selector: 'app-pdf-viewer',
@@ -44,6 +45,12 @@ export class PdfViewerComponent implements OnInit {
     }
     else if (this.data.tableType === DocumentControlType.ProductionRecords){
       this.header = Headers.production;
+    }
+    else if(this.data.tableType === DocumentControlType.WorkInstructions){
+      this.header = Headers.workInst;
+    }
+    else if(this.data.tableType === DocumentControlType.MasterList){
+      this.header = Headers.masterList;
     }
     this.header += this.data.columnData.category + "-" + this.data.columnData.doc_id
 

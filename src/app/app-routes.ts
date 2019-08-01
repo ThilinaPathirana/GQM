@@ -48,7 +48,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/gts/DocumentControl/MasterList',
     pathMatch: 'full',
   },
   { path: '**', component: MainComponent },

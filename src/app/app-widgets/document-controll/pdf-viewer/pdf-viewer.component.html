@@ -6,8 +6,8 @@
   <div class="col-12 header-bar">
     <div class="row">
 
-    <div class="col-4 h3 text-sm-center header-label" style="margin-bottom: 0px">
-      valid From {{docValidFrom}}
+    <div class="col-4 h3 text-sm-center valid-date" style="margin-bottom: 0px">
+      Valid from : {{docValidFrom}}
     </div>
     <div class="col-4">
       <button style="width: 100%" class="btn btn-lg btn-info" [ngClass]="docStatusStyle" (click)="showApprovalPopup()">{{docStatus}}</button>

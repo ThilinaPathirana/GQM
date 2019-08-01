@@ -19,15 +19,15 @@ export const userSettings = {
     {
       id: WidgetTypes.home,
       config: {
-        tooltips: 'Home',
-        url: 'home',
-        icon: 'fa fa-dashboard',
+        tooltips: 'Master List',
+        url: 'DocumentControl/MasterList',
+        icon: 'fa fa-home',
       },
     },
     {
       config: {
         tooltip: 'Document Control',
-        icon: 'uni-my-account',
+        icon: 'fa fa-book',
       },
       subItems: [
         {
@@ -35,7 +35,7 @@ export const userSettings = {
           config: {
             tooltip: 'Top Level Manuals',
             url: 'DocumentControl/TopLevelManuals',
-            icon: 'uni-portfolio',
+            icon: 'fa fa-table',
           },
         },
         {
@@ -43,7 +43,7 @@ export const userSettings = {
           config: {
             tooltip: 'Procedures',
             url: 'DocumentControl/Procedures',
-            icon: 'uni-portfolio',
+            icon: 'fa fa-table',
           },
         },
         {
@@ -51,7 +51,7 @@ export const userSettings = {
           config: {
             tooltip: 'Work Instructions',
             url: 'DocumentControl/WorkInstructions',
-            icon: 'uni-portfolio',
+            icon: 'fa fa-table',
           },
         },
         {
@@ -59,7 +59,7 @@ export const userSettings = {
           config: {
             tooltip: 'Production Records',
             url: 'DocumentControl/ProductionRecords',
-            icon: 'uni-portfolio',
+            icon: 'fa fa-table',
           },
         },
         // {
@@ -91,7 +91,7 @@ export const userSettings = {
     {
       config: {
         tooltip: 'MRM Meeting',
-        icon: 'uni-my-account',
+        icon: 'fa fa-users',
       },
       subItems: [
         {
@@ -99,7 +99,7 @@ export const userSettings = {
           config: {
             tooltip: 'Add Meeting Record',
             url: 'MRMmeeting/AddMeetingRecord',
-            icon: 'uni-portfolio',
+            icon: 'fa fa-plus-square',
           },
         },
       ],
@@ -107,7 +107,7 @@ export const userSettings = {
     {
       config: {
         tooltip: 'Incident/Complain Note',
-        icon: 'uni-my-account',
+        icon: 'fa fa-warning',
       },
       subItems: [
         {
@@ -115,7 +115,7 @@ export const userSettings = {
           config: {
             tooltip: 'Complain Note',
             url: 'IncidentComplain/ComplainNote',
-            icon: 'uni-portfolio',
+            icon: 'fa fa-upload',
           },
         },
       ],
@@ -125,7 +125,7 @@ export const userSettings = {
       config: {
         tooltip: 'Scope',
         // url: 'Scope',
-        icon: 'uni-my-account',
+        icon: 'fa fa-eye',
       },
       subItems: [
         {
@@ -133,7 +133,7 @@ export const userSettings = {
           config: {
             tooltip: 'Add Scope',
             url: 'Scope',
-            icon: 'uni-portfolio',
+            icon: 'fa fa-upload',
           },
         },
 
@@ -142,7 +142,7 @@ export const userSettings = {
           config: {
             tooltip: 'View Scope',
             url: 'Scope/viewScope',
-            icon: 'uni-portfolio',
+            icon: 'fa fa-desktop',
           },
         },
       ]
@@ -152,7 +152,7 @@ export const userSettings = {
       config: {
         tooltips: 'Policy',
          url: 'policy',
-        icon: 'uni-my-account',
+        icon: 'fa fa-star',
       },
     },
     {
@@ -160,7 +160,7 @@ export const userSettings = {
       config: {
         tooltips: 'Training',
          url: 'Training',
-        icon: 'uni-my-account',
+        icon: 'fa fa-university',
       },
     },
     // {
@@ -175,26 +175,26 @@ export const userSettings = {
       id: WidgetTypes.home,
       config: {
         tooltips: 'Payments/Financial',
-        url: 'home',
-        icon: 'uni-my-account',
+        url: 'DocumentControl/MasterList',
+        icon: 'fa fa-money',
       },
     },
     {
       id: WidgetTypes.home,
       config: {
         tooltips: 'Staffs Data',
-        url: 'home',
-        icon: 'uni-my-account',
+        url: 'DocumentControl/MasterList',
+        icon: 'fa fa-database',
       },
     },
-    {
-      id: WidgetTypes.home,
-      config: {
-        tooltips: 'Incident Report',
-        url: 'home',
-        icon: 'uni-my-account',
-      },
-    },
+    // {
+    //   id: WidgetTypes.home,
+    //   config: {
+    //     tooltips: 'Incident Report',
+    //     url: 'home',
+    //     icon: 'uni-my-account',
+    //   },
+    // },
   ],
 
   // Working Instruction DropDown List

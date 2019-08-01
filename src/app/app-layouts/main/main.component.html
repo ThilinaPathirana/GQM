@@ -9,7 +9,10 @@
         </button>
       </div>
       <div class="text-left hidden-xs-down">
-        <img src="assets/images/main-logo.svg" width="90" height="39" alt="" class="main-logo">
+        <!--<img src="assets/images/main-logo.svg" width="90" height="39" alt="" class="main-logo">-->
+        <div class="h1 text-sm-center">
+          GTS Active
+        </div>
       </div>
     </div>
     <div class="col-6 text-right pr-4">
@@ -28,7 +31,10 @@
       <mat-toolbar class="hidden-lg-down">
         <div class="flex opacity-min hidden-md-down">
           <div class="col-9">
-            <img src="assets/images/main-logo.svg" width="90" height="39" alt="" class="main-logo">
+            <!--<img src="assets/images/main-logo.svg" width="90" height="39" alt="" class="main-logo">-->
+            <div class="text-sm-center main-logo" style="font-size: larger;margin-top: 5px;">
+              GTS Active
+            </div>
           </div>
           <div class="col-3 text-right">
             <button mat-icon-button (click)="changeSideNavWidth()" class="menu-button">
@@ -153,12 +159,22 @@
       <div class="flex">
         <div class="top-panel-more-btn">
           <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
-            <i class="fa fa-search"></i>
+            <i class="fa fa-bell fa-inverse"></i>
+          </button>
+        </div>
+        <div class="top-panel-more-btn">
+          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
+            <i class="fa fa-search fa-inverse"></i>
+          </button>
+        </div>
+        <div class="top-panel-more-btn">
+          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
+            <i class="fa fa-user-circle fa-inverse"></i>
           </button>
         </div>
         <div class="top-panel-more-btn border-0">
           <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
-            <i class="fa fa-power-off"></i>
+            <i class="fa fa-power-off fa-inverse"></i>
           </button>
         </div>
       </div>
