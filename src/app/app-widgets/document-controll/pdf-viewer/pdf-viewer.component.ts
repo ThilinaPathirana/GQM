@@ -3,10 +3,9 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from "@angula
 import {DocumentControlType} from "../../../app-constants/enums/document-control-type.enum";
 import {PopCommonDocTableComponent} from "../pop-common-doc-table/pop-common-doc-table.component";
 import {AprovalPopupComponent} from "../aproval-popup/aproval-popup.component";
-import {DocStatus} from "../../../app-constants/enums/doc-status-enum";
 import {DocStatusConst} from "../../../app-constants/consts/doc-status-const";
 
-const Headers = {topLevel: "Top Level Manual-"}
+const Headers = {topLevel: "Top Level Manual-", procedure: "Procedures-", production:"Production Records-"}
 
 @Component({
   selector: 'app-pdf-viewer',
@@ -39,6 +38,12 @@ export class PdfViewerComponent implements OnInit {
     if(this.data.tableType === DocumentControlType.TopLevelManuals){
       this.header = Headers.topLevel
 
+    }
+    else if(this.data.tableType === DocumentControlType.Procedures){
+      this.header = Headers.procedure;
+    }
+    else if (this.data.tableType === DocumentControlType.ProductionRecords){
+      this.header = Headers.production;
     }
     this.header += this.data.columnData.category + "-" + this.data.columnData.doc_id
 

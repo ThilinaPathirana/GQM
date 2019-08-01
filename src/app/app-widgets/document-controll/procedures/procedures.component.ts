@@ -28,12 +28,12 @@ export class ProceduresComponent implements OnInit {
     ];
 
     this.rowData = [
-      {doc_id:'bcd143', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'manager'},
-      {doc_id:'bcd145', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'manager'},
-      {doc_id:'bcd146', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'manager'},
-      {doc_id:'bcd147', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'manager'},
-      {doc_id:'bcd148', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'manager'},
-      {doc_id:'bcd149', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'manager'},
+      {doc_id:'bcd143', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'Manager Approved'},
+      {doc_id:'bcd145', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'QE Approved'},
+      {doc_id:'bcd146', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'Not Reviewed'},
+      {doc_id:'bcd147', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'Manager Approved'},
+      {doc_id:'bcd148', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'QE Approved'},
+      {doc_id:'bcd149', category:'level1 Manual', type: 'steamer', created_date: '19.7.21', version:'1.3', valid_from:'19.01.07', status:'Not Reviewed'},
 
 
     ];
