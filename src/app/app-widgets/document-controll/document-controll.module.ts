@@ -22,6 +22,8 @@ import {CommonWidgetsModule} from '../common-widgets/common-widgets.module';
 import { AprovalPopupComponent } from './aproval-popup/aproval-popup.component';
 import {MultiSelectModule} from "@syncfusion/ej2-angular-dropdowns";
 import { MasterListComponent } from './master-list/master-list.component';
+import { AddDocumentComponent } from './add-document/add-document.component';
+import { ViewDocumentComponent } from './view-document/view-document.component';
 
 
 @NgModule({
@@ -40,7 +42,7 @@ import { MasterListComponent } from './master-list/master-list.component';
 
   ],
   declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent,
-    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent, AprovalPopupComponent, MasterListComponent],
+    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent, AprovalPopupComponent, MasterListComponent, AddDocumentComponent, ViewDocumentComponent],
   exports: [
     CommonDocumentTableComponent,
     PdfViewerComponent,

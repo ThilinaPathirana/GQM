@@ -1,0 +1,22 @@
+.header-topic{
+  color:#090634;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.header-details{
+  background: #4a5d7e;
+  margin: 5px;
+}
+.docName{
+  margin: 5px;
+  font-size: large;
+}
+.scope{
+  align-items: center;
+}
+.remove-button{
+  background: brown;
+}

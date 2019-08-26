@@ -41,9 +41,10 @@ export class CacheAtService {
 
 	public ajaxGet(tokenData: Cacheable): Promise<any> {
     const keyData = new CacheRequest(tokenData);
+    let y;
     return new Promise((resolve): void => {
       delete keyData.data.data.body.cacheType;
-      this.network.sendAjaxRequest(keyData.data.data, true).then(data => {
+       this.network.sendAjaxRequest(keyData.data.data, true).then(data => {
         return resolve(data.data.response);
       });
     });

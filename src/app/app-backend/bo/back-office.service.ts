@@ -6,11 +6,15 @@ import {ATCacheTypes} from "../../app-constants/enums/at-cache-type.enum";
 import {BackOfficeRequestHandler} from "../communication/ajax/bo-request-handler";
 import {Channels} from "../../app-constants/enums/channels.enum";
 import {LoggerService} from "../../app-utils/logger.service";
+import {DataService} from "../communication/data.service";
 
 
 @Injectable()
 export class BackOfficeService {
-  constructor(private cache: CacheAtService, private loggerService: LoggerService) {
+
+  private response;
+  constructor(private cache: CacheAtService, private loggerService: LoggerService, private dataService: DataService) {
+    this.getResponse();
 
   }
 
@@ -30,6 +34,25 @@ export class BackOfficeService {
       data,
       ATCacheTypes.NET,
     )
+  }
+
+  public viewScope(data): void {
+    this.getBackOfficeData(
+      BoMessageGroups.Scope,
+      BoMessageTypes.View_Scope,
+      {EXT_FILTER: "",
+      PAGE: 1},
+      ATCacheTypes.NET
+    )
+  }
+
+  public getResponse():any{
+    this.dataService.getAjaxResponseSteam().subscribe(data=> {
+      if(data){
+        this.response = data;
+      }
+    })
+    return true;
   }
 
 	/**

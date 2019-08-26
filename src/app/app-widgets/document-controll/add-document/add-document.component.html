@@ -1,0 +1,103 @@
+<div class="col-12 card">
+<div class="h1 col-12 text-sm-center header-topic">
+  Add New {{docType}} Document
+</div>
+  <div class="col-12 mr-5">
+    <div class="row form-group">
+      <label class="col-2 bold text-sm-left">Document Name</label>
+      <input class="col-10 form-control" type="text" placeholder="Enter Document Name here.." name="system"
+             [(ngModel)]="docName" required>
+    </div>
+
+    <div class="row form-group">
+      <label class="col-2 bold text-sm-left">Scope</label>
+      <select class="col-2">
+        <option value="QA">QA</option>
+        <option value="Management">Management</option>
+        <option value="Audit">Audit</option>
+        <option value="Labour">Labour</option>
+      </select>
+      <input class="col-8 form-control" type="text" placeholder="Enter the Comment here.." name="system"
+             [(ngModel)]="scopeComment" required>
+    </div>
+
+    <div class="row form-group">
+      <label class="col-2 bold text-sm-left">Document Summary</label>
+      <textarea class="col-10" rows="8" cols="100"> </textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+      <label class="col-2 bold text-sm-left">Point To Follow</label>
+      </div>
+
+      <div class="row">
+        <div class="col-12" *ngFor="let item of pointToFollowItems; let i = index">
+
+          <div class="row">
+
+            <!--<div class="col-12">-->
+
+            <div class="col-10 follow-ups">
+              <li (click)="selectItem(i)">{{item.data}}</li>
+            </div>
+
+            <div *ngIf="item.isSelected" class="col-2">
+              <button style="width: 100%" class="btn btn-lg btn-info remove-button" (click)="removeItem(i)">Remove</button>
+            </div>
+
+            <!--</div>-->
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-10">
+
+              <input type="text" placeholder="Enter new point" class="form-control" name="newItem"
+                     [(ngModel)]="newValue" required>
+            </div>
+
+            <div class="col-2">
+              <button style="width: 100%" class="btn btn-lg btn-info" (click)="addItem()">Add Item</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row form-group">
+      <label class="col-2">Linked Documents</label>
+      <div class="col-10">
+       <div *ngFor="let doc of linkedDocs; let i = index;">
+         <div class="row">
+           <div class="col-2 text-sm-center">{{doc.Id}}</div>
+           <div class="col-10 text-sm-center">{{doc.comment}}</div>
+         </div>
+       </div>
+      <div class="row">
+      <div class="col-2">
+        <input type="text" placeholder="document ID" class="form-control" name="newItem"
+               [(ngModel)]="newLinkedDocID" required>
+      </div>
+      <div class="col-9">
+        <input type="text" placeholder="enter the comment here" class="form-control" name="newItem"
+               [(ngModel)]="newLinkedDocComnt" required>
+      </div>
+        <div class="col-1">
+          <button style="width: 100%" class="btn btn-lg btn-info" (click)="linkDoc()">Link</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

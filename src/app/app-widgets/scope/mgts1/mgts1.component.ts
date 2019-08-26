@@ -48,7 +48,7 @@ export class Mgts1Component implements OnInit {
       SERVICE:this.service
     };
 
-    this.boService.addScope(this.addScopeData);
+    const add = this.boService.viewScope(this.addScopeData);
 
 
   }

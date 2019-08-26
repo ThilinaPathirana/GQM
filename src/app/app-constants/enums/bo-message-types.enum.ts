@@ -12,5 +12,6 @@ export enum BoMessageTypes {
 
   Register = 23,
   Add_Scope = 2,
+  View_Scope = 1,
 
 }

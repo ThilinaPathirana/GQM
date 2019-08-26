@@ -9,6 +9,7 @@ import {ProceduresComponent} from "./procedures/procedures.component";
 import {ProductionRecordComponent} from "./production-record/production-record.component";
 import {WorkInstructionsComponent} from "./work-instructions/work-instructions.component";
 import {MasterListComponent} from "./master-list/master-list.component";
+import {AddDocumentComponent} from "./add-document/add-document.component";
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path: '', component: TopLevelManualsComponent, outlet: 'outlet1'},
 ]
 },
-  {path: 'Procedures', component: DocumetControlLayoutComponent ,
+  {path: 'Procedures', component: AddDocumentComponent ,
     children: [
       {path: '', component: ProceduresComponent, outlet: 'outlet1'},
     ]
