@@ -27,14 +27,25 @@
              [(ngModel)]="scopeComment" required>
     </div>
 
-    <div class="row">
+    <div *ngIf="!isKeyGeneratePressed" class="row mt-5 mb-5">
+
       <div class="col-2">
-        <button style="width: 100%" class="btn btn-lg btn-info" (click)="linkDoc()">Generate ID</button>
+        <button style="width: 100%; background: green" class="btn btn-lg btn-info" (click)="generateDocId()">Generate ID</button>
       </div>
-      <div class="col-2">
-        <input class="form-control" type="text" placeholder="Generated ID" name="system"
-               [(ngModel)]="scopeComment" required>
+      <div class="col-8">
+        <p style="color: #0b893f; font-weight: bold">Click this button to generate Document ID</p>
       </div>
+      </div>
+
+      <div *ngIf="isKeyGeneratePressed" class="row mt-5 mb-5">
+
+        <div class="col-2">
+          <p class="bold">Generated ID : </p>
+        </div>
+
+        <div class="col-2">
+          <p class="bold" style="color: #0b893f">{{generatedId}} </p>
+        </div>
     </div>
 
     <div class="row">
@@ -52,7 +63,7 @@
             <span id="uploadStatus"></span>
           </label>
 
-          <button class="uploadButton" (click)="uploadaws()">Upload</button>
+          <!--<button class="uploadButton" (click)="uploadaws()">Upload</button>-->
         </div>
       </div>
       <div class="col-3"></div>
@@ -79,8 +90,8 @@
 
     <!--</div>-->
 
-    <div class="row form-group">
-      <label class="col-2">Linked Documents</label>
+    <div class="row form-group mt-5">
+      <label class="col-2 bold">Linked Documents</label>
       <div class="col-10">
        <div *ngFor="let doc of linkedDocs; let i = index;">
          <div class="row">

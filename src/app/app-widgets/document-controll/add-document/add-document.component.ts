@@ -34,9 +34,10 @@ export class AddDocumentComponent implements OnInit {
 
   public errorMsg = {header: 'Upload Status', content: 'Successfully Updated!!'};
   public successMsg = {header: 'Upload Status', content: 'Something Went Wrong!!'};
+  public isKeyGeneratePressed = false;
   private subscription$: Subscription;
   private renamedFile: File;
-  private generatedId;
+  public generatedId = "px123";
 
   constructor(
     // @Inject(MAT_DIALOG_DATA)data: any,
@@ -131,10 +132,14 @@ export class AddDocumentComponent implements OnInit {
       "DOC_TYPE":"1"
     };
     this.boService.addData(data);
+    this.uploadaws();
     this.subscription$ = this.boService.addDocSubject$.subscribe(data=>{
       const status = data;
     })
 
 
+  }
+  public generateDocId(): void{
+    this.isKeyGeneratePressed = true;
   }
 }
