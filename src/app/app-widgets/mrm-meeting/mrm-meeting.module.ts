@@ -5,14 +5,14 @@ import { MrmMeetingRoutingModule } from './mrm-meeting-routing.module';
 import { AddMeetingRecordComponent } from './add-meeting-record/add-meeting-record.component';
 import { MrmMeetingLayoutComponent } from './mrm-meeting-layout/mrm-meeting-layout.component';
 import {FormsModule} from "@angular/forms";
-import {MultiSelectModule} from "@syncfusion/ej2-angular-dropdowns";
+// import {MultiSelectModule} from "@syncfusion/ej2-angular-dropdowns";
 
 @NgModule({
   imports: [
     CommonModule,
     MrmMeetingRoutingModule,
     FormsModule,
-    MultiSelectModule,
+    // MultiSelectModule,
   ],
   declarations: [AddMeetingRecordComponent, MrmMeetingLayoutComponent]
 })

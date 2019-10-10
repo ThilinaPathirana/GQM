@@ -4,13 +4,15 @@
 <div class="col-12 row">
 
 <div class="col-6 dropdown">
-  <label class="bold">Document Category</label>
-  <select class="col-12 mb-md-2">
-    <option value="volvo">Department 1</option>
-    <option value="saab">Department 2</option>
-    <option value="opel">Department 3</option>
-    <option value="audi">Department 4</option>
-  </select>
+  <label class="bold">Scope</label>
+  <!--<select class="col-12 mb-md-2">-->
+    <!--<option value="volvo">Department 1</option>-->
+    <!--<option value="saab">Department 2</option>-->
+    <!--<option value="opel">Department 3</option>-->
+    <!--<option value="audi">Department 4</option>-->
+  <!--</select>-->
+  <input type="text" placeholder="scope" class="form-control" name="docScope"
+         [(ngModel)]="docScope" required>
 </div>
 
   <div class="col-6">
@@ -24,7 +26,7 @@
   </div>
 
 <div class="row document-select">
-  <ejs-multiselect id='multiselectelement'[dataSource]='data' [placeholder]="placeHolder" [popupHeight]='popupHeight' [popupWidth]='popupWidth'></ejs-multiselect>
+  <!--<ejs-multiselect id='multiselectelement'[dataSource]='data' [placeholder]="placeHolder" [popupHeight]='popupHeight' [popupWidth]='popupWidth'></ejs-multiselect>-->
 </div>
 
 <div id="dropFileForm">

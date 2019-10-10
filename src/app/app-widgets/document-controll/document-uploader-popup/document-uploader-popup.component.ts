@@ -26,9 +26,10 @@ export class DocumentUploaderPopupComponent implements OnInit {
   ) {}
 
   public errorMsg = {header: 'Upload Status', content: 'Successfully Updated!!'};
-  public successMsg = {header: 'Upload Status', content: 'Something Went Wrong!!'}
+  public successMsg = {header: 'Upload Status', content: 'Something Went Wrong!!'};
 
   public docName = '';
+  public docScope = '';
   public AWSUpStatus: boolean;
   public dropFileForm = document.getElementById('dropFileForm');
   public FileLabeltext = 'Choose a file or drag it here';

@@ -20,7 +20,7 @@ import { ProductionRecordComponent } from './production-record/production-record
 import {DialogPopupComponent} from '../common-widgets/dialog-popup/dialog-popup.component';
 import {CommonWidgetsModule} from '../common-widgets/common-widgets.module';
 import { AprovalPopupComponent } from './aproval-popup/aproval-popup.component';
-import {MultiSelectModule} from "@syncfusion/ej2-angular-dropdowns";
+// import {MultiSelectModule} from "@syncfusion/ej2-angular-dropdowns";
 import { MasterListComponent } from './master-list/master-list.component';
 import { AddDocumentComponent } from './add-document/add-document.component';
 import { ViewDocumentComponent } from './view-document/view-document.component';
@@ -37,7 +37,7 @@ import { ViewDocumentComponent } from './view-document/view-document.component';
     FormsModule,
     ContextMenuModule,
     CommonWidgetsModule,
-    MultiSelectModule,
+    // MultiSelectModule,
 
 
   ],

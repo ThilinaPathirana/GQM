@@ -4,6 +4,8 @@ import {DocumentControlType} from "../../../app-constants/enums/document-control
 import {PopCommonDocTableComponent} from "../pop-common-doc-table/pop-common-doc-table.component";
 import {AprovalPopupComponent} from "../aproval-popup/aproval-popup.component";
 import {DocStatusConst} from "../../../app-constants/consts/doc-status-const";
+import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
+import {RequestTypes} from "../../../app-constants/enums/request-types.enum";
 
 const Headers = {topLevel: "Top Level Manual-", procedure: "Procedures-", production:"Production Records-",
 workInst: "Work Instruction-", masterList:"Master List-"};
@@ -26,6 +28,7 @@ export class PdfViewerComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)public data: any,
     private dialogRef: MatDialogRef<PdfViewerComponent>,
     public popupTable : MatDialog,
+    private boService: BackOfficeService,
   ) { }
 
   ngOnInit() {
@@ -73,6 +76,25 @@ export class PdfViewerComponent implements OnInit {
     dialogConfig.data = this.header;
     // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
     this.popupTable.open(PopCommonDocTableComponent, dialogConfig);
+
+  }
+
+  public clickHistory(): void{
+
+    this.boService.requestData(RequestTypes.documentHistory,"");
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '60%';
+    dialogConfig.height = '90%';
+    dialogConfig.maxHeight = '10000px';
+    dialogConfig.data = "History Records";
+    // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
+    this.popupTable.open(PopCommonDocTableComponent, dialogConfig);
+
+
+
 
   }
 

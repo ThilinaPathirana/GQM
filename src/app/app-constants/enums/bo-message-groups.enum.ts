@@ -6,5 +6,6 @@
 export enum BoMessageGroups {
 	Authentication = 1,
 	Register = 3,
-  Scope = 15
+  Scope = 15,
+  DocumentMeta = 16,
 }

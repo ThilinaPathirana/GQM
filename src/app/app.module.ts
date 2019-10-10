@@ -29,7 +29,10 @@ import {BackOfficeService} from "./app-backend/bo/back-office.service";
 import {CacheAtService} from "./app-backend/cache/cache-at.service";
 import {AjaxService} from "./app-backend/communication/ajax/ajax.service";
 import {CacheRequestAtGenerator} from "./app-backend/cache/cache-request-generator-at";
-import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import {ScopeDataStore} from "./app-backend/data-stores/scope-data-store";
+import {DocumentListDataStore} from "./app-backend/data-stores/document-list-data-store";
+import {DocumentHistoryDataStore} from "./app-backend/data-stores/document-history-data-store";
+// import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 
 
 
@@ -55,7 +58,7 @@ import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
     PolicyModule,
     PerfectScrollbarModule,
     ChartModule,
-    MultiSelectModule,
+    // MultiSelectModule,
 
   ],
   providers: [
@@ -70,6 +73,9 @@ import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
     CacheAtService,
     AjaxService,
     CacheRequestAtGenerator,
+    ScopeDataStore,
+    DocumentListDataStore,
+    DocumentHistoryDataStore,
 
   ],
   bootstrap: [AppComponent]

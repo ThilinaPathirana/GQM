@@ -5,14 +5,14 @@ import { IncidentComplainNoteRoutingModule } from './incident-complain-note-rout
 import { CompaninHandlingComponent } from './companin-handling/companin-handling.component';
 import { CompaninHandlingLayoutComponent } from './companin-handling-layout/companin-handling-layout.component';
 import {FormsModule} from "@angular/forms";
-import {MultiSelectModule} from "@syncfusion/ej2-angular-dropdowns";
+// import {MultiSelectModule} from "@syncfusion/ej2-angular-dropdowns";
 
 @NgModule({
   imports: [
     CommonModule,
     IncidentComplainNoteRoutingModule,
     FormsModule,
-    MultiSelectModule,
+    // MultiSelectModule,
   ],
   declarations: [CompaninHandlingComponent, CompaninHandlingLayoutComponent]
 })

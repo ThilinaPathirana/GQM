@@ -7,13 +7,27 @@ import {BackOfficeRequestHandler} from "../communication/ajax/bo-request-handler
 import {Channels} from "../../app-constants/enums/channels.enum";
 import {LoggerService} from "../../app-utils/logger.service";
 import {DataService} from "../communication/data.service";
+import {ScopeDataStore} from "../data-stores/scope-data-store";
+import {RequestTypes} from "../../app-constants/enums/request-types.enum";
+import {DocumentListDataStore} from "../data-stores/document-list-data-store";
+import {ResponseMsgTypes} from "../../app-constants/enums/response-msg-types.enum";
+import {DocumentHistoryDataStore} from "../data-stores/document-history-data-store";
+import {Subject} from "rxjs";
 
 
 @Injectable()
 export class BackOfficeService {
 
+  private msgGroup;
+  private msgType;
   private response;
-  constructor(private cache: CacheAtService, private loggerService: LoggerService, private dataService: DataService) {
+  private _addDocSubject$ = new Subject<string>();
+  constructor(private cache: CacheAtService,
+              private loggerService: LoggerService,
+              private dataService: DataService,
+              private documentListDataStore: DocumentListDataStore,
+              private documentHistoryDataStore: DocumentHistoryDataStore,
+              private scopeDataStore: ScopeDataStore) {
     this.getResponse();
 
   }
@@ -36,6 +50,43 @@ export class BackOfficeService {
     )
   }
 
+  public requestData(requestType: number, data: any): void {
+    switch (requestType) {
+      case RequestTypes.documentMeta: {
+        this.msgGroup = BoMessageGroups.DocumentMeta;
+        this.msgType = BoMessageTypes.DocumentMeta;
+        break;
+      }
+      case RequestTypes.documentHistory:{
+        this.msgGroup = BoMessageGroups.DocumentMeta;
+        this.msgType = BoMessageTypes.DocumentHistory;
+        break;
+      }
+
+    }
+
+
+
+    this.getBackOfficeData(
+      this.msgGroup,
+      this.msgType,
+      {EXT_FILTER: "",
+        PAGE: 1},
+      ATCacheTypes.NET,
+    )
+  }
+
+  public addData(data: any): void {
+    this.getBackOfficeData(
+      BoMessageGroups.DocumentMeta,
+      BoMessageTypes.AddDocument,
+      data,
+      ATCacheTypes.NET,
+    )
+
+
+  }
+
   public viewScope(data): void {
     this.getBackOfficeData(
       BoMessageGroups.Scope,
@@ -49,11 +100,34 @@ export class BackOfficeService {
   public getResponse():any{
     this.dataService.getAjaxResponseSteam().subscribe(data=> {
       if(data){
-        this.response = data;
+        const msgType = data.response.HED.MSG_TYP;
+        const msgGrp = data.response.HED.MSG_GRP;
+        const responseData = data.response.DAT;
+        switch (msgGrp) {
+
+          case BoMessageGroups.DocumentMeta : {
+            switch (msgType) {
+              case ResponseMsgTypes.DocumentList:{
+                this.documentListDataStore.updateDocumentList(responseData);
+                break;
+              }
+              case ResponseMsgTypes.DocHistory:{
+                this.documentHistoryDataStore.updateDocumentHistoryStore(responseData);
+                break;
+              }
+              case ResponseMsgTypes.AddDocument:{
+                this._addDocSubject$.next(data.response.DAT.ACT_STATUS);
+              }
+            }
+          }
+
+        }
       }
-    })
+    });
     return true;
   }
+
+
 
 	/**
 	 * Generate back office ajax request and send request using caching service
@@ -105,4 +179,8 @@ export class BackOfficeService {
 		};
 		return this.cache.ajaxGet(this.cache.generateGetATRequest(cacheRequest));   // for ajax
 	}
+
+  get addDocSubject$(): Subject<string> {
+    return this._addDocSubject$;
+  }
 }

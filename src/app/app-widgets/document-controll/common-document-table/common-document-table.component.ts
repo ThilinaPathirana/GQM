@@ -8,6 +8,7 @@ import {DocumentUploaderPopupComponent} from '../document-uploader-popup/documen
 import {TemplatePortal} from '@angular/cdk/portal';
 import {fromEvent, Subscription} from 'rxjs';
 import {ContextMenuComponent, ContextMenuService} from 'ngx-contextmenu';
+import {DocumentListDataStore} from "../../../app-backend/data-stores/document-list-data-store";
 
 @Component({
   selector: 'app-common-document-table',
@@ -16,20 +17,35 @@ import {ContextMenuComponent, ContextMenuService} from 'ngx-contextmenu';
 })
 export class CommonDocumentTableComponent implements OnInit {
 
-  @Input() public rowData = [];
+  public rowData = [];
   @Input() columnDefs = [];
   @Input() tableType;
   public openPdf = false;
   private gridApi;
   private gridColumnApi;
+  private $subscription: Subscription;
 
 
   constructor(
+    private documentListDataStore: DocumentListDataStore,
 
     public popupPdf: MatDialog,
     ) { }
 
   ngOnInit() {
+    this.columnDefs = [
+      {headerName: 'Document ID', field: 'DOC_ID', Width:100, cellClass: 'text-center'},
+      {headerName: 'Doc ref# GTS', field: 'DOC_REF_NO_GTS', Width:100, cellClass: 'text-center' },
+      {headerName: 'Doc ref# Factory', field: 'DOC_REF_NO_FACTORY', Width:100, cellClass: 'text-center'},
+      {headerName: 'Factory', field: 'DOC_FACTORY', Width:100, cellClass: 'text-center' },
+      {headerName: 'Created Date', field: 'DOC_CREATED_DATE', Width:100, cellClass: 'text-center' },
+      {headerName: 'Last Update', field: 'DOC_LAST_UPDATE_DATE', Width:100, cellClass: 'text-center'},
+      {headerName: 'Valid From', field: 'DOC_VALID_FROM', Width:100, cellClass: 'text-center'},
+      {headerName: 'Status', field: 'DOC_STATUS',Width:100, cellClass: 'text-center' }
+    ];
+    this.$subscription = this.documentListDataStore.docListDataStoreUpdate$.subscribe(data=>{
+      this.rowData = this.documentListDataStore.documentList;
+    })
   }
 
   public rowClick(event: any) {

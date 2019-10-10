@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
+import {Subscription} from "rxjs";
+import {ScopeDataStore} from "../../../app-backend/data-stores/scope-data-store";
 
 @Component({
   selector: 'app-mgts1',
@@ -22,13 +24,21 @@ export class Mgts1Component implements OnInit {
   public product = '';
   public service = '';
 
-  public addScopeData = {}
+  public addScopeData = {};
+  public scopeData;
+  private $subscription :Subscription;
+
 
   constructor(
     private boService: BackOfficeService,
+    private scopeDataStore: ScopeDataStore,
   ) { }
 
   ngOnInit() {
+    this.$subscription = this.scopeDataStore.scopeStoreUpdate$.subscribe(data=>{
+      this.scopeData = this.scopeDataStore.scopeData;
+      const x = 10;
+    })
   }
 
   addButtonClick(): void{

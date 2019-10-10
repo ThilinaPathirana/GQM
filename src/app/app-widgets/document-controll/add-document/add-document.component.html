@@ -10,6 +10,12 @@
     </div>
 
     <div class="row form-group">
+      <label class="col-2 bold text-sm-left">Document Ref#</label>
+      <input class="col-10 form-control" type="text" placeholder="Enter Document Ref#" name="system"
+             [(ngModel)]="docRefNum" required>
+    </div>
+
+    <div class="row form-group">
       <label class="col-2 bold text-sm-left">Scope</label>
       <select class="col-2">
         <option value="QA">QA</option>
@@ -21,57 +27,57 @@
              [(ngModel)]="scopeComment" required>
     </div>
 
-    <div class="row form-group">
-      <label class="col-2 bold text-sm-left">Document Summary</label>
-      <textarea class="col-10" rows="8" cols="100"> </textarea>
+    <div class="row">
+      <div class="col-2">
+        <button style="width: 100%" class="btn btn-lg btn-info" (click)="linkDoc()">Generate ID</button>
+      </div>
+      <div class="col-2">
+        <input class="form-control" type="text" placeholder="Generated ID" name="system"
+               [(ngModel)]="scopeComment" required>
+      </div>
     </div>
 
-    <div class="form-group">
-      <div class="row">
-      <label class="col-2 bold text-sm-left">Point To Follow</label>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <div id="dropFileForm">
+          <input type="file" name="files[]" id="fileInput" (change)="addFiles($event)">
+
+          <label for="fileInput" id="fileLabel" (dragover)="overrideDefault($event);" (dragenter)="overrideDefault($event);" (dragleave)="overrideDefault($event);" (drop)="overrideDefault($event);
+        addFiles($event);">
+            <i class="fa fa-download fa-5x"></i>
+            <br>
+            <label>{{FileLabeltext}}</label>
+            <br>
+            <span id="uploadStatus"></span>
+          </label>
+
+          <button class="uploadButton" (click)="uploadaws()">Upload</button>
+        </div>
       </div>
+      <div class="col-3"></div>
 
-      <div class="row">
-        <div class="col-12" *ngFor="let item of pointToFollowItems; let i = index">
+    </div>
 
-          <div class="row">
+      <!--<div class="row">-->
+        <!--<div class="col-12">-->
+          <!--<div class="row">-->
+            <!--<div class="col-10">-->
 
-            <!--<div class="col-12">-->
-
-            <div class="col-10 follow-ups">
-              <li (click)="selectItem(i)">{{item.data}}</li>
-            </div>
-
-            <div *ngIf="item.isSelected" class="col-2">
-              <button style="width: 100%" class="btn btn-lg btn-info remove-button" (click)="removeItem(i)">Remove</button>
-            </div>
-
+              <!--<input type="text" placeholder="Enter new point" class="form-control" name="newItem"-->
+                     <!--[(ngModel)]="newValue" required>-->
             <!--</div>-->
-          </div>
 
-        </div>
-
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <div class="row">
-            <div class="col-10">
-
-              <input type="text" placeholder="Enter new point" class="form-control" name="newItem"
-                     [(ngModel)]="newValue" required>
-            </div>
-
-            <div class="col-2">
-              <button style="width: 100%" class="btn btn-lg btn-info" (click)="addItem()">Add Item</button>
-            </div>
+            <!--<div class="col-2">-->
+              <!--<button style="width: 100%" class="btn btn-lg btn-info" (click)="addItem()">Add Item</button>-->
+            <!--</div>-->
 
 
-          </div>
-        </div>
-      </div>
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
 
-    </div>
+    <!--</div>-->
 
     <div class="row form-group">
       <label class="col-2">Linked Documents</label>
@@ -97,6 +103,10 @@
       </div>
       </div>
     </div>
+
+  </div>
+  <div class="row">
+    <button style="width: 100%" class="btn btn-lg btn-info" (click)="addDoc()">Upload a New Document</button>
 
   </div>
 
