@@ -8,9 +8,16 @@ import {MAT_DIALOG_DATA} from '@angular/material';
 })
 export class DialogPopupComponent implements OnInit {
 
+  public headerStyle = ''
+
   constructor(@Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
+    if(this.data.type === 'error'){
+      this.headerStyle = 'error'
+    } else{
+      this.headerStyle = 'success'
+    }
   }
 
 }

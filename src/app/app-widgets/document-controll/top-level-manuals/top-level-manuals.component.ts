@@ -23,7 +23,7 @@ export class TopLevelManualsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.boService.requestData(RequestTypes.documentMeta,null);
+    this.boService.requestData(RequestTypes.documentMeta,"DC_TYPE='T'");
 
 
 

@@ -9,6 +9,7 @@ import {TemplatePortal} from '@angular/cdk/portal';
 import {fromEvent, Subscription} from 'rxjs';
 import {ContextMenuComponent, ContextMenuService} from 'ngx-contextmenu';
 import {DocumentListDataStore} from "../../../app-backend/data-stores/document-list-data-store";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-common-document-table',
@@ -28,6 +29,7 @@ export class CommonDocumentTableComponent implements OnInit {
 
   constructor(
     private documentListDataStore: DocumentListDataStore,
+    private router: Router,
 
     public popupPdf: MatDialog,
     ) { }
@@ -96,6 +98,11 @@ export class CommonDocumentTableComponent implements OnInit {
     dialogConfig.data = '';
     // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
     this.popupPdf.open(DocumentUploaderPopupComponent, dialogConfig);
+
+  }
+
+  public openDocumentUploadPage():void{
+    this.router.navigateByUrl('gts/DocumentControl/addDoc');
 
   }
 

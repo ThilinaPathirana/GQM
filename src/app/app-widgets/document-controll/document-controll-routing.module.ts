@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: '', component: TopLevelManualsComponent, outlet: 'outlet1'},
 ]
 },
-  {path: 'Procedures', component: AddDocumentComponent ,
+  {path: 'Procedures', component: DocumetControlLayoutComponent ,
     children: [
       {path: '', component: ProceduresComponent, outlet: 'outlet1'},
     ]
@@ -36,6 +36,11 @@ const routes: Routes = [
   {path: 'WorkInstructions', component: DocumetControlLayoutComponent ,
     children: [
       {path: '', component: WorkInstructionsComponent, outlet: 'outlet1'},
+    ]
+  },
+  {path: 'addDoc', component: DocumetControlLayoutComponent ,
+    children: [
+      {path: '', component: AddDocumentComponent, outlet: 'outlet1'},
     ]
   },
 ];

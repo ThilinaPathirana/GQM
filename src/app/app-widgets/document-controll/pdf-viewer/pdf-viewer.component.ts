@@ -6,6 +6,7 @@ import {AprovalPopupComponent} from "../aproval-popup/aproval-popup.component";
 import {DocStatusConst} from "../../../app-constants/consts/doc-status-const";
 import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 import {RequestTypes} from "../../../app-constants/enums/request-types.enum";
+import {PopupTableTypes} from "../../../app-constants/enums/popup-table-type.enum";
 
 const Headers = {topLevel: "Top Level Manual-", procedure: "Procedures-", production:"Production Records-",
 workInst: "Work Instruction-", masterList:"Master List-"};
@@ -32,10 +33,10 @@ export class PdfViewerComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.pdfSrc = "http://maingtsbuc.s3-website.us-east-2.amazonaws.com/AG_2018_141.pdf";
+    this.pdfSrc = "https://gtsdatabucket.s3.us-east-2.amazonaws.com/Documents/"+ this.data.columnData.DOC_ID+".pdf";
     this.createHeader();
     const columnData = this.data.columnData;
-    this.setData(columnData.status,columnData.valid_from);
+    this.setData(columnData.DOC_STATUS,columnData.valid_from);
   }
 
   public createHeader():void{
@@ -55,17 +56,25 @@ export class PdfViewerComponent implements OnInit {
     else if(this.data.tableType === DocumentControlType.MasterList){
       this.header = Headers.masterList;
     }
-    this.header += this.data.columnData.category + "-" + this.data.columnData.doc_id
+    this.header += this.data.columnData.DOC_ID
 
   }
 
   public setData( docStatus:any, docValidFrom:any):void {
-    this.docStatus = docStatus;
+
+    if(docStatus==="0"){
+      this.docStatus = DocStatusConst.Not_reviewed;
+    }
+    else if(docStatus==="1"){
+      this.docStatus = DocStatusConst.QE_reviewed;
+    }
+
     this.docValidFrom = docValidFrom;
     this.setCurrentStatusStyle();
   }
 
   public clickList():void{
+
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.autoFocus = true;
@@ -73,7 +82,7 @@ export class PdfViewerComponent implements OnInit {
     dialogConfig.width = '60%';
     dialogConfig.height = '90%';
     dialogConfig.maxHeight = '10000px';
-    dialogConfig.data = this.header;
+    dialogConfig.data = {header:this.header, tableType: PopupTableTypes.linkedList,data: this.data.columnData.DOC_LINKED_DOCS};
     // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
     this.popupTable.open(PopCommonDocTableComponent, dialogConfig);
 
@@ -81,7 +90,9 @@ export class PdfViewerComponent implements OnInit {
 
   public clickHistory(): void{
 
-    this.boService.requestData(RequestTypes.documentHistory,"");
+    const queryString = "DOCUMENT_ID="+ "'"+ this.data.columnData.DOC_ID + "'";
+
+    this.boService.requestData(RequestTypes.documentHistory,queryString);
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.autoFocus = true;
@@ -89,7 +100,7 @@ export class PdfViewerComponent implements OnInit {
     dialogConfig.width = '60%';
     dialogConfig.height = '90%';
     dialogConfig.maxHeight = '10000px';
-    dialogConfig.data = "History Records";
+    dialogConfig.data = {header:"History Records", tableType: PopupTableTypes.history};
     // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
     this.popupTable.open(PopCommonDocTableComponent, dialogConfig);
 

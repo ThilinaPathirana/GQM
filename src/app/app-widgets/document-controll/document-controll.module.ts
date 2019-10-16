@@ -37,6 +37,7 @@ import { ViewDocumentComponent } from './view-document/view-document.component';
     FormsModule,
     ContextMenuModule,
     CommonWidgetsModule,
+
     // MultiSelectModule,
 
 

@@ -21,7 +21,8 @@ export class BackOfficeService {
   private msgGroup;
   private msgType;
   private response;
-  private _addDocSubject$ = new Subject<string>();
+  private _addDocSubject$ = new Subject<number>();
+  private _generateIDSubject$ = new Subject<string>();
   constructor(private cache: CacheAtService,
               private loggerService: LoggerService,
               private dataService: DataService,
@@ -70,21 +71,28 @@ export class BackOfficeService {
     this.getBackOfficeData(
       this.msgGroup,
       this.msgType,
-      {EXT_FILTER: "",
-        PAGE: 1},
+      {EXT_FILTER: data,
+        PAGE: 0},
       ATCacheTypes.NET,
     )
   }
 
-  public addData(data: any): void {
+  public generateID(data: any): void {
     this.getBackOfficeData(
       BoMessageGroups.DocumentMeta,
-      BoMessageTypes.AddDocument,
+      BoMessageTypes.generateID,
       data,
       ATCacheTypes.NET,
     )
+  }
 
-
+  public addEditDoc(data: any): void {
+    this.getBackOfficeData(
+      BoMessageGroups.DocumentMeta,
+      BoMessageTypes.AddDoc,
+      data,
+      ATCacheTypes.NET,
+    )
   }
 
   public viewScope(data): void {
@@ -115,8 +123,13 @@ export class BackOfficeService {
                 this.documentHistoryDataStore.updateDocumentHistoryStore(responseData);
                 break;
               }
-              case ResponseMsgTypes.AddDocument:{
+              case ResponseMsgTypes.GenerateID:{
+                this._generateIDSubject$.next(data.response.DAT.KEY);
+                break;
+              }
+              case ResponseMsgTypes.AddDoc: {
                 this._addDocSubject$.next(data.response.DAT.ACT_STATUS);
+                break;
               }
             }
           }
@@ -180,7 +193,11 @@ export class BackOfficeService {
 		return this.cache.ajaxGet(this.cache.generateGetATRequest(cacheRequest));   // for ajax
 	}
 
-  get addDocSubject$(): Subject<string> {
+  get addDocSubject$(): Subject<number> {
     return this._addDocSubject$;
+  }
+
+  get generateIDSubject$(): Subject<string> {
+    return this._generateIDSubject$;
   }
 }

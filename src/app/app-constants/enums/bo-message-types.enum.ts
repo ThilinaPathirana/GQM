@@ -15,6 +15,7 @@ export enum BoMessageTypes {
   View_Scope = 1,
   DocumentMeta = 1,
   DocumentHistory = 5,
-  AddDocument = 2,
+  generateID = 2,
+  AddDoc = 4,
 
 }

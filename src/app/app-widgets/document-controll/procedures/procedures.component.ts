@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DocumentControlType} from '../../../app-constants/enums/document-control-type.enum';
+import {RequestTypes} from "../../../app-constants/enums/request-types.enum";
+import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 
 @Component({
   selector: 'app-procedures',
@@ -12,9 +14,13 @@ export class ProceduresComponent implements OnInit {
   public columnDefs = [];
   public tableType = DocumentControlType.Procedures;
 
-  constructor() { }
+  constructor(
+    private boService: BackOfficeService
+  ) { }
 
   ngOnInit() {
+
+    this.boService.requestData(RequestTypes.documentMeta,"DC_TYPE='P'");
 
     this.columnDefs = [
       {headerName: 'Document ID', field: 'doc_id', Width:100, cellClass: 'text-center'},

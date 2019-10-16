@@ -10,7 +10,7 @@ import {DialogPopupComponent} from '../../app-widgets/common-widgets/dialog-popu
 export class UploadService {
 
   public upStatusAWS: boolean;
-    public FOLDER = 'cv/';
+    public FOLDER = 'Documents/';
     public errorMsg = {header: 'Upload Status !!!', content: 'Successfully Updated!!'};
   constructor(public dialog: MatDialog) { }
 

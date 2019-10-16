@@ -1,9 +1,10 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {DialogPopupComponent} from "../../common-widgets/dialog-popup/dialog-popup.component";
 import {UploadService} from "../../../app-backend/services/upload.service";
-import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material";
+import { MatDialog,} from "@angular/material";
 import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 import {Subscription} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-document',
@@ -12,18 +13,16 @@ import {Subscription} from "rxjs";
 })
 export class AddDocumentComponent implements OnInit {
 
-  public docType = "Procedure";
-  public docName = "";
-  public docRefNum = "";
-  public scopeComment = "";
+  public docType = "T";
+  public docName;
+  public docRefNum;
+  public scopeComment;
   public pointToFollowItems = [];
   public newValue = null;
   public newLinkedDocID;
   public newLinkedDocComnt;
-  public linkedDocs = [{Id: "1234", comment: "hfwjrgwrgkwrgkjhgwhfjgjg"}, {
-    Id: "1234",
-    comment: "hfwjrgwrgkwrgkjhgwhfjgjg"
-  }];
+  public scope;
+  public linkedDocs = [];
 
   public AWSUpStatus: boolean;
   public dropFileForm = document.getElementById('dropFileForm');
@@ -32,19 +31,20 @@ export class AddDocumentComponent implements OnInit {
   public fileInput = document.getElementById('fileInput');
   public droppedFiles;
 
-  public errorMsg = {header: 'Upload Status', content: 'Successfully Updated!!'};
-  public successMsg = {header: 'Upload Status', content: 'Something Went Wrong!!'};
+  public errorMsg = {header: 'Error', content: 'Successfully Updated!!', type: 'error'};
+  public successMsg = {header: 'Success', content: 'Something Went Wrong!!', type: 'success'};
   public isKeyGeneratePressed = false;
   private subscription$: Subscription;
   private renamedFile: File;
-  public generatedId = "px123";
+  public generatedId;
 
   constructor(
     // @Inject(MAT_DIALOG_DATA)data: any,
     // private dialogRef: MatDialogRef<AddDocumentComponent>,
     private uploadService: UploadService,
     private boService : BackOfficeService,
-    // public dialog: MatDialog
+    private router: Router,
+    public dialog: MatDialog
   ) {
   }
 
@@ -106,40 +106,94 @@ export class AddDocumentComponent implements OnInit {
     this.FileLabeltext = files[0].name;
   }
 
-  uploadaws() {
+  uploadaws(): boolean {
     let file = this.droppedFiles.item(0);
-    file._name = "aa123.pdf";
-    this.renamedFile = new File([file],"qq123.pdf",{type: file.type})
-
+    this.renameFile(file);
     this.FileLabeltext = 'uploading......';
+    let uploadStatus = false;
     if (this.uploadService.uploadfileaws(this.renamedFile)) {
-      const x = 1;
-      //   this.dialog.open(DialogPopupComponent, { data: this.successMsg , panelClass: 'custom-dialog-container'});
+      uploadStatus = true;
+        // this.dialog.open(DialogPopupComponent, { data: this.successMsg , panelClass: 'custom-dialog-container'});
       // } else {
       //   this.dialog.open(DialogPopupComponent, { data: this.errorMsg , panelClass: 'custom-dialog-container'});
       // }
-      this.FileLabeltext = 'Choose a file or drag it here';
+      // this.FileLabeltext = 'Choose a file or drag it here';
+    }
+    return uploadStatus;
+  }
+
+  private renameFile(file: File): void {
+    const fileType = file.name.split(".")[1];
+    const renamedFileName = this.generatedId + "." + fileType;
+    this.renamedFile = new File([file],renamedFileName,{type: file.type})
+  }
+
+  public addDoc(): void {
+
+    let linkedDocString = '';
+
+    for (let doc of this.linkedDocs){
+      linkedDocString = linkedDocString + doc.Id + "|" + doc.comment + ",";
     }
 
-  }
-  public addDoc(): void {
     const data =  {
-      "DOC_ID": "4",
-      "DOC_REF_NO_FACTORY":"34563r",
+      "DOC_ID": this.generatedId,
+      "DOC_NAME": this.docName,
+      "DOC_REF_NO_FACTORY": this.docRefNum,
       "DOC_FACTORY": "Badulla",
-      "DOC_REF_NO_GTS": "GTS56787",
       "DOC_STATUS":"0",
-      "DOC_TYPE":"1"
+      "DOC_ACTION": "ADD",
+      "DOC_TYPE": this.docType,
+      "DOC_SCOPE": this.scope,
+      "DOC_SCOPE_COMMENT": this.scopeComment,
+      "DOC_LINKED_DOCS":linkedDocString,
     };
-    this.boService.addData(data);
-    this.uploadaws();
-    this.subscription$ = this.boService.addDocSubject$.subscribe(data=>{
-      const status = data;
-    })
 
+    if(!this.isKeyGeneratePressed){
+      this.errorMsg.content = 'please Generate Document ID';
+      this.dialog.open(DialogPopupComponent,{data:this.errorMsg, panelClass:'custom-dialog-container'})
+    }
 
+    else if(!this.docName || !this.docRefNum || ! this.scope || !this.scopeComment){
+      this.errorMsg.content = 'Please Fill all the Fields';
+      this.dialog.open(DialogPopupComponent,{data:this.errorMsg, panelClass:'custom-dialog-container'})
+    }
+    else if(!this.droppedFiles){
+      this.errorMsg.content = 'please Add the Document to Upload';
+      this.dialog.open(DialogPopupComponent,{data:this.errorMsg, panelClass:'custom-dialog-container'})
+    }
+
+    else{
+      this.boService.addEditDoc(data);
+      const pdfStatus = this.uploadaws();
+      this.subscription$ = this.boService.addDocSubject$.subscribe(data=>{
+        const dataStatus = data;
+
+        if (dataStatus === 1){
+          this.successMsg.content = 'Your Document Uploaded Successfully!!!';
+          this.dialog.open(DialogPopupComponent,{data:this.successMsg, panelClass:'custom-dialog-container'})
+          this.router.navigateByUrl('gts/DocumentControl/MasterList');
+
+        }
+        else if (dataStatus === -1) {
+          this.errorMsg.content = 'Document Upload Failed';
+          this.dialog.open(DialogPopupComponent,{data:this.errorMsg, panelClass:'custom-dialog-container'})
+        }
+      })
+
+    }
   }
+
   public generateDocId(): void{
     this.isKeyGeneratePressed = true;
+    const data = {
+        "DOC_TYPE": this.docType,
+    };
+
+    this.boService.generateID(data);
+    this.subscription$ = this.boService.generateIDSubject$.subscribe(data=>{
+      const key = data;
+      this.generatedId = key;
+    })
   }
 }

@@ -1,6 +1,6 @@
 <div class="col-12 card">
 <div class="h1 col-12 text-sm-center header-topic">
-  Add New {{docType}} Document
+  Add New Document
 </div>
   <div class="col-12 mr-5">
     <div class="row form-group">
@@ -11,13 +11,20 @@
 
     <div class="row form-group">
       <label class="col-2 bold text-sm-left">Document Ref#</label>
-      <input class="col-10 form-control" type="text" placeholder="Enter Document Ref#" name="system"
+      <input class="col-3 form-control" type="text" placeholder="Enter Document Ref#" name="system"
              [(ngModel)]="docRefNum" required>
+      <label class="col-2 bold text-sm-center">Document Type</label>
+      <select [(ngModel)]="docType" class="col-3">
+        <option value="T">Top Level Manual</option>
+        <option value="P">Procedure</option>
+        <option value="W">Work Instruction</option>
+        <option value="R">Production Record</option>
+      </select>
     </div>
 
     <div class="row form-group">
       <label class="col-2 bold text-sm-left">Scope</label>
-      <select class="col-2">
+      <select [(ngModel)]="scope" class="col-2">
         <option value="QA">QA</option>
         <option value="Management">Management</option>
         <option value="Audit">Audit</option>
@@ -44,7 +51,7 @@
         </div>
 
         <div class="col-2">
-          <p class="bold" style="color: #0b893f">{{generatedId}} </p>
+          <p class="bold" style="color: #0b893f; font-size: larger">{{generatedId}} </p>
         </div>
     </div>
 
@@ -116,7 +123,7 @@
     </div>
 
   </div>
-  <div class="row">
+  <div *ngIf="isKeyGeneratePressed" class="row">
     <button style="width: 100%" class="btn btn-lg btn-info" (click)="addDoc()">Upload a New Document</button>
 
   </div>

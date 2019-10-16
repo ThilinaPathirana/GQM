@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DocumentControlType} from "../../../app-constants/enums/document-control-type.enum";
+import {RequestTypes} from "../../../app-constants/enums/request-types.enum";
+import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 
 @Component({
   selector: 'app-production-record',
@@ -12,9 +14,12 @@ export class ProductionRecordComponent implements OnInit {
   public columnDefs = [];
   public tableType = DocumentControlType.ProductionRecords;
 
-  constructor() { }
+  constructor(
+    private boService: BackOfficeService
+  ) { }
 
   ngOnInit() {
+    this.boService.requestData(RequestTypes.documentMeta,"DC_TYPE='R'");
 
 
     this.columnDefs = [
