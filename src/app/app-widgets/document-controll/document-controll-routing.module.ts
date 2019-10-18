@@ -10,6 +10,7 @@ import {ProductionRecordComponent} from "./production-record/production-record.c
 import {WorkInstructionsComponent} from "./work-instructions/work-instructions.component";
 import {MasterListComponent} from "./master-list/master-list.component";
 import {AddDocumentComponent} from "./add-document/add-document.component";
+import {EditDocumentComponent} from "./edit-document/edit-document.component";
 
 
 const routes: Routes = [
@@ -41,6 +42,11 @@ const routes: Routes = [
   {path: 'addDoc', component: DocumetControlLayoutComponent ,
     children: [
       {path: '', component: AddDocumentComponent, outlet: 'outlet1'},
+    ]
+  },
+  {path: 'editDoc/:id', component: DocumetControlLayoutComponent ,
+    children: [
+      {path: '', component: EditDocumentComponent, outlet: 'outlet1'},
     ]
   },
 ];

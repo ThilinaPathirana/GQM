@@ -37,7 +37,7 @@ export class CommonDocumentTableComponent implements OnInit {
   ngOnInit() {
     this.columnDefs = [
       {headerName: 'Document ID', field: 'DOC_ID', Width:100, cellClass: 'text-center'},
-      {headerName: 'Doc ref# GTS', field: 'DOC_REF_NO_GTS', Width:100, cellClass: 'text-center' },
+      {headerName: 'Doc Name', field: 'DOC_NAME', Width:100, cellClass: 'text-center' },
       {headerName: 'Doc ref# Factory', field: 'DOC_REF_NO_FACTORY', Width:100, cellClass: 'text-center'},
       {headerName: 'Factory', field: 'DOC_FACTORY', Width:100, cellClass: 'text-center' },
       {headerName: 'Created Date', field: 'DOC_CREATED_DATE', Width:100, cellClass: 'text-center' },

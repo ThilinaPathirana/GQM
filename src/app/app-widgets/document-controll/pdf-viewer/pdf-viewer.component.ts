@@ -7,6 +7,7 @@ import {DocStatusConst} from "../../../app-constants/consts/doc-status-const";
 import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 import {RequestTypes} from "../../../app-constants/enums/request-types.enum";
 import {PopupTableTypes} from "../../../app-constants/enums/popup-table-type.enum";
+import {Router} from "@angular/router";
 
 const Headers = {topLevel: "Top Level Manual-", procedure: "Procedures-", production:"Production Records-",
 workInst: "Work Instruction-", masterList:"Master List-"};
@@ -30,6 +31,7 @@ export class PdfViewerComponent implements OnInit {
     private dialogRef: MatDialogRef<PdfViewerComponent>,
     public popupTable : MatDialog,
     private boService: BackOfficeService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -134,6 +136,10 @@ export class PdfViewerComponent implements OnInit {
     else{
       this.docStatusStyle = "manager-approved";
     }
+  }
+
+  public clickEditDocument(): void {
+    this.router.navigate(['gts/DocumentControl/editDoc',this.data.columnData.DOC_ID]);
   }
 
 }

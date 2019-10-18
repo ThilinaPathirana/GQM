@@ -1,0 +1,131 @@
+<div class="col-12 card">
+  <div class="h1 col-12 text-sm-center header-topic">
+    Edit {{docID}} Document
+  </div>
+  <div class="col-12 mr-5">
+    <div class="row form-group">
+      <label class="col-2 bold text-sm-left">Document Name</label>
+      <input class="col-10 form-control" type="text" placeholder="Enter Document Name here.." name="system"
+             [(ngModel)]="docName" required>
+    </div>
+
+    <div class="row form-group">
+      <label class="col-2 bold text-sm-left">Document Ref#</label>
+      <input class="col-3 form-control" type="text" placeholder="Enter Document Ref#" name="system"
+             [(ngModel)]="docRefNum" required>
+      <!--<label class="col-2 bold text-sm-center">Document Type</label>-->
+      <!--<select [(ngModel)]="docType" class="col-3">-->
+        <!--<option value="T">Top Level Manual</option>-->
+        <!--<option value="P">Procedure</option>-->
+        <!--<option value="W">Work Instruction</option>-->
+        <!--<option value="R">Production Record</option>-->
+      <!--</select>-->
+    </div>
+
+    <div class="row form-group">
+      <label class="col-2 bold text-sm-left">Scope</label>
+      <select [(ngModel)]="scope" class="col-2">
+        <option value="QA">QA</option>
+        <option value="Management">Management</option>
+        <option value="Audit">Audit</option>
+        <option value="Labour">Labour</option>
+      </select>
+      <input class="col-8 form-control" type="text" placeholder="Enter the Comment here.." name="system"
+             [(ngModel)]="scopeComment" required>
+    </div>
+
+    <!--<div *ngIf="!isKeyGeneratePressed" class="row mt-5 mb-5">-->
+
+      <!--<div class="col-2">-->
+        <!--<button style="width: 100%; background: green" class="btn btn-lg btn-info" (click)="generateDocId()">Generate ID</button>-->
+      <!--</div>-->
+      <!--<div class="col-8">-->
+        <!--<p style="color: #0b893f; font-weight: bold">Click this button to generate Document ID</p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div *ngIf="isKeyGeneratePressed" class="row mt-5 mb-5">-->
+
+      <!--<div class="col-2">-->
+        <!--<p class="bold">Generated ID : </p>-->
+      <!--</div>-->
+
+      <!--<div class="col-2">-->
+        <!--<p class="bold" style="color: #0b893f; font-size: larger">{{generatedId}} </p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6" [matTooltip]="'If you add a document, it will replace the previous document'">
+        <div id="dropFileForm">
+          <input type="file" name="files[]" id="fileInput" (change)="addFiles($event)">
+
+          <label for="fileInput" id="fileLabel" (dragover)="overrideDefault($event);" (dragenter)="overrideDefault($event);" (dragleave)="overrideDefault($event);" (drop)="overrideDefault($event);
+        addFiles($event);">
+            <i class="fa fa-download fa-5x"></i>
+            <br>
+            <label>{{FileLabeltext}}</label>
+            <br>
+            <span id="uploadStatus"></span>
+          </label>
+
+          <!--<button class="uploadButton" (click)="uploadaws()">Upload</button>-->
+        </div>
+      </div>
+      <div class="col-3"></div>
+
+    </div>
+
+    <!--<div class="row">-->
+    <!--<div class="col-12">-->
+    <!--<div class="row">-->
+    <!--<div class="col-10">-->
+
+    <!--<input type="text" placeholder="Enter new point" class="form-control" name="newItem"-->
+    <!--[(ngModel)]="newValue" required>-->
+    <!--</div>-->
+
+    <!--<div class="col-2">-->
+    <!--<button style="width: 100%" class="btn btn-lg btn-info" (click)="addItem()">Add Item</button>-->
+    <!--</div>-->
+
+
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--</div>-->
+
+    <div class="row form-group mt-5">
+      <label class="col-2 bold">Linked Documents</label>
+      <div class="col-10">
+        <div *ngFor="let doc of linkedDocs; let i = index;">
+          <div class="row">
+            <div class="col-2 text-sm-center">{{doc.Id}}</div>
+            <div class="col-10 text-sm-center">{{doc.comment}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <input type="text" placeholder="document ID" class="form-control" name="newItem"
+                   [(ngModel)]="newLinkedDocID" required>
+          </div>
+          <div class="col-9">
+            <input type="text" placeholder="enter the comment here" class="form-control" name="newItem"
+                   [(ngModel)]="newLinkedDocComnt" required>
+          </div>
+          <div class="col-1">
+            <button style="width: 100%" class="btn btn-lg btn-info" (click)="linkDoc()">Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <button style="width: 100%" class="btn btn-lg btn-info" (click)="saveDoc()">Save Document</button>
+
+  </div>
+
+</div>

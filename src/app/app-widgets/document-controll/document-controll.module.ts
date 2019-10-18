@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgGridModule } from 'ag-grid-angular';
-
+import {MatTooltipModule} from '@angular/material/tooltip'
 import { DocumentControllRoutingModule } from './document-controll-routing.module';
 import { CommonDocumentTableComponent } from './common-document-table/common-document-table.component';
 import { TopLevelManualsComponent } from './top-level-manuals/top-level-manuals.component';
@@ -24,6 +24,7 @@ import { AprovalPopupComponent } from './aproval-popup/aproval-popup.component';
 import { MasterListComponent } from './master-list/master-list.component';
 import { AddDocumentComponent } from './add-document/add-document.component';
 import { ViewDocumentComponent } from './view-document/view-document.component';
+import { EditDocumentComponent } from './edit-document/edit-document.component';
 
 
 @NgModule({
@@ -37,13 +38,14 @@ import { ViewDocumentComponent } from './view-document/view-document.component';
     FormsModule,
     ContextMenuModule,
     CommonWidgetsModule,
+    MatTooltipModule,
 
     // MultiSelectModule,
 
 
   ],
   declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent,
-    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent, AprovalPopupComponent, MasterListComponent, AddDocumentComponent, ViewDocumentComponent],
+    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent, AprovalPopupComponent, MasterListComponent, AddDocumentComponent, ViewDocumentComponent, EditDocumentComponent],
   exports: [
     CommonDocumentTableComponent,
     PdfViewerComponent,
