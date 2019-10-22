@@ -64,12 +64,7 @@ export class PdfViewerComponent implements OnInit {
 
   public setData( docStatus:any, docValidFrom:any):void {
 
-    if(docStatus==="0"){
-      this.docStatus = DocStatusConst.Not_reviewed;
-    }
-    else if(docStatus==="1"){
-      this.docStatus = DocStatusConst.QE_reviewed;
-    }
+    this.docStatus = this.data.columnData.DOC_STATUS;
 
     this.docValidFrom = docValidFrom;
     this.setCurrentStatusStyle();
@@ -120,9 +115,10 @@ export class PdfViewerComponent implements OnInit {
     dialogConfig.width = '50%';
     dialogConfig.height = '50%';
     dialogConfig.maxHeight = '10000px';
-    dialogConfig.data = {currentStatus: this.docStatus};
+    dialogConfig.data = {currentStatus: this.docStatus, docID: this.data.columnData.DOC_ID};
     // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
     this.popupTable.open(AprovalPopupComponent, dialogConfig);
+    this.dialogRef.close();
 
   }
 
@@ -140,6 +136,7 @@ export class PdfViewerComponent implements OnInit {
 
   public clickEditDocument(): void {
     this.router.navigate(['gts/DocumentControl/editDoc',this.data.columnData.DOC_ID]);
+    this.dialogRef.close();
   }
 
 }

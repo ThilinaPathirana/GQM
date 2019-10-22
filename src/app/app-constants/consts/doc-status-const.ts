@@ -1,5 +1,5 @@
 export const DocStatusConst = {
-  Not_reviewed : "Reviewed",
-    QE_reviewed : "QE Approved",
-    Manager_reviewed : "Manager Approved"
+    Not_reviewed : "Draft",
+    QE_reviewed : "Reviewed",
+    Manager_reviewed : "Approved"
 };

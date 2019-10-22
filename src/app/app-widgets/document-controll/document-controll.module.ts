@@ -8,7 +8,7 @@ import { TopLevelManualsComponent } from './top-level-manuals/top-level-manuals.
 import { DocumetControlLayoutComponent } from './documet-control-layout/documet-control-layout.component';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
 import {PdfViewerModule} from 'ng2-pdf-viewer';
-import {MatDialogModule} from '@angular/material';
+import {MatDialogModule, MatIconModule} from '@angular/material';
 import { WorkInstructionsComponent } from './work-instructions/work-instructions.component';
 import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import { DocumentUploaderPopupComponent } from './document-uploader-popup/document-uploader-popup.component';
@@ -39,6 +39,7 @@ import { EditDocumentComponent } from './edit-document/edit-document.component';
     ContextMenuModule,
     CommonWidgetsModule,
     MatTooltipModule,
+    MatIconModule,
 
     // MultiSelectModule,
 

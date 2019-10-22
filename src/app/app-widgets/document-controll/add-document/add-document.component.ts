@@ -5,6 +5,7 @@ import { MatDialog,} from "@angular/material";
 import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
+import {DocStatusConst} from "../../../app-constants/consts/doc-status-const";
 
 @Component({
   selector: 'app-add-document',
@@ -141,7 +142,7 @@ export class AddDocumentComponent implements OnInit {
       "DOC_NAME": this.docName,
       "DOC_REF_NO_FACTORY": this.docRefNum,
       "DOC_FACTORY": "Mirigama",
-      "DOC_STATUS":"0",
+      "DOC_STATUS":DocStatusConst.Not_reviewed,
       "DOC_ACTION": "ADD",
       "DOC_TYPE": this.docType,
       "DOC_SCOPE": this.scope,

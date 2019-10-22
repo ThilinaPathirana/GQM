@@ -10,15 +10,15 @@
       <!--Valid from : {{docValidFrom}}-->
     <!--</div>-->
     <div class="col-4">
-      <button style="width: 100%" class="btn btn-lg btn-info" [ngClass]="docStatusStyle">{{docStatus}}</button>
+      <button style="width: 100%" class="btn btn-lg btn-info" (click)="showApprovalPopup()" [ngClass]="docStatusStyle">{{docStatus}}</button>
     </div>
 
       <div class="col-2">
-        <button style="width: 100%" class="btn btn-lg btn-info" (click)="clickEditDocument()">Edit Document</button>
+        <button style="width: 100%" class="btn btn-lg btn-info" (click)="clickEditDocument()">Edit Doc.</button>
       </div>
 
     <div class="col-2">
-      <button style="width: 100%" class="btn btn-lg btn-info" (click)="clickList()">Linked docs</button>
+      <button style="width: 100%" class="btn btn-lg btn-info" (click)="clickList()">Linked Docs</button>
     </div>
       <div class="col-2">
         <button style="width: 100%" class="btn btn-lg btn-info" (click)="clickHistory()">History</button>
