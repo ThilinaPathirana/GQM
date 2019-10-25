@@ -14,12 +14,18 @@
       <input class="col-3 form-control" type="text" placeholder="Enter Document Ref#" name="system"
              [(ngModel)]="docRefNum" required>
       <label class="col-2 bold text-sm-center">Document Type</label>
-      <select [(ngModel)]="docType" class="col-3">
+      <div *ngIf="!isKeyGeneratePressed" class="col-3">
+      <select [(ngModel)]="docType" class="col-12">
         <option value="T">Top Level Manual</option>
         <option value="P">Procedure</option>
         <option value="W">Work Instruction</option>
         <option value="R">Production Record</option>
       </select>
+      </div>
+
+      <div *ngIf="isKeyGeneratePressed" class="col-3">
+        {{docTypeLable}}
+      </div>
     </div>
 
     <div class="row form-group">
@@ -36,7 +42,7 @@
 
     <div *ngIf="!isKeyGeneratePressed" class="row mt-5 mb-5">
 
-      <div class="col-2">
+      <div class="col-2" [matTooltip]="'Select correct document type before generate the key'">
         <button style="width: 100%; background: green" class="btn btn-lg btn-info" (click)="generateDocId()">Generate ID</button>
       </div>
       <div class="col-8">
@@ -57,7 +63,7 @@
 
     <div class="row">
       <div class="col-3"></div>
-      <div class="col-6">
+      <div class="col-6" [matTooltip]="'Select PDF to Upload'">
         <div id="dropFileForm">
           <input type="file" name="files[]" id="fileInput" (change)="addFiles($event)">
 
@@ -124,7 +130,7 @@
 
   </div>
   <div *ngIf="isKeyGeneratePressed" class="row">
-    <button style="width: 100%" class="btn btn-lg btn-info" (click)="addDoc()">Upload a New Document</button>
+    <button style="width: 100%" class="btn btn-lg btn-info" (click)="addDoc()">Upload the Created Document</button>
 
   </div>
 

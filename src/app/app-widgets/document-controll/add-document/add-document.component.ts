@@ -6,6 +6,7 @@ import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
 import {DocStatusConst} from "../../../app-constants/consts/doc-status-const";
+import {DocTypemapping} from "../../../app-constants/consts/doc-type-mapping";
 
 @Component({
   selector: 'app-add-document',
@@ -31,6 +32,7 @@ export class AddDocumentComponent implements OnInit {
   public uploadStatus = document.getElementById('uploadStatus');
   public fileInput = document.getElementById('fileInput');
   public droppedFiles;
+  public docTypeLable;
 
   public errorMsg = {header: 'Error', content: 'Successfully Updated!!', type: 'error'};
   public successMsg = {header: 'Success', content: 'Something Went Wrong!!', type: 'success'};
@@ -100,7 +102,14 @@ export class AddDocumentComponent implements OnInit {
 
   addFiles(event) {
     this.droppedFiles = event.target.files || event.dataTransfer.files;
-    this.showFiles(this.droppedFiles);
+    if(this.droppedFiles[0].type === "application/pdf"){
+      this.showFiles(this.droppedFiles);
+    } else {
+      this.errorMsg.content = 'File must be in PDF format';
+      this.dialog.open(DialogPopupComponent,{data:this.errorMsg, panelClass:'custom-dialog-container'});
+      this.droppedFiles.pop();
+    }
+
   }
 
   showFiles(files) {
@@ -124,7 +133,7 @@ export class AddDocumentComponent implements OnInit {
   }
 
   private renameFile(file: File): void {
-    const fileType = file.name.split(".")[1];
+    const fileType = file.name.split(".")[file.name.split(".").length-1];
     const renamedFileName = this.generatedId + "." + fileType;
     this.renamedFile = new File([file],renamedFileName,{type: file.type})
   }
@@ -187,6 +196,7 @@ export class AddDocumentComponent implements OnInit {
 
   public generateDocId(): void{
     this.isKeyGeneratePressed = true;
+    this.docTypeMapping();
     const data = {
         "DOC_TYPE": this.docType,
     };
@@ -196,5 +206,27 @@ export class AddDocumentComponent implements OnInit {
       const key = data;
       this.generatedId = key;
     })
+  }
+  private docTypeMapping(): void{
+
+    switch (this.docType) {
+      case "T":{
+        this.docTypeLable = DocTypemapping.T;
+        break
+      }
+      case "P":{
+        this.docTypeLable = DocTypemapping.P;
+        break
+      }
+      case "W":{
+        this.docTypeLable = DocTypemapping.W;
+        break
+      }
+      case "R":{
+        this.docTypeLable = DocTypemapping.R;
+        break
+      }
+
+    }
   }
 }
