@@ -129,7 +129,7 @@
     </div>
 
   </div>
-  <div *ngIf="isKeyGeneratePressed" class="row">
+  <div *ngIf="isKeyGeneratePressed && generatedId" class="row">
     <button style="width: 100%" class="btn btn-lg btn-info" (click)="addDoc()">Upload the Created Document</button>
 
   </div>
