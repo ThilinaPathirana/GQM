@@ -8,4 +8,5 @@ export enum BoMessageGroups {
 	Register = 3,
   Scope = 15,
   DocumentMeta = 16,
+  Email = 14,
 }

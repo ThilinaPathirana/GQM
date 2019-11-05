@@ -8,6 +8,7 @@ import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 import {RequestTypes} from "../../../app-constants/enums/request-types.enum";
 import {PopupTableTypes} from "../../../app-constants/enums/popup-table-type.enum";
 import {Router} from "@angular/router";
+import {CommentDialogBoxComponent} from "../comment-dialog-box/comment-dialog-box.component";
 
 const Headers = {topLevel: "Top Level Manual-", procedure: "Procedures-", production:"Production Records-",
 workInst: "Work Instruction-", masterList:"Master List-"};
@@ -137,6 +138,22 @@ export class PdfViewerComponent implements OnInit {
   public clickEditDocument(): void {
     this.router.navigate(['gts/DocumentControl/editDoc',this.data.columnData.DOC_ID]);
     this.dialogRef.close();
+  }
+
+  public clickComment(): void{
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    // dialogConfig.width = '50%';
+    // dialogConfig.height = '25%';
+    dialogConfig.maxHeight = '10000px';
+    dialogConfig.data = {docID: this.data.columnData.DOC_ID};
+    // dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop()
+    this.popupTable.open(CommentDialogBoxComponent, dialogConfig);
+    this.dialogRef.close();
+
   }
 
 }

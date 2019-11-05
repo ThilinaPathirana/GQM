@@ -17,5 +17,6 @@ export enum BoMessageTypes {
   DocumentHistory = 5,
   generateID = 2,
   AddDoc = 4,
+  AddComment = 3,
 
 }

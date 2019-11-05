@@ -39,7 +39,7 @@ const routes: Routes = [
       {path: '', component: WorkInstructionsComponent, outlet: 'outlet1'},
     ]
   },
-  {path: 'addDoc', component: DocumetControlLayoutComponent ,
+  {path: 'addDoc/:docType', component: DocumetControlLayoutComponent ,
     children: [
       {path: '', component: AddDocumentComponent, outlet: 'outlet1'},
     ]

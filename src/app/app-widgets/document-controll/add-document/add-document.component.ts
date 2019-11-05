@@ -4,7 +4,7 @@ import {UploadService} from "../../../app-backend/services/upload.service";
 import { MatDialog,} from "@angular/material";
 import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
 import {Subscription} from "rxjs";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {DocStatusConst} from "../../../app-constants/consts/doc-status-const";
 import {DocTypemapping} from "../../../app-constants/consts/doc-type-mapping";
 
@@ -47,8 +47,12 @@ export class AddDocumentComponent implements OnInit {
     private uploadService: UploadService,
     private boService : BackOfficeService,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private route: ActivatedRoute,
   ) {
+    this.docType = this.route.snapshot.paramMap.get('docType');
+
+
   }
 
   ngOnInit() {
@@ -229,4 +233,5 @@ export class AddDocumentComponent implements OnInit {
 
     }
   }
+
 }

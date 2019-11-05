@@ -20,14 +20,14 @@ export const routes: Routes = [
       // //   path: 'WorkInstructions',
       // //   loadChildren: './app-widgets/work-instr/work-instr.module#WorkInstrModule',
       // // },
-      // {
-      //   path: 'Scope',
-      //   loadChildren: './app-widgets/scope/scope.module#ScopeModule',
-      // },
-      // {
-      //   path: 'policy',
-      //   loadChildren: './app-widgets/policy/policy.module#PolicyModule',
-      // },
+      {
+        path: 'Scope',
+        loadChildren: './app-widgets/scope/scope.module#ScopeModule',
+      },
+      {
+        path: 'policy',
+        loadChildren: './app-widgets/policy/policy.module#PolicyModule',
+      },
       // {
       //   path: 'Training',
       //   loadChildren: './app-widgets/training/training.module#TrainingModule',

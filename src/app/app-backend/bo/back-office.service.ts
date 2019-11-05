@@ -51,6 +51,15 @@ export class BackOfficeService {
     )
   }
 
+  public sendCommentEmail(data): void {
+    this.getBackOfficeData(
+      BoMessageGroups.Email,
+      BoMessageTypes.AddComment,
+      data,
+      ATCacheTypes.NET
+    )
+  }
+
   public requestData(requestType: number, data: any): void {
     switch (requestType) {
       case RequestTypes.documentMeta: {

@@ -25,6 +25,7 @@ import { MasterListComponent } from './master-list/master-list.component';
 import { AddDocumentComponent } from './add-document/add-document.component';
 import { ViewDocumentComponent } from './view-document/view-document.component';
 import { EditDocumentComponent } from './edit-document/edit-document.component';
+import { CommentDialogBoxComponent } from './comment-dialog-box/comment-dialog-box.component';
 
 
 @NgModule({
@@ -46,13 +47,13 @@ import { EditDocumentComponent } from './edit-document/edit-document.component';
 
   ],
   declarations: [CommonDocumentTableComponent, TopLevelManualsComponent, DocumetControlLayoutComponent, PdfViewerComponent, WorkInstructionsComponent,
-    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent, AprovalPopupComponent, MasterListComponent, AddDocumentComponent, ViewDocumentComponent, EditDocumentComponent],
+    DocumentUploaderPopupComponent, ProceduresComponent, ProductionRecordComponent, PopCommonDocTableComponent, AprovalPopupComponent, MasterListComponent, AddDocumentComponent, ViewDocumentComponent, EditDocumentComponent, CommentDialogBoxComponent],
   exports: [
     CommonDocumentTableComponent,
     PdfViewerComponent,
     WorkInstructionsComponent,
   ],
-  entryComponents: [PdfViewerComponent, DocumentUploaderPopupComponent, PopCommonDocTableComponent, DialogPopupComponent, AprovalPopupComponent],
+  entryComponents: [PdfViewerComponent, DocumentUploaderPopupComponent, PopCommonDocTableComponent, DialogPopupComponent, AprovalPopupComponent, CommentDialogBoxComponent],
   providers: [PdfViewerComponent, PopCommonDocTableComponent]
 
 })

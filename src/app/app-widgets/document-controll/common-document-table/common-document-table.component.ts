@@ -10,6 +10,7 @@ import {fromEvent, Subscription} from 'rxjs';
 import {ContextMenuComponent, ContextMenuService} from 'ngx-contextmenu';
 import {DocumentListDataStore} from "../../../app-backend/data-stores/document-list-data-store";
 import {Router} from "@angular/router";
+import {DocTypeReverseMappings} from "../../../app-constants/consts/doc-type-reverse-mappings";
 
 @Component({
   selector: 'app-common-document-table',
@@ -102,7 +103,32 @@ export class CommonDocumentTableComponent implements OnInit {
   }
 
   public openDocumentUploadPage():void{
-    this.router.navigateByUrl('gts/DocumentControl/addDoc');
+    let tableTypeString;
+    switch (this.tableType) {
+      case (1):{
+        tableTypeString = DocTypeReverseMappings.TopLevelManual;
+        break;
+      }
+      case (2):{
+        tableTypeString = DocTypeReverseMappings.Procedure;
+        break;
+      }
+      case (3):{
+        tableTypeString = DocTypeReverseMappings.ProductionRecords;
+        break;
+      }
+      case (4):{
+        tableTypeString = DocTypeReverseMappings.WorkInstructions;
+        break;
+      }
+      case (5):{
+        tableTypeString = DocTypeReverseMappings.TopLevelManual;
+        break;
+      }
+
+
+    }
+    this.router.navigate(['gts/DocumentControl/addDoc', tableTypeString]);
 
   }
 
