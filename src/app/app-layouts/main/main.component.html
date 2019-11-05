@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="text-left hidden-xs-down">
-       <img src="assets/images/logo.png" width="90" height="39" alt="" class="main-logo">
+       <img src="assets/images/gtslogo.png" width="90" height="39" alt="" class="main-logo">
         <!--<div class="h1 text-sm-center">-->
           <!--GTS Active-->
         <!--</div>-->
@@ -31,7 +31,7 @@
       <mat-toolbar class="hidden-lg-down">
         <div class="flex opacity-min hidden-md-down">
           <div class="col-9">
-            <img src="assets/images/logo.png" width="160" height="45" alt="" class="main-logo">
+            <img src="assets/images/gtslogo.png" width="160" height="45" alt="" class="main-logo">
             <!--<div class="text-sm-center main-logo" style="font-size: larger;margin-top: 5px;">-->
               <!--GTS Active-->
             <!--</div>-->
@@ -62,7 +62,7 @@
                 <li class="nav-item has-sub-items" (click)="panelButtonClicked(item, false)" *ngIf="!item.subItems" [class.active]="item?.active" [tabindex]="i">
                   <input id={{item.config.tooltips}} type="checkbox" (change)="menuItemSelected($event)" /> <!--Tooltip is used as a unique id. Change this if it's oddd-->
                   <label class="nav-item-group-lbl" for={{item.config.tooltips}}>
-                    <a class="nav-link p-3 flex space-between flex-item-center" routerLink={{item.config.url}} routerLinkActive="active">
+                    <a class=" p-3 flex space-between flex-item-center" routerLink={{item.config.url}} routerLinkActive="active">
                       <i ngClass={{item.config.icon}} class="align-middle pr-2 pl-2 sub-nav-item-icon" [matTooltip]="item.config.tooltips"
                          matTooltipPosition="after"></i>
                       <span class="lblmenu">{{item.config.tooltips}}</span>

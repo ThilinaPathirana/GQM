@@ -156,4 +156,8 @@ export class PdfViewerComponent implements OnInit {
 
   }
 
+  public closeDialog(): void {
+    this.dialogRef.close();
+  }
+
 }

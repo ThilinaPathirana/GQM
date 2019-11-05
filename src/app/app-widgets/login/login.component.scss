@@ -187,10 +187,12 @@
 
 .theme1{
 	.login_bg {
-		background: $theme1-login-bg-color;
+		//background: $theme1-login-bg-color;
+    background: #094E06;
 	}
 	.login_bg .login_wrapper {
-		background: $theme1-login-bg-color;
+		//background: $theme1-login-bg-color;
+    background: #094E06;
 	}
 	.mat-form-field-invalid .mat-form-field-label.mat-float .mat-placeholder-required, .mat-form-field-label, .mat-form-field-label, .mat-form-field-invalid .mat-form-field-label, a {
 		color: black;
@@ -266,7 +268,8 @@
 	}
 
 	.login-page-blue{
-		background-color: $theme1-login-page-bg-color;
+		//background-color: $theme1-login-page-bg-color;
+    background: #0E3E0D;
 	}
 
 	.live-demo-area{
@@ -297,7 +300,8 @@
 	}
 
 	.login-button {
-		background: $theme1-login-btn-bg-color;
+		//background: $theme1-login-btn-bg-color;
+    background: #148A10;
 		color: $theme1-login-btn-text-color;
 		line-height: 0 !important;
 		padding: 16px 16px !important;
