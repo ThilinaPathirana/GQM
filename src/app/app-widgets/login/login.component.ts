@@ -74,9 +74,9 @@ export class LoginComponent {
 
       // Do Authenticate
       this.disableLoginButton = true;
-      this.responseMessage = 'Authenticating....';
+      this.rejectReason = 'Authenticating....';
 
-      // this.authenticateUser();
+      this.authenticateUser();
     }
   }
 
@@ -98,7 +98,7 @@ export class LoginComponent {
   private validateUserInputs(): boolean {
     if (this.userName === '' || this.password === '') {
       this.disableLoginButton = false;
-      this.responseMessage = 'Enter Username & Password';
+      this.rejectReason = 'Enter Username & Password';
       return false;
     }
 
@@ -114,7 +114,9 @@ export class LoginComponent {
     this.boAuthService.getAuthStatus().subscribe(msg => {
       if ( msg.isAuthenticated ) {
 
-        this.router.navigateByUrl('welcome');
+        this.router.navigateByUrl('gts/DocumentControl/MasterList');
+      } else {
+        this.rejectReason = 'Incorrect Username or Password';
       }
     });
 

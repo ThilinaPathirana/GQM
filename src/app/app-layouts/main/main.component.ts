@@ -68,6 +68,10 @@ export class MainComponent {
     }
   }
 
+  public logout(): void {
+    this.routerr.navigateByUrl( 'login');
+  }
+
   public panelButtonClicked(item?: any, isMainNav?: boolean): void {
     // TODO: [Amila] review and do below change only for mobiles
     // if (item && item.config && !item.config.url) {

@@ -7,8 +7,8 @@ import {Subscription} from "rxjs";
 import {DialogPopupComponent} from "../../common-widgets/dialog-popup/dialog-popup.component";
 import {Router} from "@angular/router";
 
-const USER = 'gtsadmin';
-const PWD = 'gts123';
+const USER = 'GTSQA100';
+const PWD = 'Manchiee100';
 @Component({
   selector: 'app-aproval-popup',
   templateUrl: './aproval-popup.component.html',

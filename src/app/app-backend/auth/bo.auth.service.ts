@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import {AjaxService} from '../communication/ajax/ajax.service';
 import {DataService} from '../communication/data.service';
+import {Md5} from 'ts-md5';
 
 interface AuthStatus {
 	isAuthenticated: boolean;
@@ -37,12 +38,12 @@ export class BackOfficeAuthService {
 		// create back-office login request
 		const loginData = {
 			UN: username,
-			PWD: password.toString(),
+			PWD: Md5.hashStr(password.toString()),
 		};
 		this.currentUser = loginData;
 		const authRequest = BackOfficeRequestHandler.getRequest(
 			BoMessageGroups.Authentication,
-			BoMessageTypes.LoginST,
+			BoMessageTypes.Login,
 			loginData,
 			ATCacheTypes.NET,
 			false,

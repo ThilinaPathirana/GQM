@@ -1,9 +1,9 @@
 {
   "buildParams": {
     "buildFlavour": "global",
-    "customization": "AT.MFG.MFS",
+    "customization": "GTS",
     "patchNumber": "",
-    "version": "1.2345"
+    "version": "1"
   },
   "connectionConfig": {
     "bo": {
@@ -17,7 +17,7 @@
     "uat": "UA-102995758-2"
   },
   "customizationConfigs": {
-    "callCenterPhone": "+94 11 7 680580",
-    "callCenterEmail": "app.support@mubasher.net"
+    "callCenterPhone": "+94 76 777 1827",
+    "callCenterEmail": "info@gtsactivegroup.com"
   }
 }
