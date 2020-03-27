@@ -1,0 +1,17 @@
+.manager-approved{
+  background: #0c9801;
+}
+.qe-approved{
+  background: #c69500;
+}
+.not-reviwed{
+  background: red;
+}
+.current-status{
+  color: white;
+}
+.current-status-bar{
+  height: 30px;
+  margin-right: 30px;
+;
+}

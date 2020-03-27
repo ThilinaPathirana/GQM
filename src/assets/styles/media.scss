@@ -1,0 +1,293 @@
+@import 'mixins/_breakpoints';
+
+// bootstrap sass mixin for media queries
+
+// MEDIA GREATER THAN = mixin 'media-breakpoint-up' supports greater than the value
+// MEDIA LESS THAN = mixin 'media-breakpoint-down' supports lower than the value
+// MEDIA BETWEEN = mixin 'media-breakpoint-only' for targeting a single segment of screen sizes
+
+
+/******************************************* MEDIA GREATER THAN STARTS  ************************************/
+
+@include media-breakpoint-up(xs) { /* extra small devices upto 576px */ }
+@include media-breakpoint-up(sm) { /* 576px and up */ }
+@include media-breakpoint-up(md) { /* 768px and up */ }
+@include media-breakpoint-up(lg) { /* 992px and up */    }
+@include media-breakpoint-up(xl) { /* 1200px and up */
+    .mat-toolbar-single-row {
+        margin-bottom: 0 !important
+    }
+    .min-sidenav {
+        .linear-gauge {
+            display: none !important;
+        }
+        .opacity-min, .opacity-min * {
+            height: 0;
+            transition: all 500ms ease-in-out;
+            padding: 0;
+            margin: 0;
+            -webkit-animation: collapse-opacity 2s 1; /* Safari 4+ */
+            -moz-animation:    collapse-opacity 2s 1; /* Fx 5+ */
+            -o-animation:      collapse-opacity 2s 1; /* Opera 12+ */
+            animation:         collapse-opacity 2s 1; /* IE 10+, Fx 29+ */
+            .main-logo, i {
+                display: none;
+            }
+            .app-version {
+                display: none;
+            }
+        }
+        .mat-toolbar .opacity-max {
+            height: auto;
+            transition: all 500ms ease-in-out;
+            -webkit-animation: expand-opacity 2s 1; /* Safari 4+ */
+            -moz-animation:    expand-opacity 2s 1; /* Fx 5+ */
+            -o-animation:      expand-opacity 2s 1; /* Opera 12+ */
+            animation:         expand-opacity 2s 1; /* IE 10+, Fx 29+ */
+            position: relative;
+            right: 20px;
+            bottom: 15px;
+
+            .menu-button {
+                height: auto;
+                width: 100%;
+                position: relative;
+                top: 15px;
+            }
+        }
+        .nav-actions {
+            display: none;
+        }
+        .mat-toolbar,
+        .mat-toolbar .mat-toolbar-row {
+            // height: 100px !important;
+            // min-height: 100px !important;
+            transition: all 500ms ease-in-out;
+        }
+    }
+    .max-sidenav {
+        .opacity-max, .opacity-max * {
+            height: 0;
+            transition: all 500ms ease-in-out;
+            width: 0;
+            opacity: 0;
+            padding: 0;
+            .menu-button{
+                border-radius: 0;
+                height: 64px;
+            }
+
+        }
+        .opacity-min {
+            height: auto;
+            transition: all 500ms ease-in-out;
+            width: 100%;
+            -webkit-animation: expand-opacity 2s 1; /* Safari 4+ */
+            -moz-animation:    expand-opacity 2s 1; /* Fx 5+ */
+            -o-animation:      expand-opacity 2s 1; /* Opera 12+ */
+            animation:         expand-opacity 2s 1; /* IE 10+, Fx 29+ */
+        }
+        .nav-arrow {
+            display: none;
+        }
+    }
+
+    @-webkit-keyframes expand-opacity {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @-moz-keyframes expand-opacity {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @-o-keyframes expand-opacity {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @keyframes expand-opacity {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @-webkit-keyframes collapse-opacity {
+        0%   { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    @-moz-keyframes collapse-opacity {
+        0%   { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    @-o-keyframes collapse-opacity {
+        0%   { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    @keyframes collapse-opacity {
+        0%   { opacity: 1; }
+        100% { opacity: 0; }
+    }
+}
+
+/******************************************* MEDIA GREATER THAN ENDS  ****************************************/
+/******************************************* MEDIA LESS THAN STARTS  ************************************/
+
+@include media-breakpoint-down(xs) { // less than 576px
+    .global-search {
+        .result-container {
+            width: 100%;
+            right: 0;
+            height: 200px;
+        }
+    }
+}
+@include media-breakpoint-down(sm) { // less than 768px
+    .news-list-wrapper {
+        height: 100%;
+    }
+	.nav-list-wrapper {
+		padding-bottom: 80px;
+	}
+}
+@include media-breakpoint-down(md) { // less than 992px
+    .top-panel {
+        display: none;
+    }
+}
+@include media-breakpoint-down(lg) { // less than 1200px
+    .nav-pills .nav-item a.active {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        margin-left: 0;
+        padding-left: 12px !important;
+    }
+    .mat-toolbar-row .menu-button{
+        width: 60px;
+    }
+    .with-search .report-list-wrapper,
+    .main-outlet .card.order-book-height {
+        height: 100% !important;
+    }
+
+    // Side nav hiding for full view in handheld devices
+
+    .mat-sidenav-container {
+        position: fixed;
+        width: 100%;
+        top: 100px;
+        left: 0;
+
+        .min-sidenav {
+            min-width: 0;
+            width: 0 !important;
+            app-linear-guage, .app-search, .nav-top, .nav-bottom {
+                opacity: 0;
+                transition: 0.3s all;
+            }
+
+            ul li a span, .min-sidenav .name {
+                opacity: 1;
+            }
+
+            .nav-body {
+                display: inline-block;
+                width: 100%;
+                height: calc(100% - 55px);
+                background: $theme1-primary;
+                position: relative;
+                bottom: 0;
+            }
+        }
+        .max-sidenav {
+            width: 210px !important;
+            background-color: $theme1-primary !important;
+            height: calc(100% - 55px);
+
+            app-linear-guage, .app-search, .nav-top, .nav-bottom {
+                opacity: 1;
+                transition: 0.3s all;
+            }
+        }
+        .mat-toolbar {
+            margin-bottom: 0 !important;
+        }
+    }
+    .expand, .shrink {
+        width: 100%;
+    }
+    .opacity-max {
+        display: none;
+    }
+	.ar .opacity-max {
+        display: none!important;
+    }
+    .opacity-min {
+        width: 100%;
+    }
+}
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+/******************************************* MEDIA "LESS THAN" ENDS ************************************/
+
+/******************************************* MEDIA "BETWEEN" STARTS ************************************/
+
+@include media-breakpoint-only(xs) { /* (max-width: 575px) */ }
+@include media-breakpoint-only(sm) { /* (min-width: 576px) and (max-width: 767px) */ }
+@include media-breakpoint-only(md) { /* (min-width: 768px) and (max-width: 991px) */ }
+@include media-breakpoint-only(lg) { /* (min-width: 992px) and (max-width: 1199px) */ }
+@include media-breakpoint-only(xl) { /* (min-width: 1200px) */ }
+
+/******************************************* MEDIA BETWEEN ENDS ************************************/
+
+
+/******************************************* VISIBILITY UTILITIES starts *********************************/
+
+.invisible {
+    visibility: hidden;
+}
+
+// Responsive visibility utility
+
+@each $bp in map-keys($grid-breakpoints) {
+    .hidden-#{$bp}-up {
+        @include media-breakpoint-up($bp) {
+            display: none !important;
+        }
+    }
+    .hidden-#{$bp}-down {
+        @include media-breakpoint-down($bp) {
+            display: none !important;
+        }
+    }
+}
+
+// mini chart hidden utility
+
+@each $bp in map-keys($grid-breakpoints) {
+    .main-outlet .hidden-mini-chart-#{$bp}-up {
+        @include media-breakpoint-up($bp) {
+            display: none !important;
+        }
+    }
+    .main-outlet .hidden-mini-chart-#{$bp}-down {
+        @include media-breakpoint-down($bp) {
+            display: none !important;
+        }
+    }
+}
+
+// advanced chart hidden utility
+
+@each $bp in map-keys($grid-breakpoints) {
+    .hidden-adv-chart-#{$bp}-up {
+        @include media-breakpoint-up($bp) {
+            display: none !important;
+        }
+    }
+    .hidden-adv-chart-#{$bp}-down {
+        @include media-breakpoint-down($bp) {
+            display: none !important;
+        }
+    }
+}
+
+/******************************************* VISIBILITY UTILITIES ends *********************************/

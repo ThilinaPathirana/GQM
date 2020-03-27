@@ -1,0 +1,168 @@
+<div class="h1 col-12 text-sm-center header-topic">
+  Corrective Action Request
+</div>
+
+<div>
+  <div class="col-12">
+
+
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-8">General Details</div>
+          <div class="col-2">
+            <label class="bold text-sm-right">Report No:</label>
+          </div>
+          <div class="col-2">
+            <input type="text" placeholder="Report no" class="form-control" name="docName"
+                   [(ngModel)]="reportNo" required>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-body">
+      <div class="row">
+
+        <div class="col-4">
+          <!--<ejs-multiselect id='multiselectelement'[dataSource]='data' [placeholder]="placeHolder" [popupHeight]='popupHeight' [popupWidth]='popupWidth'></ejs-multiselect>-->
+        </div>
+    <div class="col-4">
+      <!--<div class="card">-->
+
+        <label class="bold text-sm-center">Date</label>
+        <input type="date" placeholder="Document name" class="form-control" name="docName"
+               [(ngModel)]="date" required>
+      <!--</div>-->
+
+    </div>
+
+    <div class="col-4">
+      <!--<div class="card">-->
+        <label class="bold text-sm-center">Place</label>
+        <select class="col-12 mb-md-2">
+          <option value="volvo">Office</option>
+          <option value="saab">Board Room 1</option>
+          <option value="opel">Board Room2</option>
+          <option value="audi">Meeting Room</option>
+        </select>
+      <!--</div>-->
+
+
+    </div>
+    </div>
+      </div>
+  </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="row second-row">
+        <div class="col-3 pad">
+          <label class="bold text-sm-center">Location</label>
+        </div>
+        <div class="col-2">
+          <select class="col-12 mb-md-2">
+            <option value="volvo">General</option>
+            <option value="saab">Office</option>
+            <option value="opel">Workshop</option>
+            <option value="audi">Yard</option>
+            <option value="audi">Outside</option>
+          </select>
+
+        </div>
+        <div class="col-2"></div>
+        <div class="col-2 pad">
+          <label class="bold text-sm-center">Identified As:</label>
+        </div>
+        <div class="col-3">
+          <select class="col-12 mb-md-2">
+            <option value="volvo">Opportunity</option>
+            <option value="saab">Observation</option>
+            <option value="opel">Non Conformity</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-12">
+    <div *ngFor="let item of largeText; let i = index;" class="card">
+    <div class="row large-text-row">
+      <div class="col-2 text-sm-center">
+        <label class="bold text-sm-center">{{item.topic}}</label>
+      </div>
+      <div class="col-10">
+        <textarea [(ngModel)]="item.value" class="col-12" rows="2" cols="100"> </textarea>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-12">
+    <div class="card">
+      <div class="row large-text-row">
+
+        <div class="col-6">
+          <div class="row">
+        <div class="col-8">
+          <label class="bold text-sm-center">Preventive Action</label>
+          <textarea class="col-12" rows="2" cols="100"></textarea>
+        </div>
+        <div class="col-4">
+          <label class="bold text-sm-center">Date to complete</label>
+          <input type="date" placeholder="Document name" class="form-control" name="docName"
+                 [(ngModel)]="preActDate" required>
+        </div>
+          </div>
+      </div>
+
+        <div class="col-6">
+          <div class="row">
+          <div class="col-8">
+            <label class="bold text-sm-center">Communication Method</label>
+            <textarea class="col-12" rows="2" cols="100"></textarea>
+          </div>
+          <div class="col-4">
+            <label class="bold text-sm-center">Date to complete</label>
+            <input type="date" placeholder="Document name" class="form-control" name="docName"
+                   [(ngModel)]="communicationDate" required>
+          </div>
+        </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button style="width: 100%; margin-bottom: 60px;margin-top:10px;" class="btn btn-lg btn-info">Add Record</button>
+
+  </div>
+
+  <!--<div class="col-12">-->
+    <!--<div class="card">-->
+      <!--<div class="row large-text-row">-->
+        <!--<div class="col-2 text-sm-center">-->
+          <!--<label class="bold text-sm-center">Communication Method</label>-->
+        <!--</div>-->
+        <!--<div class="col-8">-->
+          <!--<textarea class="col-12" rows="2" cols="100"></textarea>-->
+        <!--</div>-->
+        <!--<div class="col-2">-->
+          <!--<label class="bold text-sm-center">Date to complete</label>-->
+          <!--<input type="date" placeholder="Document name" class="form-control" name="docName"-->
+                 <!--[(ngModel)]="communicationDate" required>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+</div>
+
+
+
+

@@ -1,0 +1,149 @@
+<div class="h1 col-12 text-sm-center header-topic">
+  MANAGEMENT REVIEW MEETING MINUTES
+</div>
+
+<div class="col-12">
+  <div class="row">
+    <div class="col-4">
+      <div class="card">
+
+      <label class="bold text-sm-center">Date</label>
+      <input type="date" placeholder="Document name" class="form-control" name="docName"
+             [(ngModel)]="date" required>
+      </div>
+
+    </div>
+
+    <div class="col-4">
+      <div class="card">
+
+      <label class="bold text-sm-center">Time</label>
+      <input type="time" placeholder="Document name" class="form-control" name="docName"
+             [(ngModel)]="date" required>
+      </div>
+    </div>
+
+
+    <div class="col-4">
+      <div class="card">
+        <label class="bold text-sm-center">Place</label>
+        <select class="col-12 mb-md-2">
+          <option value="volvo">Office</option>
+          <option value="saab">Board Room 1</option>
+          <option value="opel">Board Room2</option>
+          <option value="audi">Meeting Room</option>
+        </select>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="row participation">
+    <div class="col-12">
+
+      <div class="card">
+        <div class="card-header text-sm-center">Participation</div>
+        <div class="card-body">
+
+
+          <div class="row mb-3" *ngFor="let title of titleList">
+            <div class="col-4">
+              <label class="bold text-sm-center">{{title}}</label>
+            </div>
+
+            <div class="col-4">
+              <!--<ejs-multiselect id='multiselectelement'[dataSource]='data' [placeholder]="placeHolder" [popupHeight]='popupHeight' [popupWidth]='popupWidth'></ejs-multiselect>-->
+            </div>
+
+            <div class="col-4">
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-4 radio">
+                    <input type="radio" name="gender" value="male"> present</div>
+                  <div class="col-4 radio">
+                    <input type="radio" name="gender" value="female"> absent</div>
+                  <div class="col-2"></div>
+                </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+<!--<div class="container">-->
+  <div class="row" *ngFor="let topic of topics; let topicId = index">
+    <div class="col-12">
+    <div class="card">
+
+      <div class="card-header text-sm-center">
+        {{topic.topic}}
+      </div>
+
+      <div class="card-body">
+
+        <div class="row">
+          <div class="col-12" *ngFor="let item of topic.items; let i = index">
+
+            <div class="row">
+
+              <!--<div class="col-12">-->
+
+                <div class="col-10 follow-ups">
+                  <li (click)="selectItem(i,topicId)">{{item.item}}</li>
+                 </div>
+
+                <div *ngIf="item.isSelected" class="col-2">
+                  <button style="width: 100%" class="btn btn-lg btn-info remove-button" (click)="removeItem(i,topicId)">Remove</button>
+                </div>
+
+              <!--</div>-->
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-10">
+
+            <input type="text" placeholder="Enter new point" class="form-control" name="newItem"
+                   [(ngModel)]="topic.newValue" required>
+            </div>
+
+              <div class="col-2">
+                <button style="width: 100%" class="btn btn-lg btn-info" (click)="addItem(topicId)">Add Item</button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <button style="width: 100%; margin-bottom: 60px;" class="btn btn-lg btn-info">Add Record</button>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+<!--</div>-->
+
+
+
+

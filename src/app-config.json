@@ -1,0 +1,23 @@
+{
+  "buildParams": {
+    "buildFlavour": "global",
+    "customization": "GTS",
+    "patchNumber": "",
+    "version": "1"
+  },
+  "connectionConfig": {
+    "bo": {
+      "ajax_url": "http://localhost:8080/gts-back-office/services/gtsServices",
+      "url": "localhost:8080/mfg-back-office",
+      "isSecure": false
+    }
+  },
+  "googleAnalytics": {
+    "prod": "UA-102995758-1",
+    "uat": "UA-102995758-2"
+  },
+  "customizationConfigs": {
+    "callCenterPhone": "+94 76 777 1827",
+    "callCenterEmail": "info@gtsactivegroup.com"
+  }
+}

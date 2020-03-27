@@ -1,0 +1,136 @@
+<div class="col-12 mt-4">
+    <div class="h2 text-sm-center font-weight-bold">
+      Add New Document
+    </div>
+      <div class="col-12 mr-5">
+        <div class="row form-group">
+          <label class="col-2 bold text-sm-left col-form-label">Document Name</label>
+          <input class="col-6 form-control" type="text" placeholder="Enter Document Name here.." name="system"
+                 [(ngModel)]="docName" required>
+        </div>
+        <div class="row form-group">
+          <label class="col-2 bold text-sm-left">Document Ref#</label>
+          <input class="col-3 form-control" type="text" placeholder="Enter Document Ref#" name="system"
+                 [(ngModel)]="docRefNum" required>
+        </div>
+        <div class="row form-group">
+          <label class="col-2 bold text-sm-left">Document Type</label>
+          <div *ngIf="!isKeyGeneratePressed">
+          <select [(ngModel)]="docType" class="form-control">
+            <option value="T">Top Level Manual</option>
+            <option value="P">Procedure</option>
+            <option value="W">Work Instruction</option>
+            <option value="R">Production Record</option>
+          </select>
+          </div>
+          <div *ngIf="isKeyGeneratePressed">
+            {{docTypeLable}}
+          </div>
+        </div>
+    
+        <div class="row form-group">
+          <label class="col-2 bold text-sm-left">Scope</label>
+          <select [(ngModel)]="scope" class="col-2">
+            <option value="QA">QA</option>
+            <option value="Management">Management</option>
+            <option value="Audit">Audit</option>
+            <option value="Labour">Labour</option>
+          </select>
+          <input class="col-8 form-control" type="text" rows="2" placeholder="Enter the Comment here.." name="system"
+                 [(ngModel)]="scopeComment" required>
+        </div>
+    
+        <div *ngIf="!isKeyGeneratePressed" class="row mt-5 mb-5">
+    
+          <div class="col-2" [matTooltip]="'Select correct document type before generate the key'">
+            <button style="width: 100" class="btn btn-lg btn-success" (click)="generateDocId()">Generate ID</button>
+          </div>
+          <div class="col-8">
+            <p style="color: #3fb618; font-weight: bold">Click this button to generate Document ID</p>
+          </div>
+          </div>
+    
+          <div *ngIf="isKeyGeneratePressed" class="row mt-5 mb-5">
+    
+            <div class="col-2">
+              <p class="bold">Generated ID : </p>
+            </div>
+    
+            <div class="col-2">
+              <p class="bold" style="color: #3fb618; font-size: larger">{{generatedId}} </p>
+            </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6" [matTooltip]="'Select PDF to Upload'">
+            <div id="dropFileForm">
+              <input type="file" name="files[]" id="fileInput" (change)="addFiles($event)">
+    
+              <label for="fileInput" id="fileLabel" (dragover)="overrideDefault($event);" (dragenter)="overrideDefault($event);" (dragleave)="overrideDefault($event);" (drop)="overrideDefault($event);
+            addFiles($event);">
+                <i class="fa fa-download fa-5x"></i>
+                <br>
+                <label>{{FileLabeltext}}</label>
+                <br>
+                <span id="uploadStatus"></span>
+              </label>
+    
+              <!--<button class="uploadButton" (click)="uploadaws()">Upload</button>-->
+            </div>
+          </div>
+          <div class="col-3"></div>
+    
+        </div>
+    
+          <!--<div class="row">-->
+            <!--<div class="col-12">-->
+              <!--<div class="row">-->
+                <!--<div class="col-10">-->
+    
+                  <!--<input type="text" placeholder="Enter new point" class="form-control" name="newItem"-->
+                         <!--[(ngModel)]="newValue" required>-->
+                <!--</div>-->
+    
+                <!--<div class="col-2">-->
+                  <!--<button style="width: 100%" class="btn btn-lg btn-info" (click)="addItem()">Add Item</button>-->
+                <!--</div>-->
+    
+    
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+    
+        <!--</div>-->
+    
+        <div class="row form-group mt-5">
+          <label class="col-2 bold">Linked Documents</label>
+          <div class="col-10">
+           <div *ngFor="let doc of linkedDocs; let i = index;">
+             <div class="row">
+               <div class="col-2 text-sm-center">{{doc.Id}}</div>
+               <div class="col-10 text-sm-center">{{doc.comment}}</div>
+             </div>
+           </div>
+          <div class="row">
+          <div class="col-2">
+            <input type="text" placeholder="document ID" class="form-control" name="newItem"
+                   [(ngModel)]="newLinkedDocID" required>
+          </div>
+          <div class="col-8">
+            <input type="text" placeholder="enter the comment here" class="form-control" name="newItem"
+                   [(ngModel)]="newLinkedDocComnt" required>
+          </div>
+            <div class="col-2">
+              <button style="width: 100%" class="btn btn-lg btn-success" (click)="linkDoc()">Link</button>
+            </div>
+          </div>
+          </div>
+        </div>
+    
+      </div>
+      <div *ngIf="isKeyGeneratePressed && generatedId" class="row col-12 mb-5">
+        <button style="width:100%" class="btn btn-lg btn-info" (click)="addDoc()">Upload the Created Document</button>
+    
+      </div>
+    </div>

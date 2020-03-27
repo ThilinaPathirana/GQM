@@ -1,0 +1,423 @@
+/* General Color Variables starts */
+
+$theme2-primary: #000000;
+$theme2-secondary: #000000;
+$theme2-ternary: #000000;
+$theme2-ternary-rgb:rgb(0,0,0);
+$theme2-quaternary:#b1b1b1;
+$theme2-disabled-bg-color:#ececec;
+$theme2-disabled-text-color:#bbbbbb;
+
+$theme2-text-primary: #000000;
+$theme2-text-secondary: #b1b1b1;
+
+$theme2-default-border: rgba(0, 0, 0, 0.125);
+
+$theme2-text-heading: #3d3d3d;
+$theme2-text-sub-heading: #868e96;
+$theme2-heading-bg: #eaedf5;
+
+$theme2-green: #0c9801;
+$theme2-red: #ee0000;
+$theme2-row-stripe: #000000;
+$theme2-focused-gray: #303030;
+$theme2-white: #ffffff;
+$theme2-yellow:#ffd800;
+$theme2-orange:#ff9800;
+$theme2-blue:#2196f3;
+
+$theme2-color-background:#000000;
+$theme2-text-color-main: #ffffff;
+$theme2-text-color-secondary:$theme2-quaternary;
+$theme2-text-color-tertiary:#777777;
+$theme2-text-color-quaternary:#2196f3;
+$theme2-text-color-quinary:#78a6c2;
+
+$theme2-color-green-light-1: #dcffec;
+$theme2-color-green-light-2: #93f4c0;
+$theme2-color-green-light-3: #dcffeb;
+$theme2-color-green-dark: #00ff00;
+
+
+$theme2-color-red-light-1: #ffeded;
+$theme2-color-red-light-2: #ffd1d1;
+$theme2-color-red-light-3: #ffeeee;
+$theme2-color-red-dark: #ff0000;
+
+$theme2-color-no-change:#5bb5e8;
+
+$theme2-color-blue: #5bb5e8;
+$theme2-color-blue-light-1: #e1f4ff;
+
+$theme2-btn-primary-bg-color:#2196f3;
+$theme2-btn-primary-text-color:#ffffff;
+$theme2-btn-secondary-bg-color: transparent;
+$theme2-btn-secondary-text-color: #ffffff;
+
+/* General Color Variables ends */
+
+$theme2-snap-period-wrapper-red-bg-color:#e54f50;
+$theme2-snap-period-wrapper-red-text-color:#ffffff;;
+
+$theme2-snap-period-wrapper-green-bg-color:#0b893f;
+$theme2-snap-period-wrapper-green-text-color:#ffffff;;
+
+$theme2-snap-period-wrapper-no-change-bg-color:#0A4299;
+$theme2-snap-period-wrapper-no-change-text-color:#ffffff;
+$theme2-snap-note-text-color:#a4a4a4;
+$theme2-snap-lbl-1-text-color: #a4a4a4;
+$theme2-snap-lbl-2-text-color: #a4a4a4;
+
+$theme2-market-sum-chart-bg-color:#e6e6e6;
+
+$theme2-h-sep-line-color: #e5e5e5;
+
+$theme2-up-down-slider-row-2-border-color: #fff;
+
+$theme2-chart-mountain-fill-color-1: rgba(144, 202, 248,0.3);
+$theme2-chart-mountain-fill-color-2: rgba(144, 202, 248,0.3);
+$theme2-chart-mountain-stroke-color-1: #1965bc;
+$theme2-chart-color-1:#e040fb;
+$theme2-chart-color-2: #6aa76e;
+$theme2-chart-color-3:#22b1f5;
+$theme2-chart-color-4: #a35dba;
+$theme2-chart-color-5: #fff;
+$theme2-chart-color-6: #fff;
+$theme2-chart-axis-color: #bfbfbf;
+$theme2-chart-grid-color: #f7f7f7;
+$theme2-chart-grid-transparent: transparent;
+
+
+$theme2-widget-primary-bg-color: #000000;
+$theme2-widget-primary-shadow-color: rgba(0, 0, 0,0.1);
+$theme2-widget-primary-text-color: #ffffff;
+
+$theme2-widget-title-text-color:#000;
+$theme2-widget-title-bg-color:#131516;
+$theme2-widget-title-border-color: #b1b1b1;
+
+$theme2-data-table-bg-color:#00000f;
+$theme2-data-table-th-border-color:#dcdcdc;
+$theme2-data-table-th-bg-color:#000000;
+$theme2-data-table-td-border-color:#424242;
+$theme2-data-table-odd-row-bg-color:#000000;
+$theme2-data-table-even-row-bg-color:#090909;
+$theme2-data-table-more-btn-text-color:#fff;
+$theme2-data-table-more-btn-bg-color:#45beec;
+
+$theme2-tbl-cell-bg-green:#ecf5dd;
+$theme2-tbl-cell-bg-red:#ffe5e5;
+
+$theme2-strategies-duration-btn-text-color:#fff;
+$theme2-strategies-duration-btn-bg-color:#45beec;
+$theme2-strategies-duration-btn-active-bg-color:#1c84ac;
+
+$theme2-content-display-box-border-color:#dddddd;
+$theme2-content-display-box-img-border-color:#d6d6d6;
+
+$theme2-btn-green:#299629;
+$theme2-btn-blue:#38d0e8;
+$theme2-back-button-bg-color: transparent;
+$theme2-back-button-text-color: $theme2-primary;
+$theme2-active-button-bg-color:#027dc0;
+
+$theme2-desk-nav-button-bg-color:#fff;
+$theme2-desk-nav-button-text-color:#3d3d3d;
+$theme2-desk-nav-button-border-color:#eaeaea;
+$theme2-desk-nav-button-active-color: $theme2-primary; /**/
+$theme2-desk-nav-button-shadow-color:rgba(0, 0, 0, 0.125);
+
+$table-row-active:rgba(63, 81, 181, 0.18);
+
+$theme2-footer-bg-color:#d2d2d2;
+$theme2-footer-border-color:#ccc;
+$theme2-footer-text-color:#000000;
+
+$theme2-input-text-border-color:#616161;
+$theme2-input-text-color:#b1b1b1;
+$theme2-input-bg-color:transparent;
+$theme2-primary-border-color:#131516;
+$theme2-secondary-border-color:#eaeaea;
+
+$theme2-global-search-bg-color:#fff;
+$theme2-global-search-header-bg-color:#eaedf5;
+$theme2-global-search-border-color:#dddddd;
+$theme2-global-search-input-focus-border-color:#535a72;
+$theme2-global-search-input-focus-box-shadow:0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+$theme2-global-search-item-border-color:#dddddd;
+$theme2-global-search-item-hover-bg-color:#131516;
+$theme2-global-search-item-hover-text-color:#000;
+$theme2-global-search-highlight-bg-color:#D54200;
+$theme2-global-search-highlight-border-color:#D54200;
+$theme2-global-search-highlight-text-color:#fff;
+
+$theme2-sidenav-bg-color:#0F6B18;
+$theme2-sidenav-menu-item-text-color:rgba(255, 255, 255, 0.5);
+$theme2-sidenav-menu-item-bg-color:#fff;
+$theme2-sidenav-menu-item-hover-text-color:#000;
+$theme2-sidenav-menu-item-hover-bg-color:#fafafa;
+$theme2-menu-item-sep-bg-color:rgba(0,0,0,.06);
+
+$theme2-scrollbar-track-bg-color:#eeeeee;
+$theme2-scrollbar-thumb-bg-color:#d8d8d8;
+
+$theme2-mat-ink-bar-border-color:#2196f3;
+
+$theme2-login-bg-color:#02225f;
+$theme2-login-text-color:#fff;
+$theme2-login-input-bg-color:#fff;
+$theme2-login-btn-bg-color:#26a9df;
+$theme2-login-btn-text-color:#fff;
+$theme2-login-btn-disabled-bg-color:rgba(36, 190, 254, 0.3);
+$theme2-login-btn-disabled-text-color:#fff;
+$theme2-login-footer-bg-color:#0e2c68;
+$theme2-login-placeholder-text-color:#6f6f6f;
+
+$theme2-login-tab-text-color:#627ea5;
+$theme2-login-tab-border-color:#24befe;
+$theme2-login-tab-bg-color:#02225f;
+
+$theme2-login-msg-text-color-1:#fa8a8a;
+
+$theme2-primary-chips-bg-color:#81ccb7;
+$theme2-primary-chips-text-color:#fff;
+
+/******************************************** RUBIX COLOR THEMES **************************************************/
+
+/* Bootstrap 4 Mtplus v2 implementation */
+$theme2-nav-bg-color: $theme2-secondary;
+$theme2-nav-side-bg-color: $theme2-primary;
+$theme2-nav-item-active: $theme2-focused-gray;
+$theme2-nav-item-active-color: #2196f3;
+$theme2-nav-item-active-color-text: $theme2-white;
+$theme2-nav-item-color: #fff;
+$theme2-nav-item-icon-color: #7d93be;
+$theme2-nav-item-sep-color:#004c76;
+$theme2-mkt-info-color: $theme2-text-color-main;
+
+$theme2-sidenav-gauge-container-bg-color:#131516;
+$theme2-sidenav-gauge-container-border-color:#123c7a;
+
+$theme2-pagination-bg-color: $theme2-row-stripe;
+$theme2-pagination-border-color:#e7eaec;
+
+$theme2-active-row-border-color:#63c2de;
+$theme2-active-row-bg-color:#001d33;//
+$theme2-tab-header-border-bottom:#dfdfdf;
+
+
+$theme2-active-tab-bg-color:#2196f3;
+$theme2-active-tab-text-color:$theme2-white;
+$theme2-inactive-tab-text-color:$theme2-text-color-main;
+
+$theme2-app-version-box: #131516;
+$theme2-app-version-box-text: #5872a4;
+
+$theme2-chart-inner-legend-bg-color:rgba(0, 0, 0, 0.08);
+$theme2-chart-inner-legend-border-color:#e4e4e4;
+$theme2-chart-inner-legend-item-shadow-color:#ffffff;
+
+$theme2-top-panel-val-text-color:#fff;
+$theme2-top-panel-lbl-text-color:#75a1b5;
+$theme2-app-search-input-text: #6377a1;
+$theme2-top-panel-bg: #131516;
+$theme2-top-panel-red:#ff4c4c;
+$theme2-top-panel-green:#1ec710;
+$theme2-top-panel-input-color: #d0d0d0;
+$theme2-top-panel-input-bg-color: #e6ecf1;;
+$theme2-top-panel-input-border-color: #00253c;
+$theme2-top-panel-input-placeholder: #95b8d5;
+$theme2-exchange-graphic-progress-bg: rgba(0, 0, 0, 0.15);
+$theme2-exchange-graphic-up-bg:#00a258;
+$theme2-exchange-graphic-down-bg:#de4c3a;
+$theme2-exchange-graphic-unch-bg:#04bdea;
+
+$theme2-gauge-slider-row-3: #2ec9d6;
+$theme2-gauge-slider-row-4: $theme2-orange;
+
+$theme2-chart-tool-btn-bg-color:#131516;
+$theme2-chart-tool-btn-text-color:#ffffff;
+$theme2-mob-chart-tool-btn-text-color:#666;
+$theme2-mob-chart-tool-btn-border-color:transparent;
+$theme2-mob-chart-tool-btn-bg-color:transparent;
+
+$theme2-chart-tool-bar-icon-color:#000;
+$theme2-chart-tool-bar-icon-bg-color:transparent;
+$theme2-chart-studies-chip-border-color:#e4e4e4;
+
+$theme2-chart-portfolio-color:#0288D1;
+$theme2-chart-exchange-color: #f46789;
+$theme2-chart-cost-color:#1E88E5;
+$theme2-chart-unrealized-profit-color: #00C853;
+$theme2-chart-unrealized-loss-color: #f42f5b;
+$theme2-chart-symbol-percentage-color: #ff5b62;
+
+$theme2-snack-bar-bg-color:#000;
+
+$theme2-border-color-rta: #636363;
+
+/*--ag-grid overrides start--*/
+
+$theme2-ag-grid-color-header-background: #131516;
+$theme2-ag-grid-color-border-color:#2a2a2a;
+$theme2-ag-grid-color-focus-background:#131516;
+
+
+
+/*--ag-grid overrides end--*/
+
+/*--watch-list start--*/
+
+$theme2-watch-list-green-background:#dcffec;
+$theme2-watch-list-red-background:#ffeded;
+$theme2-watch-list-blue-background:#00113c;
+$theme2-watch-list-blue-text:#7086af;
+$theme2-watch-list-create-button:#7086af;
+$theme2-watch-list-edit-button:#7086af;
+$theme2-watch-list-settings-button:#7086af;
+$theme2-watch-list-set-items-color:#ddd;
+$theme2-watch-list-setting-header-border-color:#c4c4c4;
+$theme2-watchlist-setting-selected-item:#a0d0e0;
+$theme2-dual-row-watchlist-header-bg-color:$theme2-row-stripe;
+$theme2-dual-row-watchlist-text-color:$theme2-text-color-secondary;
+$theme2-watch-list-last-q-bg-color: #e5f1ff;
+$theme2-watch-list-bid-q-bg-color: #e5f6ee;
+$theme2-watch-list-offer-q-bg-color: #fcedeb;
+$theme2-watch-list-mob-turnover-bg-color:#fff9e7;
+$theme2-watch-list-mob-turnover-text-color: #555555;
+$theme2-watch-suspendend-cell-text-color:#cecece;
+$theme2-watch-list-odd-row-background:#555555;
+
+/*--watch-list end--*/
+
+
+/*--top bar highchart start--*/
+
+$theme2-chart-up-fill:rgb(22,49,8);
+$theme2-chart-up-stroke:rgb(121, 206 , 75);
+$theme2-chart-up-tracker-glow:#00a258;
+$theme2-chart-up-tracker-fill:#00a258;
+
+$theme2-chart-down-fill:rgb(94,19,19);
+$theme2-chart-down-stroke:rgb(255, 99 , 132);
+$theme2-chart-down-tracker-glow:#de4c3a;
+$theme2-chart-down-tracker-fill:#de4c3a;
+
+$theme2-chart-nochange-fill:rgb(37,73,107);
+$theme2-chart-nochange-stroke:rgb(124, 181 , 236);
+$theme2-chart-nochange-tracker-glow:#4d9ce9;
+$theme2-chart-nochange-tracker-fill:#4d9ce9;
+
+$theme2-mob-chart-nochange-stroke: #04bdea;
+$theme2-mob-chart-nochange-text: #ffffff;
+
+$theme2-mob-chart-down-stroke: #ff1c1c;
+$theme2-mob-chart-down-text: #ffffff;
+
+$theme2-mob-chart-up-stroke: #0c9801;
+$theme2-mob-chart-up-text: #ffffff;
+
+$theme2-mob-chart-even-row:#f3f3f3;
+
+/*--top bar highchart end--*/
+
+
+/*--material styles start--*/
+
+$theme2-mat-slide-toggle-bar-active-bg-color:rgba(33, 150, 243, 0.4);
+$theme2-mat-slide-toggle-thumb-active-bg-color:$theme2-btn-primary-bg-color;
+
+$theme2-mat-expansion-panel-bg-color:#131516;
+$theme2-mat-expansion-panel-text-color:#d8d8d8;
+$theme2-mat-expansion-panel-header-text-color:$theme2-widget-primary-text-color;
+
+/*--material styles end--*/
+
+/*--infotip start--*/
+$theme2-infotip-bg-color:#04bdea;
+$theme2-infotip-text-color:#000;
+/*--infotip end--*/
+
+/*Research-tab start*/
+$theme2-research-inner-header-color:#f0f8ff;
+/*Research-tab end*/
+
+
+/*--snack-bar start--*/
+$theme2-snack-bar-text-color:#fff;
+/*--isnack-bar start--*/
+
+
+/*Auto-trading start*/
+$theme2-mat-step-label-active:$theme2-btn-primary-bg-color;
+$theme2-mat-step-label:#004267;
+$theme2-auto-trade-border:#dedede;
+$theme2-auto-trade-border-shadow:rgba(0,0,0,0.2);
+/*Auto-trading end*/
+
+/*IOS web start*/
+$theme2-ios-tab-controller:#e8e8e8;
+$theme2-ios-more-widget-color:#585858;
+$theme2-mobile-more-tab:#d8d8d8;
+$theme2-mobile-widget-settings-bg:#d7dadc;
+
+/*IOS web end*/
+
+/*Global search start*/
+$theme2-global-search-result-dots:#3282d7;
+/*Global search end*/
+
+/*Reusable chart colors start*/
+$theme2-reusable-chart-color-0:#16d39a;
+$theme2-reusable-chart-color-1:#48f993;
+$theme2-reusable-chart-color-2:#ff7d4d;
+$theme2-reusable-chart-color-3:#626e82;
+$theme2-reusable-chart-color-4:#00a5a8;
+$theme2-reusable-chart-color-5:#ff4558;
+$theme2-reusable-chart-color-6:#64b5f6;
+$theme2-reusable-chart-color-7:#9575cd;
+$theme2-reusable-chart-color-8:#fffc16;
+$theme2-reusable-chart-color-9:#ffca12;
+$theme2-reusable-chart-color-10:#fafafa;
+$theme2-reusable-chart-color-11:#027dc0;
+$theme2-reusable-chart-color-12:#53d448;
+$theme2-reusable-chart-color-13:#fc6070;
+/*Reusable chart colors end*/
+
+/*Risk color start*/
+$theme2-risk-color-1:#1ec710;
+$theme2-risk-color-2:#48f993;
+$theme2-risk-color-3:#fffc16;
+$theme2-risk-color-4:#f8a910;
+$theme2-risk-color-5:#ff4c4c;
+/*Risk color end*/
+
+/*overview start*/
+$theme2-overview-icon-1-bg:#4db6ac;
+$theme2-overview-icon-2-bg:#4dd0e1;
+$theme2-overview-icon-3-bg:#64b5f6;
+$theme2-overview-icon-4-bg:#9575cd;
+/*overview end*/
+
+/*Store start */
+
+$theme2-overview-table-header-color-1:#7e7e7e;
+$theme2-risk-type-low-bg-color:#e8f5e9;
+$theme2-risk-type-moderate-low-bg-color:#e6fff1;
+$theme2-risk-type-moderate-bg-color:#fffde7;
+$theme2-risk-type-moderate-high-bg-color:#ffe8df;
+$theme2-risk-type-high-bg-color:#ffebee;
+$theme2-risk-type-check-box-selected-bg-color:#e3f2fd;
+
+$theme2-risk-type-low-color:#1ec710;
+$theme2-risk-type-moderate-low-color:#48f993;
+$theme2-risk-type-moderate-color:#fdc400;
+$theme2-risk-type-moderate-high-color:#ff7d4d;
+$theme2-risk-type-high-color:#ff4558;
+$theme2-risk-type-default-color:#027dc0;
+
+/* Store end */
+
+
+/* Store end */
+

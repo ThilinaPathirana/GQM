@@ -1,0 +1,721 @@
+@import 'common-variables';
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    direction: ltr;
+    font-size: 1rem;
+				width: 100vw;
+				height: 100vh;
+}
+
+.bold {
+    font-weight: $font-bold;
+}
+.no-bold {
+    font-weight: 400;
+}
+.md-bold {
+  font-weight: 700;
+}
+
+/* Font weight */
+.font-weight-light{
+	font-weight:$font-weight-light;
+}
+.font-weight-regular{
+	font-weight:$font-weight-regular;
+}
+.ar{
+	.font-weight-regular{
+		font-weight:$font-weight-bold;
+	}
+}
+
+.font-weight-bold{
+	font-weight:$font-weight-bold;
+}
+
+
+.ar .number {
+	direction: ltr;
+}
+
+.unicode-override {
+  unicode-bidi: bidi-override;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+//links
+a {
+	text-decoration: none;
+	outline: 0;
+}
+
+a:hover, a:active, a:focus {
+	outline: 0;
+	text-decoration: none;
+}
+
+//fonts
+.text-white{
+    color:#fff;
+}
+.font-x-small {
+    font-size: $font-x-small;
+}
+.font-small {
+    font-size: $font-small;
+}
+.font-medium {
+    font-size: $font-medium;
+}
+.font-large {
+    font-size: $font-large;
+}
+.font-x-large {
+    font-size: $font-x-large;
+}
+.font-xx-large {
+    font-size: $font-xx-large;
+}
+.font-xxx-large {
+    font-size: $font-xxx-large;
+}
+.font-xxxx-large {
+	font-size: $font-xxxx-large;
+}
+.font-xxxxx-large {
+	font-size: $font-xxxxx-large;
+}
+.font-xxxxxx-large {
+	font-size: $font-xxxxxx-large;
+}
+
+.text-right {
+    text-align: $text-align-3;
+}
+
+.ar .text-right {
+    text-align: $text-align-1!important;
+}
+
+.text-center {
+    text-align: $text-align-2;
+}
+
+.text-left {
+    text-align: $text-align-1;
+}
+
+.ar .text-left {
+    text-align: $text-align-3!important;
+}
+
+.left {
+    float: $float-1;
+}
+
+.ar .left {
+    float: $float-2!important;
+}
+
+.right {
+    float: $float-2;
+}
+
+.ar .right {
+    float: $float-1 !important;
+}
+
+.float-none {
+	float: $float-3 !important;
+}
+
+.clear {
+	float: none;
+	clear: both;
+}
+
+
+.top-0{
+    top:0;
+}
+.bot-0 {
+    bottom: 0;
+}
+.right-0{
+    right:0;
+}
+
+.left-0{
+    left:0;
+}
+
+.p-fixed {
+    position: fixed;
+}
+.p-absolute {
+    position: absolute;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.full-width {
+    width: 100%;
+}
+.half-width {
+  width: 50%;
+}
+.full-height{
+    height:100%;
+}
+.auto-height{
+    height:auto!important;
+}
+.h-100-mb-1{
+	height: calc(100% - 1rem)!important;
+}
+
+.two-col{
+	width: 48%;
+}
+
+
+.v-align-top {
+    vertical-align: top;
+}
+
+.v-align-bottom {
+    vertical-align: bottom;
+}
+
+.v-align-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  vertical-align:middle
+}
+.v-align-text-top {
+    vertical-align:text-top;
+}
+
+.v-align-text-bottom {
+    vertical-align:text-top;
+}
+
+.no-wrap{
+	white-space: nowrap;
+}
+
+.display-table {
+    display: table;
+}
+
+.display-table-row {
+    display: table-row;
+}
+
+.display-table-cell {
+    display: table-cell;
+}
+
+.display-inline {
+    display: inline-block !important;
+}
+
+.display-none {
+	display: none !important;
+}
+
+.table-layout-fixed{
+	table-layout: fixed;
+}
+
+
+.flex{
+ display: flex;
+}
+.flex-row{
+	flex-direction: row;
+}
+.flex-column{
+	flex-direction: column;
+}
+.flex-start{
+	justify-content: flex-start;
+}
+.flex-end{
+	justify-content: flex-end;
+}
+.flex-center{
+	justify-content: center;
+}
+.space-between{
+	justify-content: space-between;
+}
+.space-around{
+	justify-content: space-around;
+}
+.flex-wrap-nowrap{
+	flex-wrap: nowrap!important;
+}
+.flex-1{
+	flex-grow: 1;
+}
+.flex-fill{
+	flex: 1 1 auto !important;
+}
+
+.no-border{
+	border: none!important;
+}
+.no-shadow{
+	box-shadow: none!important;
+}
+.inline-block{
+    display: inline-block;
+}
+
+.h-group-gap{
+	margin-right: 0.25rem;
+	margin-left:0;
+}
+.ar .h-group-gap{
+	margin-left: 0.25rem;
+	margin-right: 0;
+}
+
+//padding
+.padding-small {
+    padding: $padding-small;
+}
+
+.padding-medium {
+    padding: $padding-medium;
+}
+.padding-small-top {
+    padding-top: $padding-small;
+}
+
+.padding-small-right {
+    padding-right: $padding-small;
+}
+
+.ar .padding-small-right {
+    padding-left: $padding-small;
+}
+
+.padding-small-bottom {
+    padding-bottom: $padding-small;
+}
+
+.padding-small-left {
+    padding-left: $padding-small;
+}
+
+.padding-medium-top {
+    padding-top: $padding-medium;
+}
+.padding-medium-right {
+    padding-right: $padding-medium;
+}
+
+.ar .padding-medium-right {
+    padding-left: $padding-medium;
+}
+
+.padding-medium-bottom {
+    padding-bottom: $padding-medium;
+}
+
+.padding-medium-left {
+    padding-left: $padding-medium;
+}
+
+.padding-large {
+    padding: $padding-large;
+}
+
+.padding-large-top {
+    padding-top: $padding-large;
+}
+
+.padding-large-right {
+    padding-right: $padding-large;
+}
+
+.ar .padding-large-right {
+    padding-left: $padding-large;
+}
+
+.padding-large-bottom {
+    padding-bottom: $padding-large;
+}
+
+.padding-large-left {
+    padding-left: $padding-large;
+}
+.padding-v-sep-x{
+    padding-bottom:$padding-small;
+}
+.no-padding{
+    padding: 0px !important;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+//margin
+.margin-small {
+    margin-top: $margin-small;
+}
+
+.margin-small-top {
+    margin-top: $margin-small;
+}
+
+.margin-small-right {
+    margin-right: $margin-small;
+}
+
+.margin-small-bottom {
+    margin-bottom: $margin-small;
+}
+
+.margin-small-left {
+    margin-left: $margin-small;
+}
+
+.ar .margin-small-left {
+    margin-right: $margin-small;
+}
+
+.margin-medium-top {
+    margin-top: $margin-medium;
+}
+
+.margin-medium-right {
+    margin-right: $margin-medium;
+}
+
+.margin-medium-bottom {
+    margin-bottom: $margin-medium;
+}
+
+.margin-medium-left {
+    margin-left: $margin-medium;
+}
+
+.ar .margin-medium-left {
+    margin-right: $margin-medium;
+    margin-left: inherit;
+}
+
+.ar .margin-medium-right {
+    margin-right: inherit;
+    margin-left: $margin-medium;
+}
+
+.margin-large-top {
+    margin-top: $margin-large;
+}
+
+.margin-large-right {
+    margin-right: $margin-large;
+}
+
+.margin-large-bottom {
+    margin-bottom: $margin-large;
+}
+
+.margin-large-left {
+    margin-left: $margin-large;
+}
+.margin-v-sep-x{
+    margin-bottom:$margin-small;
+}
+.no-margin {
+    margin: 0 !important;
+}
+.no-margin-top {
+    margin-top: 0 !important;
+}
+.margin-h-auto{
+		margin: 0 auto;
+}
+
+/*--reset gutter start--*/
+.row.reset-gutter {
+	padding-left: 15px;
+}
+.row.reset-gutter> [class^="col-"]{
+	padding-left: 0;
+}
+
+.ar{
+	.row.reset-gutter {
+		padding-left: 0;
+		padding-right: 15px;
+	}
+	.row.reset-gutter> [class^="col-"]{
+		padding-right: 0;
+		padding-left: 15px;
+	}
+}
+
+/*--reset gutter end--*/
+
+/*--small gutters start--*/
+.small-gutters {
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
+
+	> .col,
+	> [class*="col-"] {
+		padding-right: 0.5rem;
+		padding-left: 0.5rem;
+	}
+}
+.row.small-gutters {
+	margin-right: -0.5rem;
+	margin-left: -0.5rem;
+}
+.row.reset-gutter.small-gutters {
+	padding-left: 0.5rem;
+}
+.row.reset-gutter.small-gutters> [class^="col-"]{
+	padding-left: 0;
+}
+
+.ar{
+	.small-gutters {
+		margin-right: 0.5rem;
+		margin-left: 0.5rem;
+
+		> .col,
+		> [class*="col-"] {
+			padding-right: 0.5rem;
+			padding-left: 0.5rem;
+		}
+	}
+	.row.small-gutters {
+		margin-right: -0.5rem;
+		margin-left: -0.5rem;
+	}
+	.row.reset-gutter.small-gutters {
+		padding-left: 0;
+		padding-right: 0.5rem;
+	}
+	.row.reset-gutter.small-gutters> [class^="col-"]{
+		padding-right: 0;
+		padding-left: 0.5rem;
+	}
+}
+/*--small gutters end--*/
+
+/*Reset checkbox and radio button default styles start*/
+.reset-checkbox-radio.checkbox,.reset-checkbox-radio.radio{
+	display: flex;
+	label{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	input[type="radio"],
+	input[type="checkbox"]{
+		margin: 0 5px 0 0;
+	}
+}
+.ar .reset-checkbox-radio.checkbox,.reset-checkbox-radio.radio{
+
+	input[type="radio"],
+	input[type="checkbox"]{
+		margin: 0 0 0 5px;
+	}
+}
+/*Reset checkbox and radio button default styles end*/
+
+//truncate string with ellipsis
+.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sub_str_tbl {
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+//scroll
+.y-scroll{
+    overflow-y:scroll;
+}
+
+.y-scroll-auto{
+    overflow-y:auto;
+}
+.scroll-auto {
+  overflow: auto;
+}
+
+.ar .y-scroll {
+    overflow: overlay;
+}
+
+.x-scroll{
+    overflow-x:scroll;
+}
+.x-scroll-auto{
+    overflow-x:auto;
+}
+.x-scroll-hidden {
+  overflow-x: hidden;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+
+
+.background-color-none {
+    background-color:transparent!important;
+}
+.no-background {
+    background:none!important;
+}
+.no-radius{
+		border-radius:0!important;
+}
+.circle{
+    border-radius:50%;
+}
+.no-list-style{
+    list-style-type:none;
+}
+
+//line heights
+.line-height-xs {
+    line-height: 1;
+}
+
+.line-height-sm {
+    line-height: 1.5;
+}
+
+.line-height-lg {
+    line-height: 2;
+}
+.line-height-xl {
+    line-height: 4;
+}
+
+//buttons
+button, button:focus {
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+/*--common button start--*/
+.common-button{
+	text-align: center;
+	padding: 10px;
+	border-radius: 3px;
+	border: none;
+	font-size: 12px;
+	margin: 5px 0;
+}
+/*--common button end--*/
+
+
+/*--widget-height start--*/
+
+.widget-height-1{
+	height: $widget-height-1;
+}
+
+/*--widget-height end--*/
+
+.twobytwo-pl{
+	padding: $child-twobytwo-padding-left;
+}
+.twobytwo-pr{
+	padding: $child-twobytwo-padding-right;
+}
+
+.ar{
+	.twobytwo-pl{
+		padding: $child-twobytwo-padding-right;
+	}
+	.twobytwo-pr{
+		padding: $child-twobytwo-padding-left;
+	}
+}
+
+.twobytwo-pl-mobile{
+	padding: $child-twobytwo-padding-left;
+}
+.twobytwo-pr-mobile{
+	padding: $child-twobytwo-padding-right;
+}
+
+.flex-item-center{
+    align-items:center;
+}
+.flex-justify-center{
+    justify-content:center;
+}
+
+.rx {
+	height: 100%;
+	//overflow-y:auto;
+}
+.opacity-0 {
+    opacity: 0;
+}
+
+
+.spacer {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+body .m-height-0 {
+    max-height: none;
+}
+
+/*--reset gutter start--*/
+.row.reset-gutter {
+	padding-left: 15px;
+}
+.row.reset-gutter> [class^="col-"]{
+	padding-left: 0;
+}
+/*--reset gutter end--*/
+
+// TODO[DinushkeR]: change these colors to be theme specific
+.disabled {
+	color: #b6bbb9;
+}
+.orangeCell {
+	color: #ffa50d;;
+	font-weight: bold;
+}
+.redCell {
+	color: #ff0000;
+	font-weight: bold;
+}

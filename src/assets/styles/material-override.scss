@@ -1,0 +1,195 @@
+@import 'common-variables';
+
+/*- Override default font-*/
+.mat-list-item, .cdk-table {
+	font-family: inherit;
+	font-size: inherit !important;
+}
+
+.lbl + .val {
+    margin-right: 0px!important;
+}
+
+/*- Table styles start--*/
+.cdk-table .cdk-header-cell {
+	font-size: 13px;
+}
+.cdk-table .cdk-cell {
+	font-size: 12px;
+}
+.cdk-table .mat-header-row {
+	font-weight: bold;
+}
+.cdk-table .mat-header-row .cdk-header-cell{
+		font-weight: bold;
+}
+.mat-header-row, .cdk-row{
+	display: flex;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	align-items: center;
+	min-height: auto;
+	padding: 8px 5px;
+	height: 40px;
+}
+.cdk-cell, .cdk-header-cell {
+    flex: 1;
+}
+.cdk-header-row {
+	display: flex;
+	font-weight: 700;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	min-height: auto;
+	padding: 8px 5px;
+//	height: 16px;
+}
+/*- Table styles end--*/
+
+
+/*- List styles start--*/
+
+.mat-list-extend.mat-list {
+    .mat-list-item.mat-2-line .mat-list-item-content  {
+        height: 55px;
+    }
+    .mat-list-text h4 {
+		margin-bottom: 5px;
+		font-weight: 700;
+    }
+}
+
+.mat-list .mat-list-item {
+	font-size: 13px;
+}
+
+/*- List styles end--*/
+
+.mat-list[dense] .mat-list-item .mat-list-item-content, .mat-nav-list[dense] .mat-list-item .mat-list-item-content {
+	height: 40px;
+	padding: 0px 5px;
+}
+
+.mat-list .mat-list-item .mat-list-item-content, .mat-nav-list .mat-list-item .mat-list-item-content {
+	padding: 0px 5px;
+}
+
+.mat-list[dense] .mat-list-item, .mat-nav-list[dense] .mat-list-item {
+	font-size: 14px;
+}
+
+.mat-button-toggle-group{
+	box-shadow: none!important;
+}
+
+.mat-button-toggle{
+	margin:0 2px;
+	font-size: 12px;
+}
+.mat-button-toggle-label-content {
+	padding: 0 10px;
+}
+
+.chart-page .mat-form-field-label{
+	color: #6f6f6f;
+}
+mat-sidenav.mat-drawer {
+	min-width: 50px;
+}
+.mat-icon-button{
+	border-radius: 0!important;
+}
+.mat-button, .mat-icon-button, .mat-raised-button {
+	background-color: transparent;
+}
+
+// sidenav and tab links
+.mat-ripple-element { display: none; }
+.mat-tab-links { border-bottom: 2px solid #02225f; }
+.mat-ink-bar  { border-bottom: 2px solid #02225f; }
+.mat-tab-links .mat-tab-link { color: #8d8d8d; }
+.mat-tab-links .mat-ink-bar { bottom: -1px; }
+.mat-tab-links .mat-tab-label-active { opacity: 1; font-weight: 500 ;color: #fff; background-color:#02225f; }
+.mat-sidenav, .mat-sidenav-content, .mat-sidenav ul li a span, .mat-sidenav .name {
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-ms-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+}
+.mat-sidenav ul li a, .mat-sidenav ul li a span, .mat-sidenav .name  { white-space: nowrap }
+
+
+.mat-ink-bar {
+	margin-bottom: -1px;
+}
+.mat-tab-nav-bar, .mat-tab-header {
+	border-bottom: none;
+}
+
+.rx .mat-tab-label {
+	opacity: 1;
+    border: 0;
+    font-size: 16px;
+}
+.mat-form-field.mat-form-field {
+	width: 100%;
+}
+.rx .mat-list .mat-list-item {
+	height: auto;
+}
+
+.mat-radio-container {
+	width: 15px!important;
+	height: 15px!important;
+}
+
+.mat-radio-inner-circle {
+	height: 15px!important;
+	width: 15px!important;
+}
+.mat-radio-outer-circle {
+	height: 15px!important;
+	width: 15px!important;
+}
+
+.mat-checkbox-inner-container {
+	height: 15px!important;
+	width: 15px!important;
+}
+
+.mat-dialog-container{
+	padding: 15px !important;
+	margin: 0 !important;
+	overflow: hidden!important;
+}
+.mat-dialog-content{
+	margin: 0!important;
+	padding: 0!important;
+}
+
+.modal-header {
+	padding: 0 0 10px 0;
+}
+.ar .modal-header {
+	direction: rtl;
+}
+/* Registration Pages overrides */
+
+.reg {
+	.mat-horizontal-content-container {
+		overflow-y: scroll;
+	}
+	.mat-horizontal-stepper-content {
+		overflow: unset;
+	}
+}
+
+.mat-snack-bar-container{
+	min-width: 100%!important;
+	display: flex!important;
+	justify-content: center;
+	border-radius: 0!important;
+	min-height: 56px;
+}

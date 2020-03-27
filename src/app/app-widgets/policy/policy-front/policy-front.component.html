@@ -1,0 +1,80 @@
+
+<div class="col-12">
+  <div class="h1 col-12 text-sm-center header-topic">
+    POLICY
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+          <div class="col-10">
+
+            <div class="card-header">Add New Policy</div>
+
+          <div class="row">
+            <div class="col-8"></div>
+
+            <div class="col-4 dropdown">
+              <select class="col-12 mb-md-2">
+                <option value="volvo">Farming</option>
+                <option value="saab">Environment</option>
+                <option value="opel">Food</option>
+                <option value="audi">Chemical</option>
+              </select>
+            </div>
+          </div>
+
+            <div class="row col-12">
+              <textarea class="col-12" rows="15" cols="100"> </textarea>
+            </div>
+
+          </div>
+
+          <div class="col-2 btnGroup">
+            <div class="row col-12 policyBtn">
+              <button style="width: 100%" mat-raised-button color="accent">Upload</button>
+            </div>
+
+            <div class="row col-12 policyBtn">
+              <button style="width: 100%" mat-raised-button color="accent">Change Req</button>
+            </div>
+
+            <div class="row col-12 policyBtn">
+              <button style="width: 100%" mat-raised-button color="accent">Print</button>
+            </div>
+
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+<div class="col-12">
+    <div class="card">
+      <div class="card-header"> Details </div>
+      <div class="card-body">
+
+        <div class="row col-12">
+          <ag-grid-angular
+            style="width: 100%; height: 500px;"
+            class="ag-theme-balham"
+            [rowData]="rowData"
+            (gridReady)="onGridReady($event)"
+            [columnDefs]="columnDefs">
+          </ag-grid-angular>
+
+        </div>
+
+      </div>
+    </div>
+</div>
+  </div>
+
+</div>
+
+

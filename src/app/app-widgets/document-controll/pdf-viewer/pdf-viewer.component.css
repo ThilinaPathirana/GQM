@@ -1,0 +1,61 @@
+.header-label{
+  color: white;
+  /*margin-right: 5px;*/
+  background: #4a5d7e;
+}
+.manager-approved{
+  background: #0c9801;
+}
+.qe-approved{
+  background: #c69500;
+}
+.not-reviwed{
+  background: red;
+}
+
+.header-bar {
+  margin: 5px;
+}
+.top-bar{
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.header-topic{
+  color:white;
+  background:#0E3E0D;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+.valid-date{
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  color:#4a5d7e;
+  margin-top: 5px
+}
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}

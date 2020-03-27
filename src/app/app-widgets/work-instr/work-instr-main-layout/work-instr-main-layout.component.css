@@ -1,0 +1,8 @@
+#addQuestion{
+  border-width: 10px;
+  border-color: #00000f;
+  width: 700px;
+  overflow: hidden;
+  align-items: center;
+  float: none;
+}

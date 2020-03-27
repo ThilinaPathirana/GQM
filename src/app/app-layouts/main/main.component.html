@@ -1,3 +1,196 @@
-<p>
-  main works!
-</p>
+<!-- Header toolbar menu for responsive handheld devices starts-->
+
+<mat-toolbar class="hidden-xl-up">
+  <div class="row full-width">
+    <div class="col-6">
+      <div class="left pl-2">
+        <button mat-icon-button (click)="changeSideNavWidth()" class="menu-button">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <div class="text-left hidden-xs-down">
+       <img src="assets/images/gtslogo.png" width="90" height="39" alt="" class="main-logo">
+        <!--<div class="h1 text-sm-center">-->
+          <!--GTS Active-->
+        <!--</div>-->
+      </div>
+    </div>
+    <div class="col-6 text-right pr-4">
+      <button mat-icon-button class="menu-button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<!-- Header toolbar menu for responsive handheld devices ends-->
+<mat-sidenav-container  class="full-height" [ngClass]="{ 'theme2': isDarkTheme, 'theme1': !isDarkTheme, 'breadcrumb-available': isBackButtonVisible }">
+  <mat-sidenav id="sidenav" #sidenav mode="side" class="full-height overflow-hidden" [ngClass]="isSideNavMinimised == true ? 'min-sidenav' : 'max-sidenav'"
+               [ngStyle]="{ 'width.px': sidenavWidth }" position={{sideNavAlignment}} opened="true">
+    <nav class="d-sm-block sidebar-color p-0 full-width full-height p-fixed overflow-hidden">
+      <mat-toolbar class="hidden-lg-down">
+        <div class="flex opacity-min hidden-md-down">
+          <div class="col-9">
+            <img src="assets/images/gtslogo.png" width="160" height="45" alt="" class="main-logo">
+            <!--<div class="text-sm-center main-logo" style="font-size: larger;margin-top: 5px;">-->
+              <!--GTS Active-->
+            <!--</div>-->
+          </div>
+          <div class="col-3 text-right">
+            <button mat-icon-button (click)="changeSideNavWidth()" class="menu-button">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        <div class="row opacity-max hidden-md-down">
+          <div class="col-12 text-center">
+            <button mat-icon-button (click)="changeSideNavWidth()" class="menu-button">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </mat-toolbar>
+      <div class="nav-body h-100">
+        <!--<div class="d-flex linear-gauge full-width p-3">
+                    <app-account-summary-gauge class="w-100"> </app-account-summary-gauge>
+                </div>-->
+
+        <perfect-scrollbar >
+          <mat-nav-list class="nav-list-wrapper y-scroll-auto pt-0 h-100">
+            <ul class="nav nav-pills flex-row nav-top">
+              <div class="nav-item-wrapper full-width" *ngFor="let item of menuItems; let i = index;">
+                <li class="nav-item has-sub-items" (click)="panelButtonClicked(item, false)" *ngIf="!item.subItems" [class.active]="item?.active" [tabindex]="i">
+                  <input id={{item.config.tooltips}} type="checkbox" (change)="menuItemSelected($event)" /> <!--Tooltip is used as a unique id. Change this if it's oddd-->
+                  <label class="nav-item-group-lbl" for={{item.config.tooltips}}>
+                    <a class=" p-3 flex space-between flex-item-center" routerLink={{item.config.url}} routerLinkActive="active">
+                      <i ngClass={{item.config.icon}} class="align-middle pr-2 pl-2 sub-nav-item-icon" [matTooltip]="item.config.tooltips"
+                         matTooltipPosition="after"></i>
+                      <span class="lblmenu">{{item.config.tooltips}}</span>
+                    </a>
+                  </label>
+                </li>
+                <li class="nav-item has-sub-items" (click)="panelButtonClicked(item, true)" *ngIf="item.subItems" [class.active]="item?.active"
+                    [tabindex]="i">
+                  <input id={{item.config.tooltip}} type="checkbox" (change)="menuItemSelected($event)" /> <!--Tooltip is used as a unique id. Change this if it's oddd-->
+                  <label class="nav-item-group-lbl" for={{item.config.tooltip}}>
+                    <a class="nav-link p-3 flex space-between flex-item-center" [matTooltip]="item.config.tooltip"
+                       matTooltipPosition="after">
+                      <i ngClass={{item.config.icon}} class="align-middle pr-2 pl-2 nav-item-icon"></i>
+                      <span class="col p-0 lblmenu has-sub-items-lbl">{{ item.config.tooltip }}</span>
+                      <span class="arrow right">
+												<i class="fa fa-angle-down"></i>
+											</span>
+                    </a>
+                    <ul class="nav nav-pills flex-row nav-top sub-nav-items" *ngIf="item?.subItems">
+                      <div class="full-width" *ngFor="let subItem of item?.subItems; let i = index;">
+                        <li class="nav-item" (click)="panelButtonClicked(subItem)">
+                          <a class="nav-link pr-3 pl-3 pt-2 pb-2" routerLink={{subItem.config.url}} routerLinkActive="active">
+                            <i ngClass={{subItem.config.icon}} class="align-middle pr-2 pl-2 sub-nav-item-icon" [matTooltip]="subItem.config.tooltip"
+                               matTooltipPosition="after"></i>
+                            <span class="lblmenu">{{subItem.config.tooltip}}</span>
+                          </a>
+                        </li>
+                      </div>
+                    </ul>
+                  </label>
+                </li>
+              </div>
+            </ul>
+          </mat-nav-list>
+        </perfect-scrollbar>
+        <ul class="nav nav-pills nav-actions nav-bottom w-100 flex-row opacity-min">
+          <li class="col-12 app-version">
+            <div class="w-100 gap-1 left mb-2"></div>
+            <div class="ml-3 mr-3">
+							<span class="left">
+								<!--<span class="fa fa-circle {{ connectionStatusClass }}"></span>-->
+								<!--<span>{{ connectionStatusText }}</span>-->
+							</span>
+              <!--<span class="right">{{ customisation }} | {{ appVersion }}</span>-->
+            </div>
+            <div class="w-100 gap-2 left mt-2"></div>
+          </li>
+          <li class="nav-item text-center pr-0 pl-0 pt-2 pb-2 col">
+            <button class="btn cursor-pointer bg-transparent no-border mt-1">
+              <i class="fa fa-question-circle"></i>
+            </button>
+          </li>
+          <li class="nav-item text-center pr-0 pl-0 pt-2 pb-2 col" style="display: none;">
+            <button class="btn cursor-pointer bg-transparent no-border">
+              <i class="fa fa-paint-brush"></i>
+            </button>
+          </li>
+          <li class="nav-item text-center pr-0 pl-0 pt-2 pb-2 col">
+            <button class="btn cursor-pointer bg-transparent no-border" (click)="panelButtonClicked({id: 'preferences'})">
+              <i class="fa fa-preferences"></i>
+            </button>
+          </li>
+          <!--<li class="nav-item text-center pr-0 pl-0 pt-2 pb-2 col">-->
+          <!--<button class="btn cursor-pointer bg-transparent no-border" (click)="logoutApplication()">-->
+          <!--<i class="fa fa-power-off"></i>-->
+          <!--</button>-->
+          <!--</li>-->
+          <li class="nav-item text-center pr-0 pl-0 pt-2 pb-2 col">
+            <button class="btn cursor-pointer bg-transparent no-border">
+              <i class="fa fa-feedback"></i>
+            </button>
+          </li>
+          <li class="nav-item text-center pr-0 pl-0 pt-2 pb-2 col">
+            <button class="btn cursor-pointer bg-transparent no-border arrow" (click)="changeSideNavWidth()">
+              <i class="fa fa-chevron-left"></i>
+            </button>
+          </li>
+        </ul>
+        <ul class="nav nav-pills nav-arrow nav-bottom w-100 flex-row opacity-max">
+          <li class="nav-item text-center full-width pt-3 pb-3">
+            <button class="btn cursor-pointer bg-transparent btn-secondary no-border" (click)="changeSideNavWidth()">
+              <i class="fa fa-chevron-right"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="full-height" [ngClass]="sidenavWidth == 210 ? 'expand' : 'shrink'">
+    <div class="top-panel-wrapper hidden-lg-down flex">
+      <div class="flex-1">
+      </div>
+      <div class="flex">
+        <div class="top-panel-more-btn">
+          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
+            <i class="fa fa-bell fa-inverse"></i>
+          </button>
+        </div>
+        <div class="top-panel-more-btn">
+          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
+            <i class="fa fa-search fa-inverse"></i>
+          </button>
+        </div>
+        <div class="top-panel-more-btn">
+          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100">
+            <i class="fa fa-user-circle fa-inverse"></i>
+          </button>
+        </div>
+        <div class="top-panel-more-btn border-0">
+          <button mat-icon-button class="pl-0 pr-0 font-xx-large cursor-pointer h-100 w-100" (click)="logout()">
+            <i class="fa fa-power-off fa-inverse"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--<div *ngIf="isBackButtonVisible" class="d-flex pl-3 pr-3 pb-2 pt-2 breadcrumb-panel">-->
+			<!--<span *ngFor="let item of navigationService.navWidgetStack; let i = index;" (click)="navigateBack(i)" class="d-flex">-->
+				<!--<div class="mr-1 ml-1 d-flex breadcrumb-panel-item" [ngClass] = "{ 'breadcrumb-visited-page font-weight-regular': i === navigationService.navWidgetStack.length -1}">-->
+					<!--<div>{{ localizationService.language[item.childView.tooltip] }}</div>-->
+				<!--</div>-->
+				<!--<div class="mr-1 ml-1 d-flex"><div *ngIf="i !== navigationService.navWidgetStack.length -1"><div class="fa fa-angle-right"></div></div></div>-->
+			<!--</span>-->
+    <!--</div>-->
+    <perfect-scrollbar>
+    <router-outlet></router-outlet>
+    </perfect-scrollbar>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+

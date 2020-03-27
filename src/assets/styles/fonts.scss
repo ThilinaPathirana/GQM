@@ -1,0 +1,744 @@
+//@import url(//fonts.googleapis.com/earlyaccess/notokufiarabic.css); // arabic font
+
+@font-face {
+	font-family: "feature-icon-font-1";
+	src:url("../fonts/feature-icon-font-1.eot");
+	src:url("../fonts/feature-icon-font-1.eot?#iefix") format("embedded-opentype"),
+	url("../fonts/feature-icon-font-1.woff") format("woff"),
+	url("../fonts/feature-icon-font-1.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+[data-icon]:before {
+	font-family: "feature-icon-font-1" !important;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="uni-"]:before,
+[class*=" uni-"]:before {
+	font-family: "feature-icon-font-1" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.uni-analysis:before {
+	content: "\61";
+}
+.uni-announcements:before {
+	content: "\62";
+}
+.uni-chart:before {
+	content: "\64";
+}
+.uni-create-watchlist:before {
+	content: "\65";
+}
+.uni-default-watchlist:before {
+	content: "\67";
+}
+.uni-download:before {
+	content: "\68";
+}
+.uni-gms:before {
+	content: "\69";
+}
+.uni-market-sector:before {
+	content: "\6a";
+}
+.uni-market-summary:before {
+	content: "\6b";
+}
+.uni-markets:before {
+	content: "\6c";
+}
+.uni-money-deposit:before {
+	content: "\6d";
+}
+.uni-volume:before {
+	content: "\6e";
+}
+.uni-turnover:before {
+	content: "\6f";
+}
+.uni-trading-advices:before {
+	content: "\70";
+}
+.uni-top-stock:before {
+	content: "\72";
+}
+.uni-time-sales:before {
+	content: "\73";
+}
+.uni-sell:before {
+	content: "\74";
+}
+.uni-pro-chart:before {
+	content: "\77";
+}
+.uni-news:before {
+	content: "\78";
+}
+.uni-my-account:before {
+	content: "\79";
+}
+.uni-money-withdrawal:before {
+	content: "\7a";
+}
+.uni-watchlist:before {
+	content: "\41";
+}
+.uni-price-alert:before {
+	content: "\43";
+}
+.uni-trade-alert:before {
+	content: "\44";
+}
+.uni-custom-watchlist:before {
+	content: "\66";
+}
+.uni-buy:before {
+	content: "\63";
+}
+.uni-bear:before {
+	content: "\45";
+}
+.uni-bull:before {
+	content: "\46";
+}
+.uni-add-alert:before {
+	content: "\47";
+}
+.uni-add-price-alert:before {
+	content: "\48";
+}
+.uni-add-trade-alert:before {
+	content: "\49";
+}
+.uni-add-user:before {
+	content: "\4a";
+}
+.uni-add-users:before {
+	content: "\4b";
+}
+.uni-arrow-down:before {
+	content: "\4c";
+}
+.uni-arrow-up:before {
+	content: "\4d";
+}
+.uni-bracket-orders:before {
+	content: "\4e";
+}
+.uni-chat:before {
+	content: "\50";
+}
+.uni-contact-us:before {
+	content: "\51";
+}
+.uni-feedback:before {
+	content: "\52";
+}
+.uni-info-center:before {
+	content: "\53";
+}
+.uni-remove-user:before {
+	content: "\54";
+}
+.uni-user-settings:before {
+	content: "\55";
+}
+.uni-platforms:before {
+	content: "\56";
+}
+.uni-order-book-settings:before {
+	content: "\57";
+}
+.uni-tc:before {
+	content: "\58";
+}
+.uni-search-users:before {
+	content: "\59";
+}
+.uni-search-user:before {
+	content: "\5a";
+}
+.uni-angle-down:before {
+	content: "\99f";
+}
+.uni-angle-left:before {
+	content: "\30";
+}
+.uni-angle-right:before {
+	content: "\31";
+}
+.uni-angle-up:before {
+	content: "\32";
+}
+.uni-angle-double-left:before {
+	content: "\33";
+}
+.uni-angle-double-right:before {
+	content: "\34";
+}
+.uni-angle-double-up:before {
+	content: "\35";
+}
+.uni-angle-double-down:before {
+	content: "\36";
+}
+.uni-arrow-down-1:before {
+	content: "\37";
+}
+.uni-arrow-left:before {
+	content: "\38";
+}
+.uni-arrow-right:before {
+	content: "\39";
+}
+.uni-arrow-up-1:before {
+	content: "\21";
+}
+.uni-arrow-circle-up:before {
+	content: "\22";
+}
+.uni-arrow-circle-down:before {
+	content: "\23";
+}
+.uni-bar-chart:before {
+	content: "\24";
+}
+.uni-bell:before {
+	content: "\25";
+}
+.uni-bell-o:before {
+	content: "\26";
+}
+.uni-caret-down:before {
+	content: "\28";
+}
+.uni-caret-left:before {
+	content: "\29";
+}
+.uni-caret-right:before {
+	content: "\2a";
+}
+.uni-caret-up:before {
+	content: "\2b";
+}
+.uni-ellipsis-h:before {
+	content: "\2c";
+}
+.uni-ellipsis-v:before {
+	content: "\2d";
+}
+.uni-asterisk-1:before {
+	content: "\2e";
+}
+.uni-check-circle:before {
+	content: "\3a";
+}
+.uni-check-circle-o:before {
+	content: "\3b";
+}
+.uni-check-square:before {
+	content: "\3c";
+}
+.uni-check-square-o:before {
+	content: "\3d";
+}
+.uni-chevron-circle-down:before {
+	content: "\3e";
+}
+.uni-chevron-circle-left:before {
+	content: "\3f";
+}
+.uni-chevron-circle-right:before {
+	content: "\40";
+}
+.uni-chevron-circle-up:before {
+	content: "\5b";
+}
+.uni-chevron-down:before {
+	content: "\5d";
+}
+.uni-chevron-left:before {
+	content: "\5e";
+}
+.uni-chevron-right:before {
+	content: "\5f";
+}
+.uni-chevron-up:before {
+	content: "\60";
+}
+.uni-close:before {
+	content: "\7b";
+}
+.uni-close-circle:before {
+	content: "\7c";
+}
+.uni-close-circle-o:before {
+	content: "\7d";
+}
+.uni-dot:before {
+	content: "\27";
+}
+.uni-dot-2:before {
+	content: "\2f";
+}
+.uni-dot-3:before {
+	content: "\7e";
+}
+.uni-switch:before {
+	content: "\e000";
+}
+.uni-pause:before {
+	content: "\5c";
+}
+.uni-equal:before {
+	content: "\e001";
+}
+.uni-auto-trading:before {
+	content: "\e002";
+}
+.uni-country-data:before {
+	content: "\e003";
+}
+.uni-account-details:before {
+	content: "\e004";
+}
+.uni-focus-list:before {
+	content: "\e005";
+}
+.uni-warrant:before {
+	content: "\e006";
+}
+.uni-stock-borrowing:before {
+	content: "\e007";
+}
+.uni-trade:before {
+	content: "\e009";
+}
+.uni-screener:before {
+	content: "\e00a";
+}
+.uni-my-alerts:before {
+	content: "\e00b";
+}
+.uni-orders:before {
+	content: "\e00c";
+}
+.uni-preferences:before {
+	content: "\e00e";
+}
+.uni-money-market:before {
+	content: "\e010";
+}
+.uni-building:before {
+	content: "\71";
+}
+.uni-b:before {
+	content: "\e011";
+}
+.uni-s:before {
+	content: "\e012";
+}
+.uni-filter:before {
+	content: "\e013";
+}
+.uni-full-view:before {
+	content: "\e015";
+}
+.uni-eye:before {
+	content: "\e016";
+}
+.uni-eye-slash:before {
+	content: "\e017";
+}
+.uni-asterisk:before {
+	content: "\e018";
+}
+.uni-bell-slash:before {
+	content: "\e019";
+}
+.uni-bell-slash-o:before {
+	content: "\e01a";
+}
+.uni-calculator:before {
+	content: "\e01b";
+}
+.uni-calendar:before {
+	content: "\e01c";
+}
+.uni-camera:before {
+	content: "\e01d";
+}
+.uni-cart-arrow-down:before {
+	content: "\e01e";
+}
+.uni-cart-plus:before {
+	content: "\e01f";
+}
+.uni-clock-o:before {
+	content: "\e020";
+}
+.uni-file-pdf-o:before {
+	content: "\e021";
+}
+.uni-sort-alpha-asc:before {
+	content: "\e022";
+}
+.uni-sort-alpha-desc:before {
+	content: "\e023";
+}
+.uni-sort-amount-asc:before {
+	content: "\e024";
+}
+.uni-sort-amount-desc:before {
+	content: "\e025";
+}
+.uni-sort-numeric-asc:before {
+	content: "\e026";
+}
+.uni-sort-numeric-desc:before {
+	content: "\e027";
+}
+.uni-suitcase:before {
+	content: "\e028";
+}
+.uni-check:before {
+	content: "\e029";
+}
+.uni-pencil:before {
+	content: "\e02a";
+}
+.uni-plus:before {
+	content: "\e02b";
+}
+.uni-services:before {
+	content: "\e02c";
+}
+.uni-research-report:before {
+	content: "\e00f";
+}
+.uni-search:before {
+	content: "\75";
+}
+.uni-research:before {
+	content: "\e014";
+}
+.uni-watchlist-market-sectors:before {
+	content: "\e00d";
+}
+.uni-portfolio:before {
+	content: "\42";
+}
+.uni-stock-profile:before {
+	content: "\e008";
+}
+.uni-index:before {
+	content: "\76";
+}
+.uni-go-to-adv-chart:before {
+	content: "\e02d";
+}
+.uni-alternatives:before {
+	content: "\e02f";
+}
+.uni-equity:before {
+	content: "\e030";
+}
+.uni-fixed-income:before {
+	content: "\e032";
+}
+.uni-investment-strategy:before {
+	content: "\e034";
+}
+.uni-mutual-fund:before {
+	content: "\e036";
+}
+.uni-commodities:before {
+	content: "\e02e";
+}
+.uni-etf:before {
+	content: "\e031";
+}
+.uni-fx:before {
+	content: "\e033";
+}
+.uni-real-estate:before {
+	content: "\e03e";
+}
+.uni-mult-assets:before {
+	content: "\e03f";
+}
+.uni-number-0:before {
+	content: "\e035";
+}
+.uni-number-1:before {
+	content: "\e037";
+}
+.uni-number-2:before {
+	content: "\e038";
+}
+.uni-number-3:before {
+	content: "\e039";
+}
+.uni-number-4:before {
+	content: "\e03a";
+}
+.uni-number-5:before {
+	content: "\e03b";
+}
+.uni-number-6:before {
+	content: "\e03c";
+}
+.uni-number-7:before {
+	content: "\e03d";
+}
+.uni-number-8:before {
+	content: "\e040";
+}
+.uni-number-9:before {
+	content: "\e041";
+}
+//
+///*--chart icons start--*/
+//@font-face {
+//	font-family: "chart-icons";
+//	src:url("../fonts/chart-icons.eot");
+//	// src:url("../fonts/chart-icons.eot?#iefix") format("embedded-opentype"),
+//	url("../fonts/chart-icons.woff") format("woff"),
+//	url("../fonts/chart-icons.ttf") format("truetype");
+//	font-weight: normal;
+//	font-style: normal;
+//
+//}
+
+[data-icon]:before {
+	font-family: "chart-icons" !important;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="chart-"]:before,
+[class*=" chart-"]:before {
+	font-family: "chart-icons" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.chart-annotation:before {
+	content: "\61";
+}
+.chart-average-line:before {
+	content: "\62";
+}
+.chart-callout:before {
+	content: "\63";
+}
+.chart-candle:before {
+	content: "\64";
+}
+.chart-clear:before {
+	content: "\66";
+}
+.chart-compare:before {
+	content: "\67";
+}
+.chart-continuous:before {
+	content: "\68";
+}
+.chart-crossline:before {
+	content: "\69";
+}
+.chart-data-window:before {
+	content: "\6a";
+}
+.chart-date-range:before {
+	content: "\6b";
+}
+.chart-doodle:before {
+	content: "\6c";
+}
+.chart-dt-line:before {
+	content: "\6d";
+}
+.chart-horizontal:before {
+	content: "\6f";
+}
+.chart-hollow-candle:before {
+	content: "\70";
+}
+.chart-heikin-ashi:before {
+	content: "\71";
+}
+.chart-gartley:before {
+	content: "\72";
+}
+.chart-gannfan:before {
+	content: "\73";
+}
+.chart-freeform:before {
+	content: "\74";
+}
+.chart-fibtimezone:before {
+	content: "\75";
+}
+.chart-fibonacci:before {
+	content: "\76";
+}
+.chart-fibfan:before {
+	content: "\77";
+}
+.chart-fibarc:before {
+	content: "\78";
+}
+.chart-favourite:before {
+	content: "\79";
+}
+.chart-ellipse:before {
+	content: "\7a";
+}
+.chart-line-break:before {
+	content: "\41";
+}
+.chart-log-scale:before {
+	content: "\42";
+}
+.chart-measure:before {
+	content: "\43";
+}
+.chart-mountain:before {
+	content: "\44";
+}
+.chart-ohlc:before {
+	content: "\45";
+}
+.chart-pitchfork:before {
+	content: "\46";
+}
+.chart-point-and-figure:before {
+	content: "\47";
+}
+.chart-quadrant:before {
+	content: "\48";
+}
+.chart-range-bars:before {
+	content: "\49";
+}
+.chart-ray:before {
+	content: "\4a";
+}
+.chart-rectangle:before {
+	content: "\4b";
+}
+.chart-regression:before {
+	content: "\4c";
+}
+.chart-renko:before {
+	content: "\4d";
+}
+.chart-studies:before {
+	content: "\4e";
+}
+.chart-sppedline:before {
+	content: "\4f";
+}
+.chart-speedo:before {
+	content: "\50";
+}
+.chart-speedarc:before {
+	content: "\51";
+}
+.chart-shape-heart:before {
+	content: "\52";
+}
+.chart-shape-focuss:before {
+	content: "\53";
+}
+.chart-shape-cross:before {
+	content: "\54";
+}
+.chart-shape-check:before {
+	content: "\55";
+}
+.chart-shape-arrow:before {
+	content: "\56";
+}
+.chart-segment:before {
+	content: "\57";
+}
+.chart-scale:before {
+	content: "\58";
+}
+.chart-retracement:before {
+	content: "\59";
+}
+.chart-reset:before {
+	content: "\5a";
+}
+.chart-timecycle:before {
+	content: "\30";
+}
+.chart-tirone:before {
+	content: "\31";
+}
+.chart-vertical:before {
+	content: "\32";
+}
+.chart-volume:before {
+	content: "\33";
+}
+.chart-volume-candle:before {
+	content: "\34";
+}
+.chart-ohlc-text:before {
+	content: "\35";
+}
+.chart-channel:before {
+	content: "\65";
+}
+.chart-line:before {
+	content: "\6e";
+}
+.chart-interval-change:before {
+	content: "\36";
+}
+.chart-duration-change:before {
+	content: "\38";
+}
+.chart-orientation-change:before {
+	content: "\37";
+}
+
+
+/*--chart icons end--*/

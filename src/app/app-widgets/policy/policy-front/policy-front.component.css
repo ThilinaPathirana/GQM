@@ -1,0 +1,30 @@
+.menu-item{
+  width: 30%;
+  position: relative;
+  align-items: center;
+  /*margin-left: 40%;*/
+}
+.card{
+  margin-bottom: 5px;
+}
+.policyBtn{
+  margin-bottom: 5px;
+}
+
+.btnGroup{
+  align-items: center;
+}
+
+.dropdown{
+  margin-top: 5px;
+}
+.menu-item-container .card:hover{
+  box-shadow: 10px 10px 5px grey;
+}
+.header-topic{
+  color:#090634;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+}

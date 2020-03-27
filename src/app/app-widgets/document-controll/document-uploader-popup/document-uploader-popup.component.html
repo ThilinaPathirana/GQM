@@ -1,0 +1,45 @@
+<div class="h1 col-12 text-sm-center header-topic">
+  Upload a New Document
+</div>
+<div class="col-12 row">
+
+<div class="col-6 dropdown">
+  <label class="bold">Scope</label>
+  <!--<select class="col-12 mb-md-2">-->
+    <!--<option value="volvo">Department 1</option>-->
+    <!--<option value="saab">Department 2</option>-->
+    <!--<option value="opel">Department 3</option>-->
+    <!--<option value="audi">Department 4</option>-->
+  <!--</select>-->
+  <input type="text" placeholder="scope" class="form-control" name="docScope"
+         [(ngModel)]="docScope" required>
+</div>
+
+  <div class="col-6">
+
+  <label class="bold">Document Name</label>
+  <input type="text" placeholder="Document name" class="form-control" name="docName"
+         [(ngModel)]="docName" required>
+
+  </div>
+
+  </div>
+
+<div class="row document-select">
+  <!--<ejs-multiselect id='multiselectelement'[dataSource]='data' [placeholder]="placeHolder" [popupHeight]='popupHeight' [popupWidth]='popupWidth'></ejs-multiselect>-->
+</div>
+
+<div id="dropFileForm">
+  <input type="file" name="files[]" id="fileInput" (change)="addFiles($event)">
+
+  <label for="fileInput" id="fileLabel" (dragover)="overrideDefault($event);" (dragenter)="overrideDefault($event);" (dragleave)="overrideDefault($event);" (drop)="overrideDefault($event);
+        addFiles($event);">
+    <i class="fa fa-download fa-5x"></i>
+    <br>
+    <label>{{FileLabeltext}}</label>
+    <br>
+    <span id="uploadStatus"></span>
+  </label>
+
+  <button class="uploadButton" (click)="uploadaws()">Upload</button>
+</div>
