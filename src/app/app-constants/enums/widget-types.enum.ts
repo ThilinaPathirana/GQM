@@ -16,4 +16,7 @@ export enum WidgetTypes {
   Reports = 'reports',
   AddMrmMeeting = 'addMrmMeeting',
   ComplainNote = "complainNote",
+  GON= 'gon',
+  GRN = 'gon',
+  SupplierRegister ='supplierRegister'
 }

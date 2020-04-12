@@ -1,0 +1,104 @@
+<div class="col-12 mt-4">
+  <div class="h2 text-sm-center font-weight-bold">
+    Supplier Registration
+  </div>
+  <br>
+  
+
+    <div class="row">
+      <div class="col-sm-2 form-group" >
+        <label class=" bold">Supplier Name</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <input type="text" placeholder="Enter Customer Name" class="form-control" name="supplier_name" [(ngModel)]="supplier_name" required>
+      </div>
+
+      <div class="col-sm-2 form-group" >
+        <label class="bold">Supplier Code</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <input type="text" placeholder="Enter Supplier Code" class="form-control" name="supplier_code" [(ngModel)]="supplier_code" required>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2 form-group" >
+        <label class=" bold">Item</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <input type="text" placeholder="Enter Item" class="form-control" name="item" [(ngModel)]="item" required>
+      </div>
+
+      <div class="col-sm-2 form-group" >
+        <label class="bold">Contact Info</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <input type="text" placeholder="Enter Contact Info" class="form-control" name="contact_info" [(ngModel)]="contact_info" required>
+      </div>
+      
+    </div>
+   
+    <div class="row">
+      <div class="col-sm-2 form-group" >
+        <label class=" bold">Annual Supply</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <input type="text" placeholder="Enter Annual Supply" class="form-control" name="annual_supply" [(ngModel)]="annual_supply" required>
+      </div>
+
+      <div class="col-sm-2 form-group" >
+        <label class="bold">Unit Specification</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <input type="text" placeholder="Enter Unit Specification" class="form-control" name="unit_specs" [(ngModel)]="unit_specs" required>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2 form-group" >
+        <label class=" bold">Item Code</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <input type="text" placeholder="Enter Item Code" class="form-control" name="item_code" [(ngModel)]="item_code" required>
+      </div>
+
+      <div class="col-sm-2 form-group" >
+        <label class="bold">Address</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <textarea placeholder="Enter Address" class="form-control" name="address" [(ngModel)]="address" required></textarea>
+      </div>
+      
+    </div>
+
+
+
+    
+
+    <div class="row">
+      <div class="col-sm-2 form-group" >
+        <label class=" bold">Remarks</label>
+      </div>
+      <div class="col-sm-4 form-group" >
+        <textarea placeholder="Enter Remarks" class="form-control" name="remarks" [(ngModel)]="remarks" required></textarea>
+      </div>
+
+    </div>
+
+    
+    <div class="row">
+      <div class="col-sm-1 form-group" >
+        <button (click)="addButtonClick()" mat-raised-button color="accent">Clear</button>
+       
+      </div>
+      <div class="col-sm-2 form-group" >
+        &nbsp;
+        <button (click)="addButtonClick()" mat-raised-button color="accent">Print</button>
+         </div>
+      
+    </div>
+
+    
+  

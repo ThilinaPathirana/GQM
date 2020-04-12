@@ -163,6 +163,8 @@ export const userSettings = {
         icon: 'fa fa-university',
       },
     },
+  
+    
     // {
     //   id: WidgetTypes.home,
     //   config: {
@@ -187,6 +189,33 @@ export const userSettings = {
         icon: 'fa fa-database',
       },
     },
+
+    {
+      id: WidgetTypes.SupplierRegister,
+      config: {
+        tooltips: 'Supplier Registration',
+        url: 'Supplier-registration',
+        icon: 'fa fa-pencil',
+      },
+      },
+
+      {
+        id: WidgetTypes.SupplierRegister,
+        config: {
+          tooltips: 'GRN',
+          url: 'GRN',
+          icon: 'fa fa-print',
+        },
+        },
+
+        {
+          id: WidgetTypes.SupplierRegister,
+          config: {
+            tooltips: 'GON',
+            url: 'GON',
+            icon: 'fa fa-file',
+          },
+          },
     // {
     //   id: WidgetTypes.home,
     //   config: {

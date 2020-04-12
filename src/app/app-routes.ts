@@ -44,6 +44,18 @@ export const routes: Routes = [
         path: 'IncidentComplain',
         loadChildren: './app-widgets/incident-complain-note/incident-complain-note.module#IncidentComplainNoteModule'
       },
+      {
+        path: 'Supplier-registration',
+        loadChildren: './app-widgets/supplier/supplier.module#SupplierModule'
+      },
+      {
+        path: 'GRN',
+        loadChildren: './app-widgets/grn/grn.module#GrnModule'
+      },
+      {
+        path: 'GON',
+        loadChildren: './app-widgets/gon/gon.module#GonModule'
+      },
     ],
   },
   {
