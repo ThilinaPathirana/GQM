@@ -1,0 +1,160 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Add Process Steps</h1>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-group col-md-6">
+      <label><h5>Place</h5></label>
+      <select
+        class="custom-select my-1 mr-sm-2"
+        id="supplier"
+        [(ngModel)]="place"
+      >
+        <option selected>Choose...</option>
+        <option value="1">IP</option>
+        <option value="2">OP</option>
+        <option value="3">PS 1</option>
+        <option value="3">PS 2</option>
+        <option value="3">PS 3</option>
+        <option value="3">PS 4</option>
+        <option value="3">PS 5</option>
+        <option value="3">PS 6</option>
+        <option value="3">PS 7</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-group col-md-6">
+      <label><h5>From</h5></label>
+      <select
+        class="custom-select my-1 mr-sm-2"
+        id="supplier"
+        [(ngModel)]="from"
+      >
+        <option selected>Choose...</option>
+        <option value="1">IP</option>
+        <option value="2">OP</option>
+        <option value="3">PS 1</option>
+        <option value="3">PS 2</option>
+        <option value="3">PS 3</option>
+        <option value="3">PS 4</option>
+        <option value="3">PS 5</option>
+        <option value="3">PS 6</option>
+        <option value="3">PS 7</option>
+        <option value="3">GRN</option>
+        <option value="3">GON</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>To</h5></label>
+      <select class="custom-select my-1 mr-sm-2" id="supplier" [(ngModel)]="to">
+        <option selected>Choose...</option>
+        <option value="1">IP</option>
+        <option value="2">OP</option>
+        <option value="3">PS 1</option>
+        <option value="3">PS 2</option>
+        <option value="3">PS 3</option>
+        <option value="3">PS 4</option>
+        <option value="3">PS 5</option>
+        <option value="3">PS 6</option>
+        <option value="3">PS 7</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-group col-md-6">
+      <label><h5>Activity</h5></label>
+      <select
+        class="custom-select my-1 mr-sm-2"
+        id="supplier"
+        [(ngModel)]="activity"
+      >
+        <option selected>Choose...</option>
+        <option value="1">selection</option>
+        <option value="2">visual inspection</option>
+        <option value="3">temperature check</option>
+        <option value="3">time measurement</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-group col-md-4">
+      <label><h5>QA Decision</h5></label>
+      <select
+        class="custom-select my-1 mr-sm-2"
+        id="supplier"
+        [(ngModel)]="desicion"
+      >
+        <option selected>Choose...</option>
+        <option value="1">Pass</option>
+        <option value="2">Reject</option>
+        <option value="3">Hold</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label><h5>Done By</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="supplierCode"
+        [(ngModel)]="doneBy"
+      />
+    </div>
+    <div class="form-group col-md-4">
+      <label><h5>Approved By</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="supplierCode"
+        [(ngModel)]="approvedBy"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Conversion Rate</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="item"
+        [(ngModel)]="conversionRate"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Comment</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="contactInfo"
+        [(ngModel)]="comment"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>PS Code</h5></label>
+      <div class="form-inline justify-content-between">
+        <input
+          type="text"
+          class="form-control col-md-6"
+          id="item"
+          [(ngModel)]="psCode"
+        />
+        <button type="submit" class="btn btn-md btn-info">Generate Code</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-lg btn-info" (click)="addStep()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

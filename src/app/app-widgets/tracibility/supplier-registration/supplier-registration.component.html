@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Supplier Registration</h1>
+  </div>
+  <br /><br />
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Supplier Name</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="supplierName"
+        [(ngModel)]="supplierName"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Supplier Code</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="supplierCode"
+        [(ngModel)]="supplierCode"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Item</h5></label>
+      <input type="text" class="form-control" id="item" [(ngModel)]="item" />
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Contact Info</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="contactInfo"
+        [(ngModel)]="contactInfo"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Annual Supply</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="annual"
+        [(ngModel)]="annual"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Unit</h5></label>
+      <input type="text" class="form-control" id="unit" [(ngModel)]="unit" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Item code</h5></label>
+      <input type="text" class="form-control" id="code" [(ngModel)]="code" />
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Address</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        [(ngModel)]="address"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Item Specification</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="specification"
+        [(ngModel)]="specification"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Remark</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="remark"
+        [(ngModel)]="remark"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-lg btn-info" (click)="register()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
