@@ -12,6 +12,7 @@ import { RequestTypes } from "../../app-constants/enums/request-types.enum";
 import { DocumentListDataStore } from "../data-stores/document-list-data-store";
 import { ResponseMsgTypes } from "../../app-constants/enums/response-msg-types.enum";
 import { DocumentHistoryDataStore } from "../data-stores/document-history-data-store";
+import { TracibilityDataStore } from "../data-stores/tracibility-data-store";
 import { Subject } from "rxjs";
 
 @Injectable()
@@ -27,7 +28,8 @@ export class BackOfficeService {
     private dataService: DataService,
     private documentListDataStore: DocumentListDataStore,
     private documentHistoryDataStore: DocumentHistoryDataStore,
-    private scopeDataStore: ScopeDataStore
+    private scopeDataStore: ScopeDataStore,
+    private tracibilityDataStore: TracibilityDataStore,
   ) {
     this.getResponse();
   }
@@ -69,6 +71,36 @@ export class BackOfficeService {
       case RequestTypes.documentHistory: {
         this.msgGroup = BoMessageGroups.DocumentMeta;
         this.msgType = BoMessageTypes.DocumentHistory;
+        break;
+      }
+      case RequestTypes.productMeta: {
+        this.msgGroup = BoMessageGroups.Tracibility;
+        this.msgType = BoMessageTypes.ListProducts;
+        break;
+      }
+      case RequestTypes.itemMeta: {
+        this.msgGroup = BoMessageGroups.Tracibility;
+        this.msgType = BoMessageTypes.ListItem;
+        break;
+      }
+      case RequestTypes.supplierMeta: {
+        this.msgGroup = BoMessageGroups.Tracibility;
+        this.msgType = BoMessageTypes.ListSupplier;
+        break;
+      }
+      case RequestTypes.processMeta: {
+        this.msgGroup = BoMessageGroups.Tracibility;
+        this.msgType = BoMessageTypes.ListProcess;
+        break;
+      }
+      case RequestTypes.processStepMeta: {
+        this.msgGroup = BoMessageGroups.Tracibility;
+        this.msgType = BoMessageTypes.ListProcessSteps;
+        break;
+      }
+      case RequestTypes.placesMeta: {
+        this.msgGroup = BoMessageGroups.Tracibility;
+        this.msgType = BoMessageTypes.ListPlaces;
         break;
       }
     }
@@ -137,6 +169,34 @@ export class BackOfficeService {
               }
             }
           }
+          case BoMessageGroups.Tracibility: {
+            switch(msgType) {
+              case ResponseMsgTypes.ProductList: {
+                this.tracibilityDataStore.productList(responseData);
+                break;
+              }
+              case ResponseMsgTypes.ItemList: {
+                this.tracibilityDataStore.itemList(responseData);
+                break;
+              }
+              case ResponseMsgTypes.SupplierList: {
+                this.tracibilityDataStore.supplierList(responseData);
+                break;
+              }
+              case ResponseMsgTypes.ProcessList: {
+                this.tracibilityDataStore.processList(responseData);
+                break;
+              }
+              case ResponseMsgTypes.ProcessStepList: {
+                this.tracibilityDataStore.processStepList(responseData);
+                break;
+              }
+              case ResponseMsgTypes.PlacesList: {
+                this.tracibilityDataStore.placesList(responseData);
+                break;
+              }
+            }
+          }
         }
       }
     });
@@ -155,7 +215,16 @@ export class BackOfficeService {
   public supplierRegistration(data): void {
     this.getBackOfficeData(
       BoMessageGroups.Tracibility,
-      BoMessageTypes.SupplierRegistration,
+      BoMessageTypes.AddSupplier,
+      data,
+      ATCacheTypes.NET
+    );
+  }
+
+  public suppliersProduct(data): void {
+    this.getBackOfficeData(
+      BoMessageGroups.Tracibility,
+      BoMessageTypes.AddSupplierProduct,
       data,
       ATCacheTypes.NET
     );
@@ -174,6 +243,15 @@ export class BackOfficeService {
     this.getBackOfficeData(
       BoMessageGroups.Tracibility,
       BoMessageTypes.Label,
+      data,
+      ATCacheTypes.NET
+    );
+  }
+
+  public addItem(data): void {
+    this.getBackOfficeData(
+      BoMessageGroups.Tracibility,
+      BoMessageTypes.AddItem,
       data,
       ATCacheTypes.NET
     );

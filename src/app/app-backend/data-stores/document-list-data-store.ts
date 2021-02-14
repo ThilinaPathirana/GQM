@@ -22,4 +22,5 @@ export class DocumentListDataStore {
   get docListDataStoreUpdate$(): Subject<string> {
     return this._docListDataStoreUpdate$;
   }
+
 }

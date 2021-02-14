@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import {fromEvent, Subscription} from 'rxjs';
+import {DocumentListDataStore} from "../../../app-backend/data-stores/document-list-data-store";
+import {TracibilityDataStore} from "../../../app-backend/data-stores/tracibility-data-store";
+import {BackOfficeService} from "../../../app-backend/bo/back-office.service";
+import {RequestTypes} from "../../../app-constants/enums/request-types.enum";
 
 @Component({
   selector: "app-store",
@@ -7,72 +12,51 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./store.component.css"],
 })
 export class StoreComponent implements OnInit {
-  constructor(private routerr: Router) {}
+  public columnDefs = [];
+  public rowData = [];
 
-  columnDefs = [
-    { headerName: "Ref#", field: "ref", width: 300, cellClass: "text-center" },
-    {
-      headerName: "Process Name",
-      field: "processName",
-      width: 300,
-      cellClass: "text-center",
-    },
-    {
-      headerName: "Supplier",
-      field: "supplier",
-      width: 300,
-      cellClass: "text-center",
-    },
-    {
-      headerName: "Process Status",
-      field: "processStatus",
-      width: 300,
-      cellClass: "text-center",
-    },
-  ];
+  private $subscription: Subscription;
+  private gridApi;
+  private gridColumnApi;
 
-  rowData = [
-    {
-      id: 1,
-      ref: "UN/2018/14",
-      processName: "System1",
-      supplier: "ktslanka(pvt)Ltd",
-      processStatus: "Done",
-    },
-    {
-      id: 2,
-      ref: "UN/2018/14",
-      processName: "System2",
-      supplier: "ktslanka(pvt)Ltd",
-      processStatus: "Done",
-    },
-    {
-      id: 3,
-      ref: "UN/2018/14",
-      processName: "System3",
-      supplier: "ktslanka(pvt)Ltd",
-      processStatus: "Done",
-    },
-    {
-      id: 4,
-      ref: "UN/2018/14",
-      processName: "System4",
-      supplier: "ktslanka(pvt)Ltd",
-      processStatus: "Done",
-    },
-    {
-      id: 5,
-      ref: "UN/2018/14",
-      processName: "System5",
-      supplier: "ktslanka(pvt)Ltd",
-      processStatus: "Done",
-    },
-  ];
+  constructor(private routerr: Router, private tracibilityDataStore: TracibilityDataStore, private boService: BackOfficeService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.boService.requestData(RequestTypes.processMeta,"T1_PROCESS_STATUS='0'");
+    this.columnDefs = [
+      { headerName: "Ref#", field: "PROCESS_ID", width: 300, cellClass: "text-center" },
+      {
+        headerName: "Process Name",
+        field: "PROCESS_NAME",
+        width: 300,
+        cellClass: "text-center",
+      },
+      {
+        headerName: "Supplier",
+        field: "SUPPLIER.supplierName",
+        width: 300,
+        cellClass: "text-center",
+      },
+      {
+        headerName: "Volume",
+        field: "PROCESS_QUANTITY",
+        width: 300,
+        cellClass: "text-center",
+      },
+      {
+        headerName: "Process Created Date",
+        field: "PROCESS_CREATED_DATE",
+        width: 300,
+        cellClass: "text-center",
+      },
+    ];
+  
+    this.$subscription = this.tracibilityDataStore.docListDataStoreUpdate$.subscribe(data=>{
+      this.rowData = this.tracibilityDataStore.processArr;
+    })
+  }
 
   public rowClick(event: any) {
-    console.log("row", event.data);
-    this.routerr.navigateByUrl(`gts/Trace/process/detail/${event.data.id}`);
+    this.routerr.navigateByUrl(`gts/Trace/process/detail/${event.data.PROCESS_ID}`);
   }
 }

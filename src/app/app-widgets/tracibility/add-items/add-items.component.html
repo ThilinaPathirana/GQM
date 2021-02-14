@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Item Registration</h1>
+  </div>
+  <br /><br />
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Item Name</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="itemName"
+        [(ngModel)]="itemName"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Item Code</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="itemCode"
+        [(ngModel)]="itemCode"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Item Specification</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="itemSpec"
+        [(ngModel)]="itemSpec"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-lg btn-info" (click)="register()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

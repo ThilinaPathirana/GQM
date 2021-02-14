@@ -224,6 +224,22 @@ export const userSettings = {
             icon: "fa fa-table",
           },
         },
+        {
+          id: WidgetTypes.Item,
+          config: {
+            tooltip: "Item",
+            url: "Trace/item",
+            icon: "fa fa-table",
+          },
+        },
+        {
+          id: WidgetTypes.Products,
+          config: {
+            tooltip: "Supplier Products",
+            url: "Trace/products",
+            icon: "fa fa-table",
+          },
+        },
       ],
     },
     // {

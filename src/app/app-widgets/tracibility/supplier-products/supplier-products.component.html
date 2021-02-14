@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Supplier's Product Registration</h1>
+  </div>
+  <br /><br />
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Supplier</h5></label>
+      <select
+        class="custom-select my-1 mr-sm-2"
+        id="supplier"
+        [(ngModel)]="selectedSuppliers"
+        (ngModelChange)="selectedSupplier($event)"
+      >
+      <option *ngFor="let supplier of suppliers" [value]="supplier.SUPPLIER_ID">{{supplier.SUPPLIER_NAME}} </option> 
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Product</h5></label>
+      <select
+        class="custom-select my-1 mr-sm-2"
+        id="product"
+        [(ngModel)]="selectedProducts"
+        (ngModelChange)="selectedProduct($event)"
+      >
+      <option *ngFor="let item of items" [value]="item.ITEM_ID">{{item.ITEM}} </option> 
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label><h5>Annual Supply</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="annualSupply"
+        [(ngModel)]="annualSupply"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label><h5>Unit</h5></label>
+      <input
+        type="text"
+        class="form-control"
+        id="unit"
+        [(ngModel)]="unit"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <button type="submit" class="btn btn-lg btn-info" (click)="register()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

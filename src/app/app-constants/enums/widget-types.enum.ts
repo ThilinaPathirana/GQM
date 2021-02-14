@@ -23,4 +23,6 @@ export enum WidgetTypes {
   Supplier = "supplier",
   FinalStore = "finalStore",
   FinalWorkSheet = "finalWorkSheet",
+  Item = "item",
+  Products = "products"
 }
