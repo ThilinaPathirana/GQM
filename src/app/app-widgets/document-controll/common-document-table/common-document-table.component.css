@@ -1,0 +1,45 @@
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.header_inner .header-topic {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.header_inner .btn-primary {
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.header_inner .btn-primary {
+  background-color: #148a10;
+  border-color: #148a10;
+}
+
+.header_inner .btn-primary:hover {
+  background-color: #25b120;
+  border-color: #25b120;
+}
+
+.header_inner .btn-primary:not(:disabled):not(.disabled).active,
+.header_inner .btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: #0f770c;
+  border-color: #0f770c;
+}
+
+.header_inner .btn-primary.focus,
+.btn-primary:focus,
+.header_inner .btn-primary:not(:disabled):not(.disabled).active:focus,
+.header_inner .btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .header_inner .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #25b1202f;
+}

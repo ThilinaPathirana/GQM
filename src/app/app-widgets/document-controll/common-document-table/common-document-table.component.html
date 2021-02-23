@@ -1,41 +1,46 @@
 <div>
-
   <div *ngIf="!openPdf">
-
-  <div class="card">
-    <!--<div class="col-12">-->
-
-    <div class="col-12">
-
-    <div class="row" style="margin-top: 10px">
-      <ag-grid-angular
-        style="width: 100%;height: 500px;"
-        class="ag-theme-balham"
-        [rowData]="rowData"
-        [columnDefs]="columnDefs"
-        (gridReady)="onGridReady($event)"
-      (rowClicked)="rowClick($event)"
-        [suppressContextMenu]="false"
-        [floatingFilter]="true"
+    <div class="header_inner">
+      <span class="header-topic"
+        >Header Title (Need to pass as prop - Janitha)</span
       >
-      </ag-grid-angular>
-
+      <button class="btn btn-primary" (click)="openDocumentUploadPage()">
+        + Upload new document
+      </button>
     </div>
-    <div class="row">
-      <button style="width: 100%" class="col-md-12 col-lg-12" (click)="openDocumentUploadPage()">Upload a New Document</button>
-
+    <div class="card">
+      <!--<div class="col-12">-->
+      <div class="col-12">
+        <div class="row" style="margin-top: 10px">
+          <ag-grid-angular
+            style="width: 100%; height: 500px"
+            class="ag-theme-balham"
+            [rowData]="rowData"
+            [columnDefs]="columnDefs"
+            (gridReady)="onGridReady($event)"
+            (rowClicked)="rowClick($event)"
+            [suppressContextMenu]="false"
+            [floatingFilter]="true"
+          >
+          </ag-grid-angular>
+        </div>
+        <div class="row">
+          <button
+            style="width: 100%"
+            class="col-md-12 col-lg-12"
+            (click)="openDocumentUploadPage()"
+          >
+            Upload a New Document
+          </button>
+        </div>
+      </div>
+      <!--</div>-->
     </div>
-
-    </div>
-    <!--</div>-->
-  </div>
-
   </div>
 
   <!--<div *ngIf="openPdf">-->
-    <!--<div class="card">-->
-    <!--<app-work-instructions></app-work-instructions>-->
-    <!--</div>-->
+  <!--<div class="card">-->
+  <!--<app-work-instructions></app-work-instructions>-->
   <!--</div>-->
-
+  <!--</div>-->
 </div>
