@@ -262,6 +262,16 @@
     .mat-toolbar {
       margin-bottom: 0 !important;
     }
+    .mat-drawer-content.expand {
+      perfect-scrollbar {
+        margin-left: 210px;
+        width: calc(100% - 105px);
+        transition: ease-in-out 0.5s margin-left;
+      }
+    }
+    .mat-drawer-content.shrink {
+      transition: ease-in-out 0.5s margin-left;
+    }
   }
   .expand,
   .shrink {
