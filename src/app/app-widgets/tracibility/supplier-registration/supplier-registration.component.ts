@@ -28,21 +28,14 @@ export class SupplierRegistrationComponent implements OnInit {
 
     //this.routerr.navigateByUrl("gts/Trace/supplier");
     this.registrationData = {
-      supplierName: this.supplierName,
-      supplierCode: this.supplierCode,
-      contactInfo: this.contactInfo,
-      item: this.item,
-      annual: this.annual,
-      unit: this.unit,
-      code: this.code,
-      address: this.address,
-      specification: this.specification,
-      remark: this.remark,
+      SUPPLIER_NAME: this.supplierName,
+      SUPPLIER_CODE: this.supplierCode,
+      SUPPLIER_CONTACT_INFO: this.contactInfo,
+      SUPPLIER_ADDRESS: this.address,
+      REMARKS: this.remark,
     };
 
     this.boService.supplierRegistration(this.registrationData);
-
-    console.log("data", this.registrationData);
   }
 
   ngOnInit() {}

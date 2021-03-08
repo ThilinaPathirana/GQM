@@ -34,6 +34,7 @@ import { DocumentListDataStore } from "./app-backend/data-stores/document-list-d
 import { DocumentHistoryDataStore } from "./app-backend/data-stores/document-history-data-store";
 import { TracibilityComponent } from "./app-widgets/tracibility/tracibility.component";
 import { TracibilityModule } from "./app-widgets/tracibility/tracibility.module";
+import { TracibilityDataStore } from "./app-backend/data-stores/tracibility-data-store";
 // import { MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @NgModule({
@@ -70,6 +71,7 @@ import { TracibilityModule } from "./app-widgets/tracibility/tracibility.module"
     ScopeDataStore,
     DocumentListDataStore,
     DocumentHistoryDataStore,
+    TracibilityDataStore
   ],
   bootstrap: [AppComponent],
 })
