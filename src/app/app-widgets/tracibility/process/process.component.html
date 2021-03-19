@@ -1,22 +1,7 @@
-<!-- <div class="row">
-  <div class="h1 col-12 text-sm-center header-topic">
-    Flow Charts
-  </div>
-</div>
-
-<div class="row col-5 mb-5 button-class">
-  <button
-    style="width: 50%;"
-    class="btn btn-lg btn-info"
-    (click)="addProcess()"
-  >
-    Add Process
-  </button>
-</div> -->
 
 <div class="header_inner">
-  <span class="header-topic">Flow Charts</span>
-  <button class="btn btn-primary" (click)="addProcess()">
+  <h1>Flow Charts</h1>
+  <button class="btn btn-custom" (click)="addProcess()">
     + Add Process
   </button>
 </div>
@@ -24,7 +9,7 @@
 <div class="card table">
   <div class="col-12" style="margin-top: 10px; margin-bottom: 10px;">
     <ag-grid-angular
-      style="width: 100%; height: 500px;"
+      style="width: 100%;"
       class="ag-theme-balham"
       [rowData]="rowData"
       [columnDefs]="columnDefs"

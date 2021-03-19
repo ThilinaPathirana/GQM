@@ -719,3 +719,93 @@ body .m-height-0 {
 	color: #ff0000;
 	font-weight: bold;
 }
+
+/* Common Header - Janitha */
+.header_inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+
+	h1{
+		color:#090634;
+		font-size: 1.75rem;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+	}
+
+	.btn-custom{
+		margin-left: 10px;
+	}
+}
+/* Common Header - Janitha */
+
+/* Common CTA BTN - Janitha */
+.btn-custom {
+	border-radius: 8px;
+	padding: 10px;
+	font-weight: 500;
+	&{
+	background-color: #148a10;
+	border-color: #148a10;
+	color: #fff;
+	}
+	&:hover {
+		background-color: #25b120;
+		border-color: #25b120;
+		color: #fff;
+	}
+	&.cta{
+		padding: 10px 25px;
+	}
+}
+
+.btn-custom:not(:disabled):not(.disabled).active,
+.btn-custom:not(:disabled):not(.disabled):active,
+.show > .btn-custom.dropdown-toggle {
+	background-color: #0f770c;
+	border-color: #0f770c;
+}
+
+.btn-custom.focus,
+.btn-custom:focus,
+.btn-custom:not(:disabled):not(.disabled).active:focus,
+.btn-custom:not(:disabled):not(.disabled):active:focus,
+.show > .btn-custom.dropdown-toggle:focus {
+	box-shadow: 0 0 0 0.2rem #25b1202f;
+}
+/* Common CTA BTN - Janitha */
+
+.ag-theme-balham{
+	height: calc(100vh - 145px);
+}
+
+/* Common Form - Janitha */
+.custom-from{
+	.form-group{
+		margin-bottom: 1.563rem;
+	}
+	label{
+		margin-bottom: 0.938rem;
+	}
+	input{
+		margin-bottom: 0.5rem;
+		border-radius: .25rem !important;
+	}
+	.warning-msg{
+		
+		color: #ff0000;
+	}
+	.custom-select{
+		height: 34px;
+	}
+}
+
+/* Common Form - Janitha */
+
+@media (max-width: 747px) {
+	.header_inner {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
