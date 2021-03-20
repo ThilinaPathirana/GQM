@@ -1,20 +1,24 @@
 
-<div class="header_inner">
-  <h1>Flow Charts</h1>
-  <button class="btn btn-custom" (click)="addProcess()">
-    + Add Process
-  </button>
-</div>
-
-<div class="card table">
-  <div class="col-12" style="margin-top: 10px; margin-bottom: 10px;">
-    <ag-grid-angular
-      style="width: 100%;"
-      class="ag-theme-balham"
-      [rowData]="rowData"
-      [columnDefs]="columnDefs"
-      (rowClicked)="rowClick($event)"
-    >
-    </ag-grid-angular>
+<div class="container">
+  <div class="row">
+    <div class="col-12 header_inner">
+      <h1>Flow Charts</h1>
+      <button class="btn btn-custom" (click)="addProcess()">
+        + Add Process
+      </button>
+    </div>
+  </div>
+  
+  <div class="card table">
+    <div class="col-12" style="margin-top: 10px; margin-bottom: 10px;">
+      <ag-grid-angular
+        style="width: 100%;"
+        class="ag-theme-balham"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        (rowClicked)="rowClick($event)"
+      >
+      </ag-grid-angular>
+    </div>
   </div>
 </div>

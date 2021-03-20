@@ -788,12 +788,11 @@ body .m-height-0 {
 	label{
 		margin-bottom: 0.938rem;
 	}
-	input{
+	input,.custom-select{
 		margin-bottom: 0.5rem;
 		border-radius: .25rem !important;
 	}
 	.warning-msg{
-		
 		color: #ff0000;
 	}
 	.custom-select{
@@ -807,5 +806,9 @@ body .m-height-0 {
 	.header_inner {
 		flex-direction: column;
 		align-items: stretch;
+
+		.btn-custom{
+			margin-left: 0;
+		}
 	}
 }

@@ -1,9 +1,43 @@
-<div class="row justify-content-center">
-  <h1>Final Worksheet</h1>
-</div>
-
 <div class="container">
-  <div class="form-group row">
+  <div class="row">
+    <div class="col-12 header_inner">
+      <h1>Final Worksheet</h1>
+    </div>
+  </div>
+
+  <form class="custom-from">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>Select store</label>
+          <select
+            class="custom-select"
+            id="supplier"
+            [(ngModel)]="selectedPlace"
+            (ngModelChange)="selectedFromValue($event)"
+          >
+            <option selected>Choose...</option>
+            <option value="1">Store 1</option>
+            <option value="2">Store 2</option>
+            <option value="3">Store 3</option>
+          </select>
+          <span class="warning-msg">Please fill an value</span>
+        </div>
+      </div>
+
+      <div class="col-sm-12 d-flex flex-column">
+        <div>
+          <button type="submit" class="btn btn-custom cta" (click)="addProcess()">
+            Submit
+          </button>
+        </div>
+        <span class="warning-msg">Please fill an value</span>
+      </div>
+    </div>
+  </form>
+
+
+  <!-- <div class="form-group row">
     <label class="col-sm-2 col-form-label col-form-label-sm"
       ><h5>Select store</h5></label
     >
@@ -39,5 +73,5 @@
     <div class="col-sm-3">
       <button class="btn btn-lg btn-info" (click)="label()">Label</button>
     </div>
-  </div>
+  </div> -->
 </div>
