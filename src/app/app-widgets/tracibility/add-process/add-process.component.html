@@ -10,56 +10,38 @@
       <div class="col-sm-6">
         <div class="form-group">
           <label>Process Name</label>
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            id="name"
-            [(ngModel)]="processName"
-          />
-          <span class="warning-msg">Please fill an value</span>
+          <input type="text" class="form-control form-control-sm" id="name" [(ngModel)]="processName" />
+          <span *ngIf="(processNameError || allEmpty)" class="warning-msg">Required</span>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="form-group">
           <label>Supplier</label>
-          <select
-            class="custom-select"
-            id="supplier"
-            [(ngModel)]="selectedSuppliers"
-            (ngModelChange)="selectedSupplier($event)"
-          >
-          <option *ngFor="let supplier of suppliers" [value]="supplier.SUPPLIER_ID">{{supplier.SUPPLIER_NAME}} </option> 
+          <select class="custom-select" id="supplier" [(ngModel)]="selectedSuppliers"
+            (ngModelChange)="selectedSupplier($event)">
+            <option *ngFor="let supplier of suppliers" [value]="supplier.SUPPLIER_ID">{{supplier.SUPPLIER_NAME}}
+            </option>
           </select>
-          <span class="warning-msg">Please fill an value</span>
+          <span *ngIf="(suppliersError || allEmpty)" class="warning-msg">Required</span>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="form-group">
           <label>Product</label>
-          <select
-          class="custom-select"
-          id="item"
-          [(ngModel)]="selectedItems"
-          (ngModelChange)="selectedItem($event)"
-        >
-        <option *ngFor="let item of items" [value]="item.ITEM_SUPPLIER_ID">{{item.ITEM.item}} </option> 
-        </select>
-        <span class="warning-msg">Please fill an value</span>
+          <select class="custom-select" id="item" [(ngModel)]="selectedItems" (ngModelChange)="selectedItem($event)">
+            <option *ngFor="let item of items" [value]="item.ITEM_SUPPLIER_ID">{{item.ITEM.item}} </option>
+          </select>
+          <span *ngIf="(itemsError || allEmpty)" class="warning-msg">Required</span>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="form-group">
           <label>Quantity</label>
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            id="quantity"
-            [(ngModel)]="quantity"
-          />
-          <span class="warning-msg">Please fill an value</span>
+          <input type="text" class="form-control form-control-sm" id="quantity" [(ngModel)]="quantity" />
+          <span *ngIf="(quantityError || allEmpty)" class="warning-msg">Required</span>
         </div>
       </div>
 
@@ -69,7 +51,7 @@
             Submit
           </button>
         </div>
-        <span class="warning-msg">Please fill an value</span>
+        <!-- <span class="warning-msg">Please fill an value</span> -->
       </div>
     </div>
   </form>
