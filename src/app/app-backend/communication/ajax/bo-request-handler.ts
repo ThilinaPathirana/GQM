@@ -51,7 +51,7 @@ export class BackOfficeRequestHandler {
   public static getAjaxAtRequest(data: any): any {
     return {
       method: "POST",
-      url: "http://localhost:8085/gts-back-office/services/gtsServices",
+      url: "http://18.222.164.207:8080/gts-back-office/services/gtsServices",
       body: data.data,
     };
   }
