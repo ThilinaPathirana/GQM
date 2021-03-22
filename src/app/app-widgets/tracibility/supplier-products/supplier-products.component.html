@@ -10,56 +10,39 @@
       <div class="col-sm-6">
         <div class="form-group">
           <label>Supplier</label>
-          <select
-            class="custom-select my-1 mr-sm-2"
-            id="supplier"
-            [(ngModel)]="selectedSuppliers"
-            (ngModelChange)="selectedSupplier($event)"
-          >
-          <option *ngFor="let supplier of suppliers" [value]="supplier.SUPPLIER_ID">{{supplier.SUPPLIER_NAME}} </option> 
+          <select class="custom-select my-1 mr-sm-2" id="supplier" [(ngModel)]="selectedSuppliers"
+            (ngModelChange)="selectedSupplier($event)">
+            <option *ngFor="let supplier of suppliers" [value]="supplier.SUPPLIER_ID">{{supplier.SUPPLIER_NAME}}
+            </option>
           </select>
-          <span class="warning-msg">Please fill an value</span>
+          <span *ngIf="(suppliersError || allEmpty)" class="warning-msg">Required !</span>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="form-group">
           <label>Product</label>
-          <select
-            class="custom-select my-1 mr-sm-2"
-            id="product"
-            [(ngModel)]="selectedProducts"
-            (ngModelChange)="selectedProduct($event)"
-          >
-          <option *ngFor="let item of items" [value]="item.ITEM_ID">{{item.ITEM}} </option> 
+          <select class="custom-select my-1 mr-sm-2" id="product" [(ngModel)]="selectedProducts"
+            (ngModelChange)="selectedProduct($event)">
+            <option *ngFor="let item of items" [value]="item.ITEM_ID">{{item.ITEM}} </option>
           </select>
-          <span class="warning-msg">Please fill an value</span>
+          <span *ngIf="(productError || allEmpty)" class="warning-msg">Required !</span>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="form-group">
           <label>Annual Supply</label>
-          <input
-            type="text"
-            class="form-control"
-            id="annualSupply"
-            [(ngModel)]="annualSupply"
-          />
-        <span class="warning-msg">Please fill an value</span>
+          <input type="text" class="form-control" id="annualSupply" [(ngModel)]="annualSupply" />
+          <span *ngIf="(annualSupplyError || allEmpty)" class="warning-msg">Required !</span>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="form-group">
           <label>Unit</label>
-          <input
-            type="text"
-            class="form-control"
-            id="unit"
-            [(ngModel)]="unit"
-          />
-        <span class="warning-msg">Please fill an value</span>
+          <input type="text" class="form-control" id="unit" [(ngModel)]="unit" />
+          <span *ngIf="(unitError || allEmpty)" class="warning-msg">Required !</span>
         </div>
       </div>
 
@@ -69,7 +52,7 @@
             Submit
           </button>
         </div>
-        <span class="warning-msg">Please fill an value</span>
+        <!-- <span class="warning-msg">Please fill an value</span> -->
       </div>
     </div>
   </form>

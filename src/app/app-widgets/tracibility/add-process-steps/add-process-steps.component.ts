@@ -36,6 +36,7 @@ export class AddProcessStepsComponent implements OnInit {
   public conversionRateError: boolean;
   public commentError: boolean;
   public psCodeError: boolean;
+  public allEmpty: boolean;
 
   private $subscription: Subscription;
   private gridApi;
@@ -96,6 +97,21 @@ export class AddProcessStepsComponent implements OnInit {
   }
 
   addStep() {
+
+    if (!this.place ||
+      !this.from ||
+      !this.to ||
+      !this.store ||
+      !this.activity ||
+      !this.decision ||
+      !this.doneBy ||
+      !this.approvedBy ||
+      !this.conversionRate ||
+      !this.comment) {
+      this.allEmpty = true;
+      return false;
+    }
+
     this.addProcessStep = {
       PS_PROCESS: { "PROCESS_ID": 1 },
       PS_PLACES: { "PLACES_ID": this.place },
@@ -124,6 +140,7 @@ export class AddProcessStepsComponent implements OnInit {
       this.conversionRateError = false;
       this.commentError = false;
       this.psCodeError = false;
+      this.allEmpty = false;
     }, 3000)
 
     if (!errorResponse) {
