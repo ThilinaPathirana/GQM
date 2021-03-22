@@ -19,14 +19,49 @@ export class SupplierRegistrationComponent implements OnInit {
   public specification = "";
   public remark = "";
 
+  public supplierNameError: Boolean;
+  public supplierCodeError: Boolean;
+  public contactInfoError: Boolean;
+  public addressError: Boolean;
+  public remarkError: Boolean;
+  public allEmpty: Boolean;
+
   public registrationData = {};
 
-  constructor(private routerr: Router, private boService: BackOfficeService) {}
+  constructor(private routerr: Router, private boService: BackOfficeService) { }
 
-  register(): void {
-    // console.log("event", this.supplierName);
+  validationForm(data) {
+    let error = false;
+    if (!data.SUPPLIER_NAME) {
+      this.supplierNameError = true;
+      error = true;
+    } else if (!data.SUPPLIER_CODE) {
+      this.supplierCodeError = true;
+      error = true;
+    } else if (!data.SUPPLIER_CONTACT_INFO) {
+      this.contactInfoError = true;
+      error = true;
+    } else if (!data.SUPPLIER_ADDRESS) {
+      this.addressError = true;
+      error = true;
+    } else if (!data.REMARKS) {
+      this.remarkError = true;
+      error = true;
+    } else {
+      error = false;
+    }
 
-    //this.routerr.navigateByUrl("gts/Trace/supplier");
+    return error;
+  }
+
+  register() {
+    if (!this.supplierName ||
+      !this.supplierCode ||
+      !this.contactInfo ||
+      !this.address ||
+      !this.remark) {
+      this.allEmpty = true;
+    }
     this.registrationData = {
       SUPPLIER_NAME: this.supplierName,
       SUPPLIER_CODE: this.supplierCode,
@@ -35,8 +70,21 @@ export class SupplierRegistrationComponent implements OnInit {
       REMARKS: this.remark,
     };
 
-    this.boService.supplierRegistration(this.registrationData);
+    let errorResponse = this.validationForm(this.registrationData);
+
+    setTimeout(() => {
+      this.supplierNameError = false;
+      this.supplierCodeError = false;
+      this.contactInfoError = false;
+      this.addressError = false;
+      this.remarkError = false;
+      this.allEmpty = false;
+    }, 3000);
+
+    if (!errorResponse) {
+      this.boService.supplierRegistration(this.registrationData);
+    }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
