@@ -4,9 +4,10 @@
  **/
 
 export enum BoMessageGroups {
-	Authentication = 1,
-	Register = 3,
+  Authentication = 1,
+  Register = 3,
   Scope = 15,
   DocumentMeta = 16,
   Email = 14,
+  Tracibility = 17,
 }

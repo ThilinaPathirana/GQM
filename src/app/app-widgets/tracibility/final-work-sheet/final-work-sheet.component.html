@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+  <h1>Final Worksheet</h1>
+</div>
+
+<div class="container">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm"
+      ><h5>Select store</h5></label
+    >
+    <div class="col-sm-8">
+      <select
+        class="form-control form-control-sm"
+        id="supplier"
+        [(ngModel)]="selectedPlace"
+        (ngModelChange)="selectedFromValue($event)"
+      >
+        <option selected>Choose...</option>
+        <option value="1">Store 1</option>
+        <option value="2">Store 2</option>
+        <option value="3">Store 3</option>
+      </select>
+    </div>
+  </div>
+  <div *ngIf="isLast" class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm"
+      ><h5>List of Batch Codes</h5></label
+    >
+    <div class="col-sm-8">
+      <div class="card">
+        <ul>
+          <li *ngFor="let linkList of linkLists">
+            <span class="badge">{{linkList.PROCESS_NAME}}</span> {{linkList.BATCH_CODE}}
+         </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-3">
+      <button class="btn btn-lg btn-info" (click)="label()">Label</button>
+    </div>
+  </div>
+</div>

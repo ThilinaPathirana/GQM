@@ -48,7 +48,7 @@ export class CommonDocumentTableComponent implements OnInit {
     ];
     this.$subscription = this.documentListDataStore.docListDataStoreUpdate$.subscribe(data=>{
       this.rowData = this.documentListDataStore.documentList;
-    })
+    })    
   }
 
   public rowClick(event: any) {
