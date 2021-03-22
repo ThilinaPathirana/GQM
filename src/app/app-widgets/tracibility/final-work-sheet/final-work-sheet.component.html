@@ -10,18 +10,14 @@
       <div class="col-sm-6">
         <div class="form-group">
           <label>Select store</label>
-          <select
-            class="custom-select"
-            id="supplier"
-            [(ngModel)]="selectedPlace"
-            (ngModelChange)="selectedFromValue($event)"
-          >
+          <select class="custom-select" id="supplier" [(ngModel)]="selectedPlace"
+            (ngModelChange)="selectedFromValue($event)">
             <option selected>Choose...</option>
             <option value="1">Store 1</option>
             <option value="2">Store 2</option>
             <option value="3">Store 3</option>
           </select>
-          <span class="warning-msg">Please fill an value</span>
+          <span *ngIf="allEmpty" class="warning-msg">Required !</span>
         </div>
       </div>
 
@@ -31,7 +27,7 @@
             Submit
           </button>
         </div>
-        <span class="warning-msg">Please fill an value</span>
+        <!-- <span class="warning-msg">Please fill an value</span> -->
       </div>
     </div>
   </form>

@@ -10,49 +10,34 @@
       <div class="col-sm-6">
         <div class="form-group">
           <label>Item Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="itemName"
-            [(ngModel)]="itemName"
-          />
-          <span class="warning-msg">Please fill an value</span>
+          <input type="text" class="form-control" id="itemName" [(ngModel)]="itemName" />
+          <span *ngIf="(itemNameError || allEmpty)" class="warning-msg">Required !</span>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="form-group">
           <label>Item Code</label>
-          <input
-            type="text"
-            class="form-control"
-            id="itemCode"
-            [(ngModel)]="itemCode"
-          />
-          <span class="warning-msg">Please fill an value</span>
+          <input type="text" class="form-control" id="itemCode" [(ngModel)]="itemCode" />
+          <span *ngIf="(itemCodeError || allEmpty)" class="warning-msg">Required !</span>
         </div>
       </div>
 
       <div class="col-sm-6">
         <div class="form-group">
           <label>Item Specification</label>
-          <input
-            type="text"
-            class="form-control"
-            id="itemSpec"
-            [(ngModel)]="itemSpec"
-          />
-        <span class="warning-msg">Please fill an value</span>
+          <input type="text" class="form-control" id="itemSpec" [(ngModel)]="itemSpec" />
+          <span *ngIf="(itemSpecError || allEmpty)" class="warning-msg">Required !</span>
         </div>
       </div>
 
       <div class="col-sm-12 d-flex flex-column">
         <div>
-          <button type="submit" class="btn btn-custom cta" (click)="addProcess()">
+          <button type="submit" class="btn btn-custom cta" (click)="register()">
             Submit
           </button>
         </div>
-        <span class="warning-msg">Please fill an value</span>
+        <!-- <span class="warning-msg">Please fill an value</span> -->
       </div>
     </div>
   </form>
